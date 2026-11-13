@@ -16,6 +16,7 @@
 2. **系统怎么闭环**：看 [`docs/system-design.md`](docs/system-design.md)。以活动系统和断线托管为例，拆控制流、状态、配置、异常、补偿和验收。
 3. **制作人视角**：看 [`docs/product-judgment.md`](docs/product-judgment.md)。从市场、产品命题、范围成本、团队交付、商业运营到上线复盘，完整看一个玩法怎么立项和交付。
 4. **系统 + 数值联合案例**：看 [docs/system-numeric-case.md](docs/system-numeric-case.md)。断线托管的状态机、90 秒回控预算，以及风迹手册的 8 币方案和 6.71% 预算内测算。
+5. **效率系统**：看 [docs/efficiency-system.md](docs/efficiency-system.md)。从标准化、最小跑通、日志验收、批量扩量到工具化沉淀，含 Lua/GM/命令行和 AI 提效流程。
 
 ## 可玩 Demo
 
