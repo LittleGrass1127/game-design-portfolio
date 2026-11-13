@@ -1,4 +1,4 @@
-﻿# 高原｜系统 / 数值策划作品集
+# 高原｜系统 / 数值策划作品集
 
 2027 届本科｜大连理工大学（985 / 双一流 A 类）｜系统策划 / 数值策划方向
 
@@ -8,15 +8,16 @@
 
 ## 这个仓库放什么
 
-这里只放可以公开查看的内容：可玩 Demo、系统/数值方法说明、产品判断和项目复盘。实习项目的内部配置、UID、Depot 路径、未公开内容和原始数据不在仓库中。
+这里只放可以公开查看的内容：可玩 Demo、系统/数值方法说明、产品判断、游戏经历与项目复盘。实习项目的内部配置、UID、Depot 路径、未公开内容和原始数据不在仓库中。
 
 ## 3 分钟阅读路线
 
-1. **数值怎么落地**：看 [`docs/numeric-design.md`](docs/numeric-design.md)。从活动总消耗反推成长、怪物、技能和奖励，再用模拟、GM/Lua 和服务器日志验收。
-2. **系统怎么闭环**：看 [`docs/system-design.md`](docs/system-design.md)。以活动系统和断线托管为例，拆控制流、状态、配置、异常、补偿和验收。
-3. **制作人视角**：看 [`docs/product-judgment.md`](docs/product-judgment.md)。从市场、产品命题、范围成本、团队交付、商业运营到上线复盘，完整看一个玩法怎么立项和交付。
-4. **系统 + 数值联合案例**：看 [docs/system-numeric-case.md](docs/system-numeric-case.md)。断线托管的状态机、90 秒回控预算，以及风迹手册的 8 币方案和 6.71% 预算内测算。
-5. **效率系统**：看 [docs/efficiency-system.md](docs/efficiency-system.md)。从标准化、最小跑通、日志验收、批量扩量到工具化沉淀，含 Lua/GM/命令行和 AI 提效流程。
+1. **游戏经历怎么转成判断**：看 [`docs/game-experience.md`](docs/game-experience.md)。炉石、原神、星铁、暗黑 4 等时长与成就，以及它们如何影响系统、战斗和数值判断。
+2. **数值怎么落地**：看 [`docs/numeric-design.md`](docs/numeric-design.md)。从活动总消耗反推成长、怪物、技能和奖励，再用模拟、GM/Lua 和服务器日志验收。
+3. **系统怎么闭环**：看 [`docs/system-design.md`](docs/system-design.md)。以活动系统和断线托管为例，拆控制流、状态、配置、异常、补偿和验收。
+4. **制作人视角**：看 [`docs/product-judgment.md`](docs/product-judgment.md)。从市场、产品命题、范围成本、团队交付、商业运营到上线复盘，完整看一个玩法怎么立项和交付。
+5. **系统 + 数值联合案例**：看 [docs/system-numeric-case.md](docs/system-numeric-case.md)。断线托管的状态机、90 秒回控预算，以及风迹手册的 8 币方案和 6.71% 预算内测算。
+6. **效率系统**：看 [docs/efficiency-system.md](docs/efficiency-system.md)。从标准化、最小跑通、日志验收、批量扩量到工具化沉淀，含 Lua/GM/命令行和 AI 提效流程。
 
 ## 可玩 Demo
 
@@ -41,3 +42,5 @@
 - 落地：配置表字段、ID、引用、状态流转、异常与补偿、前后端字段边界一起检查。
 - 验收：模拟、实机、GM/Lua、服务器日志和玩家反馈互相校验，不以“请求发出”代替“结果到账”。
 - 复盘：按目标、机制、数值、信息、验证五层拆问题，下一版先改判断标准，再调参数。
+
+
