@@ -1,4 +1,4 @@
-# 高原｜系统 / 数值策划作品集
+﻿# 高原｜系统 / 数值策划作品集
 
 2027 届本科｜大连理工大学（985 / 双一流 A 类）｜系统策划 / 数值策划方向
 
@@ -15,6 +15,7 @@
 1. **数值怎么落地**：看 [`docs/numeric-design.md`](docs/numeric-design.md)。从活动总消耗反推成长、怪物、技能和奖励，再用模拟、GM/Lua 和服务器日志验收。
 2. **系统怎么闭环**：看 [`docs/system-design.md`](docs/system-design.md)。以活动系统和断线托管为例，拆控制流、状态、配置、异常、补偿和验收。
 3. **玩法怎么判断**：看 [`docs/product-judgment.md`](docs/product-judgment.md)。先回答为什么做、为什么是我们、为什么不抄、怎么验证，再谈功能和排期。
+4. **系统 + 数值联合案例**：看 [docs/system-numeric-case.md](docs/system-numeric-case.md)。断线托管的状态机、90 秒回控预算，以及风迹手册的 8 币方案和 6.71% 预算内测算。
 
 ## 可玩 Demo
 
