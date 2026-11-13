@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; font-src data:; media-src blob: data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="theme-color" content="#283f38">
+<title>中国式考研 · 最后十二周</title>
+<style>*{box-sizing:border-box} :root{--paper:#f5f1e8;--card:#fffdf7;--ink:#293f37;--muted:#777d6f;--line:#dddccc;--green:#3e6051;--soft:#e9eee3;--orange:#b9613c;--light-orange:#f5e8d9;--red:#a44d41;--blue:#5c7d83;--shadow:0 12px 36px #293f3709}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 "Microsoft YaHei","PingFang SC",system-ui,sans-serif;overflow-x:hidden}button,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.46}button:focus-visible,a:focus-visible{outline:3px solid #bd8650;outline-offset:4px}button{color:inherit}button:active:not(:disabled){transform:translateY(1px)}h1,h2,h3,p{margin:0}h2{font-weight:650;font-size:21px}h3{font-size:16px;font-weight:650}small{font-size:12px}svg{display:block}button svg{pointer-events:none}button span{pointer-events:none}.paper-grain{position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath filter='url(%23n)' opacity='.2' d='M0 0h180v180H0z'/%3E%3C/svg%3E");z-index:10}
+.wrap{max-width:1440px;margin:auto;padding:0 38px}.site-header{height:96px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:13px}.brand-mark{height:36px;width:36px;border-radius:9px;background:var(--ink);color:#fff4d4;display:grid;place-items:center;font-family:serif;font-size:20px}.brand strong{display:block;font-family:"STSong","SimSun",serif;font-size:25px;letter-spacing:2px}.brand small{display:block;letter-spacing:3px;font-size:9px;color:var(--muted);line-height:1.5}.header-note{letter-spacing:2px;color:var(--muted);font-size:12px}.nav{display:flex;gap:7px;align-items:center}.text-btn{border:0;background:none;padding:9px 11px;font-size:13px;white-space:nowrap;border-radius:8px}.text-btn:hover{background:var(--soft)}.primary,.secondary{border:1px solid transparent;padding:12px 20px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;gap:12px;font-weight:600;transition:background .18s,box-shadow .18s}.primary{background:var(--green);color:#fffdf0;box-shadow:0 5px 12px #284c3210}.primary:hover:not(:disabled){background:#2c4b3e;box-shadow:0 6px 17px #284c3220}.secondary{background:var(--card);border-color:var(--line)}.secondary:hover{background:var(--soft)}.eyebrow{color:var(--orange);font-size:11px;letter-spacing:3px;font-weight:650}.muted{color:var(--muted)}.serif{font-family:"STSong","SimSun","Noto Serif SC",serif}.intro-hero{display:grid;grid-template-columns:.88fr 1.12fr;gap:34px;align-items:center;padding:42px 0 26px}.intro-copy{padding:16px 0 8px 10px}.intro-copy h1{font-size:clamp(42px,4.4vw,67px);font-weight:550;line-height:1.28;letter-spacing:5px;margin:14px 0 20px}.intro-copy h1 em{font-style:normal;color:var(--orange)}.intro-copy>p{max-width:380px;color:#707467;line-height:1.9;font-size:15px}.intro-steps{display:flex;gap:22px;margin-top:28px;font-size:12px;color:#656f61}.intro-steps b{font-family:Georgia,serif;font-size:16px;color:var(--orange);font-weight:400;padding-right:6px}.hero-art{position:relative;padding:0 8px}.hero-art svg{width:100%;height:auto;max-height:350px}.art-caption{text-align:center;font-family:"SimSun",serif;color:#7e7f6c;font-size:13px;letter-spacing:2px;margin-top:0}.setup{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:10px}.setup-title{display:flex;align-items:center;gap:10px;margin-bottom:13px;font-size:16px}.setup-title>span{font-family:Georgia,serif;color:var(--orange);font-size:22px;font-style:italic}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice{position:relative;text-align:left;background:var(--card);border:1px solid var(--line);padding:17px 14px;border-radius:10px;min-height:141px;transition:background .2s,border-color .2s}.choice:hover{border-color:#97aa8e}.choice.selected{border:2px solid var(--green);padding:16px 13px;background:#eaf0e3}.choice.selected:after{content:'✓';position:absolute;right:10px;top:8px;font-size:12px;color:var(--green)}.choice strong{display:block;font-size:15px;margin-bottom:5px}.choice p{color:#7a7e70;font-size:11px;line-height:1.7;margin-bottom:10px}.choice .mini{color:var(--green);font-size:11px;line-height:1.7}.choice .target-score{font:26px Georgia,serif;display:block;line-height:1.2;margin:5px 0}.choice .target-score small{font:10px "Microsoft YaHei",sans-serif;margin-left:6px;color:var(--muted)}.start-bar{border-top:1px solid var(--line);margin-top:26px;padding:22px 0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.start-bar p{font-size:12px;color:var(--muted)}.start-actions{display:flex;align-items:center;gap:12px}.start-actions .primary{min-width:205px}.footer{text-align:center;font-size:11px;color:#929384;padding:12px 0 24px;letter-spacing:1px}
+.week-top{display:flex;justify-content:space-between;align-items:center;margin:24px 0 19px;gap:20px}.week-info{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap}.week-info h1{font-size:24px;font-weight:500;letter-spacing:1px}.week-info h1 b{font-family:Georgia,serif;color:var(--orange);font-size:33px}.week-info span{font-size:12px;color:var(--muted)}.week-track{display:flex;gap:6px;align-items:center}.week-track i{display:block;width:20px;height:5px;border-radius:2px;background:#dddfd3}.week-track i.done{background:#8fa78c}.week-track i.current{height:9px;background:var(--orange)}.game-grid{display:grid;grid-template-columns:244px minmax(0,1fr) 350px;gap:22px;align-items:start}.panel{background:var(--card);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow)}.scores-panel{padding:22px 20px 17px}.panel-label{font-size:10px;letter-spacing:2px;color:#929584;display:flex;align-items:center;justify-content:space-between}.admission-heading{margin-top:9px;display:flex;gap:10px;align-items:center}.target-badge{width:34px;height:40px;border:1px solid #bdc4ae;display:grid;place-items:center;color:#667859;font-size:19px;border-radius:40% 40% 45% 45%}.admission-heading strong{font-size:16px;font-weight:600}.admission-heading small{color:var(--muted);display:block;font-size:10px}.total-score{margin:18px 0 15px;padding-bottom:15px;border-bottom:1px dashed var(--line);display:flex;align-items:baseline;gap:7px}.total-score strong{font:39px Georgia,serif;letter-spacing:-1px}.total-score span{font-size:11px;color:var(--muted)}.subject-row{margin-bottom:14px}.subject-title{display:flex;justify-content:space-between;font-size:12px;margin-bottom:7px}.subject-title small{font-size:10px;color:#8c927e}.subject-title b{font-weight:500;font-variant-numeric:tabular-nums}.subject-title b.behind{color:var(--orange)}.bar{position:relative;height:5px;border-radius:5px;background:#e9eadd;overflow:visible}.bar .fill{position:absolute;inset:0 auto 0 0;background:#819676;border-radius:5px;transition:width .55s}.bar .marker{position:absolute;top:-2px;bottom:-2px;width:1px;background:#b86643;z-index:1}.shortfall{font-size:11px;line-height:1.8;background:#f4edde;padding:10px;border-radius:7px;margin-top:17px;color:#946746}.status-panel{padding:17px 20px;margin-top:16px}.status-item+.status-item{margin-top:14px}.status-line{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px}.status-line span{color:var(--muted)}.status-line b{font-weight:500}.status-item .bar .fill{background:var(--blue)}.status-item.stress .bar .fill{background:#c99a68}.cash-line{display:flex;justify-content:space-between;border-top:1px dashed var(--line);padding-top:13px;margin-top:17px;align-items:center}.cash-line b{font:22px Georgia,serif}.cash-line span{font-size:12px}.cash-line small{display:block;color:var(--muted);font-size:10px}.efficiency{background:var(--soft);border-radius:8px;padding:10px 12px;margin-top:14px;font-size:12px;display:flex;justify-content:space-between}.efficiency b{font-weight:600}.desk-scene{position:relative;overflow:hidden;height:191px;background:#e8e9dd;border:1px solid #d5d9c7;border-radius:13px;margin-bottom:17px}.desk-scene svg{position:absolute;height:266px;width:480px;right:-25px;bottom:-31px;opacity:.95}.scene-note{position:relative;z-index:1;padding:21px;max-width:43%;pointer-events:none}.scene-note h2{font-size:18px;line-height:1.5;font-weight:500;font-family:serif}.scene-note p{font-size:11px;line-height:1.8;color:#7d8773;margin-top:10px}.scene-note .eyebrow{font-size:9px;letter-spacing:2px;margin-bottom:9px}.actions-panel{padding:21px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.section-head p{font-size:11px;color:var(--muted);margin-top:2px}.section-head h2{font-size:18px}.tabs{display:flex;gap:5px;background:#efefe4;padding:4px;border-radius:8px;margin:19px 0 15px}.tab{flex:1;border:0;border-radius:6px;background:none;font-size:12px;padding:8px 2px;color:#848574}.tab.active{background:var(--card);color:var(--green);box-shadow:0 2px 5px #313d2910;font-weight:600}.action-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.action-card{text-align:left;position:relative;border:1px solid var(--line);border-radius:9px;padding:14px 13px;background:var(--card);transition:background .15s,border-color .15s;min-height:117px}.action-card:hover:not(:disabled){background:#f0f4e9;border-color:#9bab8a}.action-head{display:flex;align-items:center;gap:8px;min-width:0}.action-symbol{font-family:serif;height:28px;width:28px;display:grid;place-items:center;border-radius:7px;color:#677a58;background:#ebefdf;flex:0 0 auto}.action-card strong{font-size:13px;font-weight:600}.add-sign{position:absolute;right:10px;top:10px;font-size:15px;color:#93a283}.action-card .gain{font-size:11px;color:#5f7b59;margin-top:12px}.action-card .cost{font-size:10px;color:#95917b;margin-top:3px}.action-card.life .action-symbol{background:#f3e5d2;color:#a0774c}.action-card.sprint .action-symbol{background:#f2e4d7;color:#a96c48}.action-tip{font-size:11px;color:#8b8d7c;line-height:1.8;margin-top:15px;padding:0 1px}.action-tip b{color:var(--orange);font-weight:500}.plan-panel{padding:21px;position:sticky;top:18px}.plan-count{font:19px Georgia,serif;color:var(--orange)}.slots{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:9px}.slot{height:64px;display:flex;align-items:center;gap:10px;border:1px dashed #d8dccd;border-radius:8px;padding:11px 10px;min-width:0}.slot.filled{border-style:solid;background:#eef2e8}.slot-no{font:18px Georgia,serif;color:#a3aa92;width:19px;flex:0 0 auto}.slot-content{flex:1;min-width:0}.slot-content strong{font-size:12px;font-weight:550;display:block}.slot-content small{display:block;font-size:9px;color:#8a907d;white-space:nowrap}.slot.empty .slot-content{color:#adb19f;font-size:11px}.slot-controls{display:flex;gap:1px}.icon-btn{border:0;background:none;border-radius:4px;min-width:24px;height:29px;font-size:13px;padding:0;display:grid;place-items:center;color:#798a6c}.icon-btn:hover:not(:disabled){background:#dfe7d4}.slot-controls .delete{color:#9b7c62;font-size:18px}.preview{border-top:1px dashed var(--line);margin-top:20px;padding-top:16px}.preview-label{display:flex;align-items:center;justify-content:space-between}.preview-label h3{font-size:12px;font-weight:500}.preview-label span{font-size:10px;color:#959985}.preview-total{display:flex;align-items:baseline;justify-content:space-between;margin-top:12px}.preview-total strong{font:32px Georgia,serif;font-weight:400}.preview-total b{font-weight:500;font-size:13px;color:#5f7d54}.preview-total small{font:10px sans-serif;color:var(--muted);margin-left:5px}.preview-subjects{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:11px 0 12px}.preview-subjects span{font-size:10px;color:#8c9180}.preview-subjects b{display:block;font-weight:500;color:#557451;font-size:12px;margin-top:2px}.preview-resources{font-size:10px;line-height:1.8;color:#7e8674;background:#f0f2e8;padding:8px 9px;border-radius:6px}.preview-error{background:#f6e8d9;color:#9a6647;font-size:12px;line-height:1.8;padding:15px 12px;margin-top:15px;border-radius:7px}.plan-details{margin:11px 0 5px;font-size:10px;color:#8b937d}.plan-details summary{cursor:pointer;color:#6f8260}.plan-details p{margin-top:6px;padding-left:7px;border-left:2px solid #d5ddca;line-height:1.75}.commit-btn{width:100%;padding:14px 10px;font-size:14px;margin-top:14px}.commit-note{font-size:10px;text-align:center;color:#a0a48f;margin-top:8px}.game-bottom{display:flex;justify-content:space-between;gap:20px;padding:23px 0 24px;color:#929682;font-size:11px}.save-fallback{background:#fff0d9;color:#91633c;padding:10px 16px;border-radius:8px;font-size:12px;margin-bottom:16px}.red{color:var(--red)!important}.storage-state:before{content:'●';font-size:7px;padding-right:6px;color:#8ca575}
+.overlay-backdrop{position:fixed;inset:0;background:#223a326b;backdrop-filter:blur(5px);z-index:30;display:flex;align-items:center;justify-content:center;padding:24px;animation:fade-in .18s ease}.modal{background:var(--card);width:min(660px,100%);max-height:calc(100dvh - 48px);overflow:auto;border:1px solid #dce0cf;border-radius:18px;box-shadow:0 25px 100px #11271f2b;padding:31px;position:relative}.modal.wide{width:min(840px,100%)}.modal-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px}.modal h2{font-family:"SimSun",serif;font-size:27px;font-weight:550}.modal p{line-height:1.9}.modal-close{height:32px;width:32px;border-radius:50%;border:1px solid var(--line);background:none;color:#859177;font-size:18px}.modal-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:24px;flex-wrap:wrap}.event-label{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:2px;color:#a78155;margin-bottom:20px}.event-label:after{content:'';height:1px;background:var(--line);flex:1}.event-illustration{width:56px;height:56px;border-radius:50%;background:#f3e8d4;display:grid;place-items:center;color:#b48955;font-family:serif;font-size:29px;margin-bottom:20px}.event-body{font-size:14px;color:#7c816e;margin-top:14px}.event-choices{display:grid;gap:11px;margin-top:26px}.event-choice{text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:17px 20px;transition:background .16s}.event-choice:hover:not(:disabled){background:var(--soft);border-color:#90a17f}.event-choice strong{font-weight:500;display:block;font-size:14px}.event-choice p{font-size:11px;color:#8c987e;margin-top:4px}.event-choice small{font-size:10px;color:#ba7d53}.week-result{display:flex;align-items:center;justify-content:space-between;padding:19px 20px;margin:20px 0;background:#eef2e7;border-radius:10px}.week-result strong{font:39px Georgia,serif}.week-result span{color:#728669;font-size:12px}.result-actions{display:grid;gap:12px}.result-step{display:flex;align-items:center;gap:13px;padding:10px 0;border-bottom:1px dashed var(--line)}.result-step>span{font:20px Georgia,serif;color:#9aa88a;width:21px}.result-step div{flex:1}.result-step strong{font-size:14px;font-weight:550}.result-step small{display:block;color:var(--muted);font-size:11px}.result-step>b{font:21px Georgia,serif;color:#769162}.result-note{font-size:12px;color:var(--muted);margin-top:19px}.rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.rule-card{background:var(--paper);padding:17px;border-radius:9px}.rule-card h3{font-size:14px;margin-bottom:8px;color:#5c7656}.rule-card p{font-size:12px;color:#858a76}.rule-formula{font-size:11px;padding:12px;margin-top:18px;background:var(--soft);line-height:1.9;border-radius:8px}.diary-list{display:grid;gap:13px;margin-top:20px}.diary-entry{padding:16px 18px;border-left:2px solid #c3cfb4;background:var(--paper);border-radius:0 8px 8px 0}.diary-entry h3{font-size:13px;font-weight:500;display:flex;justify-content:space-between;gap:10px}.diary-entry p{font-size:11px;color:var(--muted);margin-top:6px}.empty-diary{padding:35px 12px;text-align:center;color:#88927d;font-family:serif}.chart{padding:18px 12px 9px;background:#edf1e4;border-radius:9px;overflow:hidden}.chart svg{width:100%;height:130px}.ending{max-width:880px;margin:34px auto}.ending-head{text-align:center;margin-bottom:25px}.ending-head h1{font-family:serif;font-size:38px;font-weight:500;letter-spacing:3px;margin:10px 0}.ending-head p{font-size:13px;color:#828874}.ending-paper{background:var(--card);border:1px solid var(--line);padding:30px 38px;border-radius:12px;position:relative;overflow:hidden}.ending-paper:before{content:'';position:absolute;inset:0 0 auto;height:6px;background:repeating-linear-gradient(90deg,#476652 0 13px,#f5f1e8 13px 25px)}.ending-score{text-align:center;border-bottom:1px dashed var(--line);padding:6px 0 23px}.ending-score strong{font:68px Georgia,serif;display:block;line-height:1.3}.ending-score p{font-size:12px;color:var(--muted)}.stamp{display:inline-block;transform:rotate(-8deg);border:2px solid #718a5f;border-radius:7px;padding:3px 12px;color:#648053;font-family:serif;font-size:18px;letter-spacing:3px;margin-top:13px}.stamp.failed{color:#b18157;border-color:#bb9165}.ending-subjects{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;text-align:center;margin:26px 0}.ending-subjects>div+div{border-left:1px solid var(--line)}.ending-subjects span{font-size:12px;color:var(--muted)}.ending-subjects strong{display:block;font:28px Georgia,serif;margin:4px 0}.ending-subjects small{font-size:10px;color:#829270}.reflection{font-size:13px;background:var(--soft);padding:18px 20px;border-radius:9px;line-height:1.9}.reflection h3{font-size:13px;color:#59754f;margin-bottom:6px}.reflection p{color:#7b8871;font-size:12px;margin-top:5px}.ending-buttons{display:flex;justify-content:center;gap:12px;margin-top:24px;flex-wrap:wrap}.ending-quote{text-align:center;color:#8d927f;font-size:12px;margin-top:20px;font-family:serif}.confetti{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}.confetti i{position:absolute;top:-15px;width:7px;height:11px;background:#b48a4e;animation:fall 2.8s ease-in forwards}.confetti i:nth-child(3n){background:#7d9971}.confetti i:nth-child(3n+1){background:#c78c6c;border-radius:50%}.import-zone{border-top:1px solid var(--line);margin-top:22px;padding-top:16px;display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}.import-zone p{font-size:11px;color:var(--muted);width:100%}#toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);background:#283f38f5;color:#fff9e9;padding:11px 22px;border-radius:9px;font-size:13px;z-index:60;box-shadow:0 5px 22px #26362a26;opacity:0;pointer-events:none;transition:all .2s;max-width:min(520px,90vw);text-align:center}#toast.show{opacity:1;transform:translate(-50%,0)}.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}@keyframes fade-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}@keyframes fall{to{transform:translateY(105vh) rotate(450deg);opacity:0}}.reveal{animation:fade-in .3s ease}.game-grid .panel{animation:fade-in .25s ease}
+@media(min-width:1500px){.wrap{padding:0 45px}.intro-hero{padding-top:47px}.hero-art svg{max-height:370px}}
+@media(max-width:1200px){.wrap{padding:0 24px}.game-grid{grid-template-columns:210px minmax(0,1fr) 310px;gap:15px}.scores-panel,.status-panel{padding-left:15px;padding-right:15px}.actions-panel,.plan-panel{padding:16px}.desk-scene svg{right:-64px}.scene-note{max-width:48%;padding:17px}.action-card{padding:12px 10px}.action-card strong{font-size:12px}.action-symbol{width:24px;height:24px}.action-card .cost{font-size:9px}.intro-hero{gap:16px}.choice{padding:14px 11px}.choice.selected{padding:13px 10px}.setup{gap:20px}.header-note{display:none}}
+@media(max-width:1040px){.game-grid{grid-template-columns:minmax(0,1fr) 340px}.sidebar{grid-column:1/-1;display:grid;grid-template-columns:1.4fr 1fr;gap:16px}.scores-panel{position:relative;padding:16px 20px}.panel-label{display:none}.admission-heading{margin:0}.total-score{position:absolute;right:20px;top:8px;margin:0;border:0;padding:0}.total-score strong{font-size:28px}.subject-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:16px}.subject-row{margin:0}.subject-title{flex-direction:column;gap:3px}.subject-title small{display:none}.shortfall{padding:6px 8px;margin-top:13px}.status-panel{margin:0;padding:16px 20px}.status-item{display:grid;grid-template-columns:100px 1fr;gap:13px;align-items:center}.status-line{margin:0}.status-item+.status-item{margin-top:12px}.cash-line{margin-top:11px;padding-top:10px}.efficiency{position:static;margin-top:10px;padding:5px 8px;font-size:10px}.setup{grid-template-columns:1fr;gap:22px}.choice{min-height:125px}.intro-hero{padding-top:25px}.intro-copy h1{font-size:52px}.intro-steps{gap:14px}.hero-art svg{min-height:280px}.game-bottom{font-size:10px}.desk-scene svg{right:-40px}.scene-note{max-width:46%}.game-grid{align-items:start}.plan-panel{top:12px}.sidebar .status-panel{box-shadow:var(--shadow)}}
+@media(max-width:760px){.wrap{padding:0 17px}.site-header{height:80px;gap:10px}.brand{gap:9px}.brand strong{font-size:20px}.brand-mark{height:31px;width:31px;font-size:17px}.brand small{font-size:8px;letter-spacing:2px}.nav{gap:0}.nav .text-btn{font-size:11px;padding:8px}.nav .nav-reset{display:none}.intro-hero{grid-template-columns:1fr;padding:26px 0 8px;gap:0}.intro-copy{padding:3px 9px}.intro-copy h1{font-size:46px;letter-spacing:4px;margin:11px 0 15px}.intro-copy h1 br{display:none}.intro-copy>p{font-size:13px;max-width:unset}.intro-steps{margin-top:17px;gap:18px;font-size:10px}.hero-art{margin-top:6px}.hero-art svg{max-height:220px;min-height:0}.art-caption{font-size:11px;margin-top:-4px}.setup{margin-top:17px;gap:18px}.setup-title{font-size:14px}.choices{gap:7px}.choice{padding:12px 10px;min-height:152px}.choice.selected{padding:11px 9px}.choice strong{font-size:12px}.choice p{font-size:10px}.choice .mini{font-size:9px}.choice .target-score{font-size:24px}.choice .target-score small{font-size:9px}.start-bar{flex-direction:column;align-items:stretch;margin-top:21px;padding:17px 0}.start-actions{justify-content:stretch;flex-wrap:wrap}.start-actions .primary{flex:1;min-width:170px}.start-actions .secondary{flex:1}.start-bar p{text-align:center;font-size:10px}.footer{font-size:9px}.week-top{margin:17px 0 14px;gap:12px}.week-info{gap:7px}.week-info h1{font-size:17px}.week-info h1 b{font-size:26px}.week-info span{font-size:10px}.week-track{gap:4px}.week-track i{width:9px;height:4px}.week-track i.current{height:8px}.game-grid{display:flex;flex-direction:column;gap:15px}.sidebar{width:100%;grid-template-columns:1fr;gap:12px}.scores-panel{padding:14px 17px}.admission-heading strong{font-size:14px}.admission-heading small{font-size:9px}.admission-heading{gap:8px}.target-badge{height:32px;width:28px;font-size:15px}.total-score{right:17px;top:7px;gap:5px}.total-score span{font-size:10px}.subject-list{margin-top:13px}.subject-title{flex-direction:row;gap:4px;align-items:center;font-size:10px}.subject-title b{font-size:11px}.shortfall{font-size:10px;margin-top:11px}.status-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px 17px}.status-item{display:block}.status-line{font-size:11px;margin-bottom:7px}.status-item+.status-item{margin:0}.cash-line{grid-column:1;border:0;padding:0;margin:0}.cash-line b{font-size:21px}.cash-line span{font-size:11px}.cash-line small{font-size:9px}.efficiency{grid-column:2;align-self:center;font-size:10px;margin:0}.workspace{width:100%}.desk-scene{height:150px;margin-bottom:13px}.desk-scene svg{height:217px;width:390px;right:-10px;bottom:-25px}.scene-note{max-width:40%;padding:18px}.scene-note h2{font-size:15px}.scene-note p{font-size:10px}.scene-note .eyebrow{font-size:8px}.actions-panel{padding:17px}.section-head h2{font-size:17px}.tabs{margin:15px 0 12px}.action-list{gap:10px}.action-card{min-height:107px;padding:12px}.action-card strong{font-size:13px}.action-symbol{width:25px;height:25px}.action-card .cost{font-size:9px}.action-tip{font-size:10px;margin-top:12px}.plan-panel{width:100%;position:static;padding:18px}.slots{margin-top:16px}.slot{height:60px}.slot-content strong{font-size:13px}.slot-content small{font-size:10px}.slot-controls{gap:5px}.icon-btn{width:30px}.preview-subjects{gap:12px}.preview-subjects span{font-size:11px}.preview-subjects b{font-size:14px}.preview-total strong{font-size:36px}.preview-resources{font-size:11px}.plan-details{font-size:11px}.commit-btn{padding:15px}.game-bottom{flex-direction:column;gap:6px;padding-top:16px;text-align:center}.overlay-backdrop{padding:14px}.modal{padding:24px 21px;max-height:calc(100dvh - 28px);border-radius:14px}.modal h2{font-size:23px}.rule-grid{grid-template-columns:1fr;gap:12px}.rule-card{padding:15px}.event-illustration{width:48px;height:48px;font-size:25px;margin-bottom:15px}.event-body{font-size:13px}.event-choices{margin-top:21px}.event-choice{padding:15px}.event-choice strong{font-size:13px}.modal-actions>*{flex:1}.ending{margin:27px auto}.ending-head h1{font-size:29px}.ending-head p{font-size:11px}.ending-paper{padding:25px 19px}.ending-score strong{font-size:57px}.ending-subjects{gap:7px}.ending-subjects strong{font-size:24px}.ending-subjects small{font-size:9px}.reflection{padding:15px}.ending-quote{font-size:11px}.ending-buttons>*{flex:1;min-width:132px}.chart svg{height:110px}.diary-entry{padding:13px}.diary-entry h3{font-size:12px}.diary-entry p{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(max-width:760px){.desk-scene:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#e8e9dd 0%,#e8e9dded 28%,#e8e9dd00 67%);pointer-events:none;z-index:1}.scene-note{z-index:2}}
+</style>
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<div id="app"></div>
+<div id="overlay-root"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<input id="import-file" type="file" accept=".json,application/json" hidden>
+<template id="desk-art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" fill="none" role="img" aria-label="夜色渐深，温暖的台灯照着书桌上的考研课本与计划本">
+  <title>给努力留一盏灯</title>
+  <desc>晚蓝色的窗外是安静的城市。木书桌上摊开书本，摆着计划本、茶杯与绿植，一盏暖灯照亮了今晚的学习。</desc>
+  <defs>
+    <linearGradient id="desk-art-wall" x1="40" y1="20" x2="740" y2="485" gradientUnits="userSpaceOnUse"><stop stop-color="#F6F0E4"/><stop offset="1" stop-color="#E9E6D6"/></linearGradient>
+    <linearGradient id="desk-art-sky" x1="588" y1="46" x2="588" y2="263" gradientUnits="userSpaceOnUse"><stop stop-color="#64848F"/><stop offset=".66" stop-color="#9DB4AF"/><stop offset="1" stop-color="#D3D3B9"/></linearGradient>
+    <linearGradient id="desk-art-wood" x1="107" y1="300" x2="727" y2="435" gradientUnits="userSpaceOnUse"><stop stop-color="#DBB17C"/><stop offset="1" stop-color="#CAA174"/></linearGradient>
+    <linearGradient id="desk-art-shade" x1="547" y1="157" x2="634" y2="230" gradientUnits="userSpaceOnUse"><stop stop-color="#497066"/><stop offset="1" stop-color="#244B43"/></linearGradient>
+    <radialGradient id="desk-art-light" cx="0" cy="0" r="1" gradientTransform="translate(553 297) rotate(98) scale(126 192)" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE6A5" stop-opacity=".78"/><stop offset="1" stop-color="#FFE6A5" stop-opacity="0"/></radialGradient>
+    <radialGradient id="desk-art-table-light" cx="0" cy="0" r="1" gradientTransform="translate(514 354) rotate(5) scale(176 44)" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF0C6" stop-opacity=".54"/><stop offset="1" stop-color="#FFE7A5" stop-opacity="0"/></radialGradient>
+    <linearGradient id="desk-art-page" x1="397" y1="320" x2="571" y2="363" gradientUnits="userSpaceOnUse"><stop stop-color="#F6ECD4"/><stop offset=".45" stop-color="#FFFCED"/><stop offset="1" stop-color="#EFE4CD"/></linearGradient>
+    <filter id="desk-art-soft-shadow" x="-25%" y="-30%" width="150%" height="180%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#314438" flood-opacity=".11"/></filter>
+    <clipPath id="desk-art-window-clip"><rect x="458" y="48" width="280" height="206" rx="5"/></clipPath>
+  </defs>
+
+  <!-- A quiet room, open at the edges so it sits naturally in the paper interface. -->
+  <rect x="17" y="13" width="866" height="474" rx="30" fill="url(#desk-art-wall)"/>
+  <path d="M18 377H883" stroke="#D9D8C7" stroke-width="2"/>
+  <path d="M18 391H883V457C883 473.569 869.569 487 853 487H47C30.4315 487 17 473.569 17 457V391Z" fill="#DEDCC9" fill-opacity=".35"/>
+  <path d="M759 271L858 298V381H701L649 352L759 271Z" fill="#E2DFCC" fill-opacity=".8"/>
+
+  <!-- Window and the last light outside. -->
+  <rect x="446" y="36" width="305" height="231" rx="11" fill="#D2CDB9"/>
+  <rect x="451" y="39" width="294" height="222" rx="8" fill="#FDF7E7"/>
+  <g clip-path="url(#desk-art-window-clip)">
+    <rect id="sky" x="458" y="48" width="280" height="206" fill="url(#desk-art-sky)"/>
+    <circle cx="680" cy="87" r="18" fill="#F2E4BC"/>
+    <path d="M510 103H560M521 109H577M634 146H707M652 153H725" stroke="#E6E7D5" stroke-width="3" stroke-linecap="round" opacity=".33"/>
+    <path d="M449 226V206H474V213H492V188H530V221H548V203H574V219H594V181H626V213H641V200H673V224H702V190H728V203H749V261H449V226Z" fill="#667F79" opacity=".5"/>
+    <path d="M449 240V226H482V234H512V214H548V230H569V208H594V236H617V220H654V239H677V211H715V229H752V259H449V240Z" fill="#546F65" opacity=".58"/>
+    <path d="M517 222H522V229H517ZM535 222H540V229H535ZM578 216H583V224H578ZM632 229H637V236H632ZM688 219H693V226H688ZM704 231H709V238H704Z" fill="#E8CEA0" opacity=".72"/>
+    <path d="M690 260C695 223 712 212 741 199M714 226C710 210 713 194 722 181M720 216C735 219 750 215 763 207" stroke="#365E54" stroke-width="5" stroke-linecap="round"/>
+    <path d="M711 216C692 204 695 190 700 184C715 192 719 206 711 216ZM720 200C720 181 733 175 742 178C741 192 731 201 720 200ZM731 212C741 196 755 200 759 207C750 218 739 220 731 212Z" fill="#446C5E"/>
+  </g>
+  <path d="M593 47V255M457 181H739" stroke="#F4EEDC" stroke-width="7"/>
+  <path d="M597 49V252M459 185H737" stroke="#D2D1BA" stroke-width="2" opacity=".8"/>
+  <rect x="438" y="260" width="322" height="11" rx="3" fill="#E6DCC5"/>
+  <path d="M440 271H757" stroke="#C6C7AF" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Pinned plans: deliberately wordless, with twelve small weekly boxes. -->
+  <g transform="rotate(-4 227 141)" filter="url(#desk-art-soft-shadow)">
+    <rect x="113" y="60" width="225" height="164" rx="7" fill="#C4B99B"/>
+    <rect x="120" y="67" width="211" height="150" rx="4" fill="#D3C8AC"/>
+    <g transform="rotate(7 265 108)">
+      <path d="M238 82H305V142L292 153H238V82Z" fill="#E7B678"/>
+      <path d="M292 153V141H305" fill="#D29B62"/>
+      <path d="M251 101H286M251 111H292M251 121H277" stroke="#A77441" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    </g>
+    <rect x="143" y="83" width="83" height="113" rx="2" fill="#FCF8E9"/>
+    <path d="M155 102H209" stroke="#40665B" stroke-width="4" stroke-linecap="round"/>
+    <g fill="#D6E0CE">
+      <rect x="155" y="116" width="12" height="12" rx="2"/><rect x="176" y="116" width="12" height="12" rx="2"/><rect x="197" y="116" width="12" height="12" rx="2"/>
+    </g>
+    <g stroke="#D7D4C0" stroke-width="1.5">
+      <rect x="155" y="135" width="12" height="12" rx="2"/><rect x="176" y="135" width="12" height="12" rx="2"/><rect x="197" y="135" width="12" height="12" rx="2"/>
+      <rect x="155" y="154" width="12" height="12" rx="2"/><rect x="176" y="154" width="12" height="12" rx="2"/><rect x="197" y="154" width="12" height="12" rx="2"/>
+      <rect x="155" y="173" width="12" height="12" rx="2"/><rect x="176" y="173" width="12" height="12" rx="2"/><rect x="197" y="173" width="12" height="12" rx="2"/>
+    </g>
+    <path d="M158 121L161 124L165 119M179 121L182 124L186 119M200 121L203 124L207 119" stroke="#52785F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="161" cy="141" r="10" stroke="#C57D47" stroke-width="1.5"/>
+    <rect x="168" y="74" width="37" height="16" transform="rotate(3 168 74)" fill="#BFCDAF" fill-opacity=".8"/>
+    <circle cx="272" cy="82" r="4" fill="#A76543"/>
+  </g>
+
+  <!-- Desk: simple wooden planes and a few understated grain lines. -->
+  <path d="M160 392H192L172 483H146L160 392Z" fill="#B99165"/>
+  <path d="M741 390H765L791 483H765L741 390Z" fill="#A6835F"/>
+  <path d="M191 406H737V434H185L191 406Z" fill="#A9845E"/>
+  <path d="M98 315L724 306L839 390L187 410L98 337V315Z" fill="#B58A5D"/>
+  <path d="M99 312L727 300L839 382L184 401L99 327V312Z" fill="url(#desk-art-wood)"/>
+  <path d="M99 312L184 386L839 368V382L184 401L99 327V312Z" fill="#C79E6D"/>
+  <path d="M102 312L726 300L836 368L184 386L102 312Z" fill="#DEB887"/>
+  <path d="M168 331L673 319M203 366L793 350M322 376L526 371M118 320L276 316" stroke="#C69E6C" stroke-width="2" stroke-linecap="round" opacity=".36"/>
+  <path d="M190 390L833 373" stroke="#EECBA0" stroke-width="2" opacity=".65"/>
+  <ellipse cx="491" cy="469" rx="292" ry="12" fill="#5C6450" fill-opacity=".05"/>
+
+  <!-- Little plant, some books, and an eraser. -->
+  <ellipse cx="170" cy="317" rx="49" ry="12" fill="#706F4D" fill-opacity=".13"/>
+  <path d="M147 276H192L186 311C176 320 159 319 151 311L147 276Z" fill="#B56D49"/>
+  <ellipse cx="169.5" cy="276" rx="22.5" ry="7" fill="#D59C70"/>
+  <ellipse cx="169.5" cy="275" rx="18" ry="4.5" fill="#765C40"/>
+  <path d="M170 277C168 254 166 233 155 209M170 277C171 250 184 233 201 222M170 260C156 252 146 242 141 231" stroke="#426B4E" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M155 228C130 226 127 206 133 193C153 194 161 211 155 228Z" fill="#5E8056"/>
+  <path d="M165 249C181 230 176 209 166 202C151 213 152 235 165 249Z" fill="#759568"/>
+  <path d="M177 247C177 221 191 211 208 216C208 234 194 246 177 247Z" fill="#416C51"/>
+  <path d="M150 248C126 248 119 236 120 226C138 223 151 233 150 248Z" fill="#86A273"/>
+  <path d="M173 266C184 247 204 244 216 253C209 268 189 274 173 266Z" fill="#658B5B"/>
+  <path d="M154 285L158 307M161 288L163 310" stroke="#E4B48B" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+
+  <g transform="rotate(-4 266 298)">
+    <path d="M219 293H303L322 304L241 309L219 301V293Z" fill="#587265"/>
+    <path d="M225 291H303L317 299L241 304L225 298V291Z" fill="#F8EFD6"/>
+    <path d="M217 288H302L322 298L240 303L217 294V288Z" fill="#547463"/>
+    <path d="M231 277H303L317 286L241 291L231 285V277Z" fill="#C87C50"/>
+    <path d="M232 280H302L313 285L242 289L232 285V280Z" fill="#F4E8C8"/>
+    <path d="M231 276H303L317 283L241 288L231 282V276Z" fill="#DAA576"/>
+    <path d="M245 297L307 294" stroke="#BBD0B4" stroke-width="1.5"/>
+  </g>
+
+  <!-- Warm pool of light and a bent-neck metal lamp. -->
+  <g id="lamp-glow">
+    <ellipse cx="558" cy="292" rx="176" ry="132" fill="url(#desk-art-light)"/>
+    <path d="M545 206L458 344L692 344L617 215L545 206Z" fill="#FFE4A3" opacity=".07"/>
+    <ellipse cx="514" cy="354" rx="176" ry="44" fill="url(#desk-art-table-light)"/>
+  </g>
+  <ellipse cx="617" cy="327" rx="61" ry="12" fill="#5F6348" fill-opacity=".16"/>
+  <ellipse cx="613" cy="320" rx="48" ry="12" fill="#294D42"/>
+  <path d="M565 316C565 300 661 300 661 316V320C649 332 576 332 565 320V316Z" fill="#345C4B"/>
+  <ellipse cx="613" cy="315" rx="48" ry="11" fill="#50715A"/>
+  <ellipse cx="613" cy="313" rx="36" ry="6" fill="#698569" opacity=".5"/>
+  <path d="M613 310V246C613 223 641 213 641 188C641 170 628 156 606 153L589 151" stroke="#244C41" stroke-width="9" stroke-linecap="round"/>
+  <path d="M611 304V246C611 221 637 213 637 188C637 172 625 160 606 157" stroke="#72907A" stroke-width="2.5" stroke-linecap="round" opacity=".7"/>
+  <circle cx="589" cy="152" r="8" fill="#9B9769"/>
+  <path d="M549 175C558 151 583 143 600 158L628 211C617 224 550 218 529 205L549 175Z" fill="url(#desk-art-shade)"/>
+  <path d="M555 175C563 158 577 153 587 156" stroke="#76907A" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="579" cy="208" rx="50" ry="10" transform="rotate(5 579 208)" fill="#23463C"/>
+  <ellipse cx="579" cy="207" rx="43" ry="6.5" transform="rotate(5 579 207)" fill="#F4D694"/>
+  <ellipse cx="579" cy="207" rx="23" ry="4" transform="rotate(5 579 207)" fill="#FFF3C6"/>
+  <path d="M636 324C672 327 683 335 724 331" stroke="#716B4E" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- The open textbook, with only printed texture and a small bookmark. -->
+  <g id="study-book">
+    <ellipse cx="452" cy="360" rx="140" ry="18" fill="#70694A" fill-opacity=".16"/>
+    <path d="M336 321L439 305L579 336L564 377L433 355L340 365L324 345L336 321Z" fill="#36594A"/>
+    <path d="M340 317C375 309 407 306 441 315C475 309 521 319 568 334L558 370C515 357 474 348 437 351C403 342 371 350 340 358L327 341L340 317Z" fill="#DBCFAF"/>
+    <path d="M341 314C378 303 412 302 444 312L438 347C404 337 372 345 340 353L330 338L341 314Z" fill="#FAF5E3"/>
+    <path d="M444 312C477 306 524 317 573 332L560 365C520 352 475 341 438 347L444 312Z" fill="url(#desk-art-page)"/>
+    <path d="M444 313L438 347" stroke="#D4C8AA" stroke-width="2"/>
+    <path d="M358 319C380 313 404 312 426 317M353 327C376 321 400 320 423 325M350 335C374 329 396 328 421 332M347 342C367 337 387 335 405 337" stroke="#B1B79D" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <path d="M459 320C490 318 525 328 552 336M458 328C487 326 522 336 548 344M454 336C481 334 516 343 539 350" stroke="#B4B6A0" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+    <path d="M486 328L521 336" stroke="#DFB25D" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+    <path d="M477 351L470 370L465 365L459 368L466 348L477 351Z" fill="#BC704B"/>
+  </g>
+
+  <!-- Planner with a clipped pencil, ready for one more small decision. -->
+  <g transform="rotate(-7 251 353)">
+    <path d="M201 325H281L312 366L231 375L201 338V325Z" fill="#BE7952"/>
+    <path d="M205 322H281L307 362L231 370L205 334V322Z" fill="#F9F2DD"/>
+    <path d="M212 330L282 328M219 341L288 339M227 352L295 350M234 362L301 360" stroke="#DAD4BB" stroke-width="1.5"/>
+    <path d="M219 329L239 362" stroke="#C89579" stroke-width="1.5" opacity=".7"/>
+    <path d="M227 332L230 335L235 330M235 344L238 347L242 342" stroke="#69846A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M224 316L244 348" stroke="#3C6858" stroke-width="7" stroke-linecap="round"/>
+    <path d="M245 350L249 357L242 353L245 350Z" fill="#785846"/>
+    <path d="M224 316L230 325" stroke="#94AC8C" stroke-width="3" stroke-linecap="round"/>
+    <path d="M271 322L280 334C283 338 277 342 274 338L264 324C261 320 267 317 270 321L279 334" stroke="#9BA38C" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+
+  <!-- A mug of tea, soft steam, and small everyday belongings. -->
+  <ellipse cx="725" cy="345" rx="43" ry="11" fill="#7B704E" fill-opacity=".13"/>
+  <ellipse cx="721" cy="341" rx="35" ry="9" fill="#F3E9CD"/>
+  <ellipse cx="721" cy="340" rx="26" ry="6" stroke="#D4C9AB" stroke-width="1.5"/>
+  <path d="M743 304C767 298 767 329 744 327" stroke="#E8D9B8" stroke-width="9"/>
+  <path d="M743 305C761 301 762 324 746 324" stroke="#FFFAE9" stroke-width="3"/>
+  <path d="M697 302H746L742 330C737 340 706 340 701 330L697 302Z" fill="#F4EBD2"/>
+  <path d="M703 310L706 327" stroke="#FFFCED" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="721.5" cy="302" rx="24.5" ry="7.5" fill="#FFF9E6"/>
+  <ellipse cx="721.5" cy="303" rx="19.5" ry="5" fill="#937647"/>
+  <ellipse cx="721.5" cy="301.5" rx="17" ry="2.2" fill="#B09258"/>
+  <path d="M715 290C704 278 723 271 714 257M728 287C739 277 723 268 731 255" stroke="#F8F4DE" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+  <path d="M665 353L680 352L688 360L671 362L665 357V353Z" fill="#A59D83" fill-opacity=".4"/>
+  <path d="M663 349L679 348L686 355L670 357L663 354V349Z" fill="#E7B797"/>
+  <path d="M663 349L671 348L678 355L670 357L663 354V349Z" fill="#FBF1D8"/>
+
+  <!-- Chair tucked beneath the desk, with a familiar knitted cardigan. -->
+  <path d="M385 448C385 427 399 414 421 414H498C520 414 534 427 534 448V487H385V448Z" fill="#466B59"/>
+  <path d="M393 449C393 432 403 423 421 423H498C516 423 526 432 526 449V487H393V449Z" fill="#6B8770"/>
+  <path d="M397 449H521M396 472H523" stroke="#A0AC88" stroke-width="2" opacity=".32"/>
+  <path d="M425 420C438 411 458 412 466 423L479 487H415L421 446L410 466L395 457L425 420Z" fill="#D4A676"/>
+  <path d="M438 420L450 487M452 420L467 487M426 444L421 480M408 445L402 457" stroke="#B88359" stroke-width="2" opacity=".45"/>
+  <path d="M435 420C442 427 450 427 457 421" stroke="#E8C399" stroke-width="4" stroke-linecap="round"/>
+</svg>
+</template>
+<script id="exam-config" type="application/json">{"weeks":12,"slots":3,"seed":2027,"initialEnergy":75,"initialStress":20,"initialMoney":950,"weeklyExpense":60,"weeklyEnergy":12,"weeklyStress":-5,"subjectNames":["政治","英语","数学","专业"],"caps":[100,100,150,150],"backgrounds":[{"name":"稳步起跑","description":"底子均衡，先找回自己的学习节奏。","scores":[30,35,50,55]},{"name":"数理优势","description":"数学起点高，但英语不能再拖到最后。","scores":[25,25,70,50]},{"name":"跨专业备考","description":"英语基础好，专业课需要更多时间。","scores":[40,50,50,30]}],"goals":[{"name":"青川大学","description":"稳妥上岸 · 总分320，四科都要过线。","total":320,"minimums":[40,40,60,60]},{"name":"南岭理工","description":"认真争取 · 总分365，兼顾优势和短板。","total":365,"minimums":[50,50,75,75]},{"name":"海城研究院","description":"向上挑战 · 总分400，更考验计划与状态。","total":400,"minimums":[60,60,90,90]}],"actions":[{"id":"study0","name":"政治自习","description":"梳理知识框架。基础 +7 分，实际收益受当前效率影响。","subject":0,"gain":7,"energy":-14,"stress":9,"cost":0,"income":0},{"id":"study1","name":"英语自习","description":"阅读与词汇复盘。基础 +7 分，实际收益受当前效率影响。","subject":1,"gain":7,"energy":-14,"stress":9,"cost":0,"income":0},{"id":"study2","name":"数学自习","description":"把错题重新做一遍。基础 +10 分，实际收益受当前效率影响。","subject":2,"gain":10,"energy":-14,"stress":9,"cost":0,"income":0},{"id":"study3","name":"专业自习","description":"整理学科重点。基础 +10 分，实际收益受当前效率影响。","subject":3,"gain":10,"energy":-14,"stress":9,"cost":0,"income":0},{"id":"sprint0","name":"政治冲刺","description":"限时训练与讲评。基础 +10.15 分，花费25，精力-24、压力+15。","subject":0,"gain":10.15,"energy":-24,"stress":15,"cost":25,"income":0},{"id":"sprint1","name":"英语冲刺","description":"限时训练与讲评。基础 +10.15 分，花费25，精力-24、压力+15。","subject":1,"gain":10.15,"energy":-24,"stress":15,"cost":25,"income":0},{"id":"sprint2","name":"数学冲刺","description":"限时训练与讲评。基础 +14.5 分，花费25，精力-24、压力+15。","subject":2,"gain":14.5,"energy":-24,"stress":15,"cost":25,"income":0},{"id":"sprint3","name":"专业冲刺","description":"限时训练与讲评。基础 +14.5 分，花费25，精力-24、压力+15。","subject":3,"gain":14.5,"energy":-24,"stress":15,"cost":25,"income":0},{"id":"rest","name":"好好睡一觉","description":"精力+34，压力-18。不涨分，但会改善后续学习效率。","subject":-1,"gain":0,"energy":34,"stress":-18,"cost":0,"income":0},{"id":"walk","name":"操场散步","description":"精力+18，压力-30。暂时放下题目，让自己喘口气。","subject":-1,"gain":0,"energy":18,"stress":-30,"cost":0,"income":0},{"id":"job","name":"接一单兼职","description":"预算+200，精力-10，压力+5。先把生活安顿好。","subject":-1,"gain":0,"energy":-10,"stress":5,"cost":0,"income":200}],"events":[{"title":"家里的电话","body":"晚自习结束，家里问起最近的情况。你看着桌上的错题本，决定怎么回答。","options":[{"text":"坦诚聊聊最近的压力","description":"压力-16，精力+6","money":0,"energy":6,"stress":-16,"scores":[0,0,0,0]},{"text":"聊完顺手整理学习计划","description":"政治+2，专业+2，压力+6","money":0,"energy":0,"stress":6,"scores":[2,0,0,2]}]},{"title":"室友的周末邀请","body":"室友问你要不要一起去江边走走。周末的空白，也可以是计划的一部分。","options":[{"text":"出去吹吹风","description":"预算-60，精力+12，压力-16","money":-60,"energy":12,"stress":-16,"scores":[0,0,0,0]},{"text":"留在自习室补两道题","description":"数学+3，精力-8，压力+5","money":0,"energy":-8,"stress":5,"scores":[0,0,3,0]}]},{"title":"一份前辈的旧笔记","body":"前辈留下了一本专业课笔记。你可以请对方讲解，也可以自己慢慢消化。","options":[{"text":"请前辈吃饭并集中请教","description":"预算-80，专业+4，压力-4","money":-80,"energy":0,"stress":-4,"scores":[0,0,0,4]},{"text":"独自整理重点","description":"专业+2，精力-6","money":0,"energy":-6,"stress":0,"scores":[0,0,0,2]}]},{"title":"兼职临时加单","body":"合作过的店主想请你帮一个小忙。收入足够覆盖几周生活费，但今晚会晚一些睡。","options":[{"text":"接下加单","description":"预算+150，精力-18，压力+8","money":150,"energy":-18,"stress":8,"scores":[0,0,0,0]},{"text":"婉拒，按时休息","description":"精力+10，压力-8","money":0,"energy":10,"stress":-8,"scores":[0,0,0,0]}]},{"title":"图书馆的互助小组","body":"同桌准备交换错题讲解。你可以加入讨论，也可以按自己的节奏完成阅读。","options":[{"text":"加入讨论，讲懂一道题","description":"数学+3，政治+1，精力-10","money":0,"energy":-10,"stress":0,"scores":[1,0,3,0]},{"text":"独自完成阅读训练","description":"英语+2，压力-8","money":0,"energy":0,"stress":-8,"scores":[0,2,0,0]}]},{"title":"屏幕里的上岸经验","body":"刷到一串高分经验帖，你开始怀疑自己的进度。比较很容易，回到自己的计划却需要一点勇气。","options":[{"text":"关掉手机，整理今天的收获","description":"压力-18，精力+4","money":0,"energy":4,"stress":-18,"scores":[0,0,0,0]},{"text":"挑选一条方法做小范围尝试","description":"英语+2，专业+2，压力+8","money":0,"energy":0,"stress":8,"scores":[0,2,0,2]}]},{"title":"坏掉的台灯","body":"台灯开始闪烁。新台灯要花一笔钱，也可以先借用舍友的，稍微调整学习地点。","options":[{"text":"换一盏顺手的新台灯","description":"预算-100，精力+12，压力-10","money":-100,"energy":12,"stress":-10,"scores":[0,0,0,0]},{"text":"借用备用灯，把钱留给生活","description":"压力+6，专业+1","money":0,"energy":0,"stress":6,"scores":[0,0,0,1]}]},{"title":"给未来的自己写封信","body":"一路走到这里，你已经有很多具体的改变。你想在信里记下什么？","options":[{"text":"记下值得被肯定的努力","description":"精力+8，压力-15","money":0,"energy":8,"stress":-15,"scores":[0,0,0,0]},{"text":"把还没懂的概念再讲一遍","description":"政治+2，英语+2，精力-6","money":0,"energy":-6,"stress":0,"scores":[2,2,0,0]}]}]}</script>
+<script>/* China Exam rules. Parameters come from the existing Unity exam_config.json.
+   No browser APIs or dependencies: this same file runs in a browser and Node. */
+(function (root) {
+  'use strict';
+  const f = Math.fround;
+  const clamp = (x, lo, hi) => Math.max(lo, Math.min(x, hi));
+  const copy = value => JSON.parse(JSON.stringify(value));
+  // C# casts Single to Decimal (seven significant digits) before rounding.
+  const rounded = value => {
+    const decimal = Number(f(value).toPrecision(7));
+    return Math.sign(decimal) * Math.round((Math.abs(decimal) + Number.EPSILON) * 10) / 10;
+  };
+  const fmt = value => String(rounded(value));
+  function makeOrder(count, seed) {
+    const order = Array.from({ length: count }, (_, i) => i);
+    let rng = seed >>> 0;
+    for (let i = count - 1; i > 0; i--) {
+      rng = (Math.imul(rng, 1664525) + 1013904223) >>> 0;
+      const j = rng % (i + 1);
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    return order;
+  }
+  const finite = x => typeof x === 'number' && Number.isFinite(x);
+  const boundedText = x => typeof x === 'string' && x.length <= 4000;
+  function validSnapshot(c, s) {
+    return s && typeof s === 'object' && Number.isInteger(s.week) && s.week >= 1 && s.week <= c.weeks + 1 &&
+      Number.isInteger(s.money) && Math.abs(s.money) <= 2147483647 &&
+      finite(s.energy) && s.energy >= 0 && s.energy <= 100 && finite(s.stress) && s.stress >= 0 && s.stress <= 100 &&
+      Array.isArray(s.scores) && s.scores.length === 4 && s.scores.every((v, i) => finite(v) && v >= 0 && v <= c.caps[i]) &&
+      Number.isInteger(s.eventIndex) && s.eventIndex >= -1 && s.eventIndex < c.events.length && typeof s.finished === 'boolean';
+  }
+  function validJournal(c, rows) {
+    if (!Array.isArray(rows) || rows.length > c.weeks * 2) return false;
+    return rows.every(x => {
+      if (!x || typeof x !== 'object' || !['week', 'event'].includes(x.type) || !Number.isInteger(x.week) ||
+          x.week < 1 || x.week > c.weeks || !validSnapshot(c, x.before) || !validSnapshot(c, x.after)) return false;
+      if (x.type === 'week') return Array.isArray(x.plan) && x.plan.length === c.slots && x.plan.every(id => c.actions.some(a => a.id === id)) &&
+        Array.isArray(x.steps) && x.steps.length === c.slots && x.steps.every((step, i) => step && step.id === x.plan[i] &&
+          boundedText(step.name) && boundedText(step.detail) && finite(step.gain) && finite(step.efficiency) && step.efficiency >= 0 && step.efficiency <= 1 &&
+          Number.isInteger(step.subject) && step.subject >= -1 && step.subject < 4 && validSnapshot(c, step.before) && validSnapshot(c, step.after));
+      const event = c.events[x.eventIndex];
+      return Number.isInteger(x.eventIndex) && !!event && Number.isInteger(x.option) && x.option >= 0 && x.option < event.options.length &&
+        boundedText(x.title) && boundedText(x.text) && boundedText(x.description);
+    });
+  }
+  function validateConfig(c) {
+    if (!c || !Number.isInteger(c.weeks) || c.weeks < 1 || c.weeks > 100 || c.slots !== 3 ||
+        !Array.isArray(c.caps) || c.caps.length !== 4 || !c.caps.every(x => finite(x) && x > 0) ||
+        !Array.isArray(c.actions) || !c.actions.length || !Array.isArray(c.goals) || !c.goals.length ||
+        !Array.isArray(c.backgrounds) || !c.backgrounds.length || !Array.isArray(c.events) ||
+        !Array.isArray(c.subjectNames) || c.subjectNames.length !== 4) throw new Error('配置不完整');
+  }
+  function validateState(config, state) {
+    try { validateConfig(config); } catch (e) { return { valid: false, error: e.message }; }
+    const bad = error => ({ valid: false, error: error || '存档不兼容或已损坏。' });
+    if (!state || typeof state !== 'object' || Array.isArray(state) || state.version !== 1) return bad();
+    for (const [key, min, max] of [['week', 1, config.weeks + 1], ['background', 0, config.backgrounds.length - 1],
+      ['goal', 0, config.goals.length - 1], ['seed', -2147483648, 2147483647], ['money', -2147483648, 2147483647],
+      ['eventIndex', -1, config.events.length - 1]]) {
+      if (!Number.isInteger(state[key]) || state[key] < min || state[key] > max) return bad('存档字段无效：' + key);
+    }
+    if (typeof state.finished !== 'boolean' || state.finished !== (state.week === config.weeks + 1)) return bad('存档进度不一致。');
+    if (!finite(state.energy) || state.energy < 0 || state.energy > 100 || !finite(state.stress) || state.stress < 0 || state.stress > 100) return bad('存档中的状态数值无效。');
+    if (!Array.isArray(state.scores) || state.scores.length !== 4 || state.scores.some((x, i) => !finite(x) || x < 0 || x > config.caps[i])) return bad('存档成绩无效。');
+    if (!Array.isArray(state.logs) || state.logs.length > 1000 || state.logs.some(x => typeof x !== 'string' || x.length > 4000)) return bad('存档日记无效。');
+    const expected = makeOrder(config.events.length, state.seed);
+    if (!Array.isArray(state.eventOrder) || state.eventOrder.length !== expected.length || expected.some((x, i) => x !== state.eventOrder[i])) return bad('存档事件顺序无效。');
+    if (state.eventIndex >= 0 && (state.finished || state.week % 2 !== 0 || state.eventIndex !== expected[((state.week / 2) - 1) % expected.length])) return bad('存档中的生活事件进度不一致。');
+    if (state.lastPlan != null && (!Array.isArray(state.lastPlan) || state.lastPlan.length !== config.slots || state.lastPlan.some(id => !config.actions.some(a => a.id === id)))) return bad('存档中的上周安排无效。');
+    if (state.journal != null && !validJournal(config, state.journal)) return bad('存档记录无效。');
+    return { valid: true, error: '' };
+  }
+  function snapshot(s) {
+    return { week: s.week, money: s.money, energy: s.energy, stress: s.stress,
+      scores: s.scores.slice(), eventIndex: s.eventIndex, finished: s.finished };
+  }
+  class ExamEngine {
+    constructor(config, state) {
+      validateConfig(config);
+      const checked = validateState(config, state);
+      if (!checked.valid) throw new Error(checked.error);
+      this.config = config;
+      this.state = copy(state);
+      if (!this.state.journal) this.state.journal = [];
+    }
+    static newGame(c, background, goal, seed = c.seed) {
+      validateConfig(c);
+      if (!Number.isInteger(background) || background < 0 || background >= c.backgrounds.length ||
+          !Number.isInteger(goal) || goal < 0 || goal >= c.goals.length || !Number.isInteger(seed) || seed < -2147483648 || seed > 2147483647) throw new Error('请选择有效的起点与目标');
+      return { version: 1, week: 1, background, goal, seed, scores: c.backgrounds[background].scores.slice(),
+        energy: c.initialEnergy, stress: c.initialStress, money: c.initialMoney, eventIndex: -1, finished: false,
+        eventOrder: makeOrder(c.events.length, seed), lastPlan: null, journal: [],
+        logs: ['备考日记 / 最后十二周', '你的决定有据可查，考试不会追加隐藏随机扣分。'] };
+    }
+    efficiency(s = this.state) {
+      const energyFactor = Math.min(1, f(f(.55) + f(f(.0075) * f(s.energy))));
+      const stressFactor = f(1 - f(Math.max(0, f(f(s.stress) - 35)) * f(.005)));
+      return f(energyFactor * stressFactor);
+    }
+    total(s = this.state) { return rounded(s.scores.reduce((sum, score) => f(sum + f(score)), 0)); }
+    goal() { return this.config.goals[this.state.goal]; }
+    isAdmitted() {
+      return this.state.finished && this.total() >= this.goal().total && this.state.scores.every((v, i) => v >= this.goal().minimums[i]);
+    }
+    action(id) { return this.config.actions.find(a => a.id === id) || null; }
+    preview(ids) {
+      const result = { valid: false, error: '', after: copy(this.state), steps: [] };
+      if (this.state.finished) { result.error = '本轮备考已经结束。'; return result; }
+      if (this.state.eventIndex >= 0) { result.error = '请先处理本周生活事件。'; return result; }
+      if (!Array.isArray(ids) || ids.length !== this.config.slots) { result.error = '请安排完整的三个时段。'; return result; }
+      for (let slot = 0; slot < ids.length; slot++) {
+        const a = this.action(ids[slot]);
+        if (!a) { result.error = '第 ' + (slot + 1) + ' 时段尚未安排。'; return result; }
+        if (a.cost > 0 && result.after.money < a.cost) { result.error = '第 ' + (slot + 1) + ' 时段的预算不足；可先安排兼职或改为免费自习。'; return result; }
+        const before = snapshot(result.after), efficiency = this.efficiency(result.after);
+        let gain = 0;
+        if (a.subject >= 0) {
+          gain = rounded(f(f(a.gain) * efficiency));
+          const old = f(result.after.scores[a.subject]);
+          result.after.scores[a.subject] = rounded(clamp(f(old + f(gain)), 0, this.config.caps[a.subject]));
+          gain = rounded(f(f(result.after.scores[a.subject]) - old));
+        }
+        result.after.money += a.income - a.cost;
+        result.after.energy = clamp(f(f(result.after.energy) + f(a.energy)), 0, 100);
+        result.after.stress = clamp(f(f(result.after.stress) + f(a.stress)), 0, 100);
+        const benefit = a.subject >= 0 ? this.config.subjectNames[a.subject] + ' +' + fmt(gain) + ' 分 · 效率 ' + fmt(f(efficiency * 100)) + '%' : '恢复与生活安排';
+        const detail = benefit + '\n精力 ' + fmt(result.after.energy) + ' / 压力 ' + fmt(result.after.stress) + ' / 余额 ¥' + result.after.money;
+        result.steps.push({ id: a.id, name: a.name, detail, gain, subject: a.subject, efficiency, before, after: snapshot(result.after) });
+      }
+      result.after.money -= this.config.weeklyExpense;
+      result.after.energy = clamp(f(f(result.after.energy) + f(this.config.weeklyEnergy)), 0, 100);
+      result.after.stress = clamp(f(f(result.after.stress) + f(this.config.weeklyStress)), 0, 100);
+      result.valid = true;
+      return result;
+    }
+    commit(ids) {
+      const p = this.preview(ids), before = copy(this.state);
+      if (!p.valid) return { ok: false, error: p.error, before, after: copy(this.state), steps: p.steps };
+      this.state = p.after;
+      this.state.lastPlan = ids.slice();
+      const changes = this.config.subjectNames.map((name, i) => name + ' +' + fmt(f(f(this.state.scores[i]) - f(before.scores[i])))).join(' · ');
+      this.state.logs.push('第 ' + this.state.week + ' 周 / ' + changes + ' / 总分 ' + fmt(this.total()));
+      this.state.logs.push('  ' + p.steps.map(x => x.name).join(' → '));
+      if (this.state.money < 0) this.state.logs.push('  生活费已记账，欠款 ¥' + (-this.state.money) + '；兼职会优先补足余额。无额外隐藏惩罚。');
+      this.state.journal.push({ type: 'week', week: before.week, plan: ids.slice(), steps: p.steps, before: snapshot(before), after: snapshot(this.state) });
+      if (this.state.week % 2 === 0 && this.config.events.length > 0)
+        this.state.eventIndex = this.state.eventOrder[((this.state.week / 2) - 1) % this.state.eventOrder.length];
+      else this._advanceWeek();
+      return { ok: true, error: '', before, after: copy(this.state), steps: p.steps };
+    }
+    pendingEvent() { return this.state.eventIndex >= 0 ? this.config.events[this.state.eventIndex] || null : null; }
+    canChoose(option) {
+      const e = this.pendingEvent();
+      if (!e || !Number.isInteger(option) || option < 0 || option >= e.options.length) return false;
+      return e.options[option].money >= 0 || this.state.money >= -e.options[option].money;
+    }
+    chooseEvent(option) {
+      if (!this.canChoose(option)) return { ok: false, error: '该选项暂时无法负担，请选择另一项。' };
+      const e = this.pendingEvent(), o = e.options[option], before = snapshot(this.state), eventIndex = this.state.eventIndex;
+      this.state.money += o.money;
+      this.state.energy = clamp(f(f(this.state.energy) + f(o.energy)), 0, 100);
+      this.state.stress = clamp(f(f(this.state.stress) + f(o.stress)), 0, 100);
+      if (o.scores) for (let i = 0; i < Math.min(4, o.scores.length); i++)
+        this.state.scores[i] = rounded(clamp(f(f(this.state.scores[i]) + f(o.scores[i])), 0, this.config.caps[i]));
+      this.state.logs.push('  生活事件 / ' + e.title + '：' + o.text + '（' + o.description + '）');
+      this.state.journal.push({ type: 'event', week: this.state.week, eventIndex, title: e.title, option, text: o.text, description: o.description, before, after: snapshot(this.state) });
+      this.state.eventIndex = -1;
+      this._advanceWeek();
+      return { ok: true, error: '', before, after: snapshot(this.state) };
+    }
+    _advanceWeek() {
+      this.state.week++;
+      if (this.state.week > this.config.weeks) {
+        this.state.finished = true;
+        this.state.logs.push('考场落笔 / ' + this.config.subjectNames.map((x, i) => x + ' ' + fmt(this.state.scores[i])).join(' · ') + ' / 总分 ' + fmt(this.total()));
+      }
+    }
+  }
+  Object.assign(ExamEngine, { rounded, copy, makeOrder, validateState, snapshot, clamp });
+  root.ExamEngine = ExamEngine;
+  root.validateState = validateState;
+  if (typeof module !== 'undefined' && module.exports) module.exports = ExamEngine;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+</script>
+<script>(() => {
+  'use strict';
+  const config = JSON.parse(document.getElementById('exam-config').textContent);
+  const app = document.getElementById('app'), overlayRoot = document.getElementById('overlay-root');
+  const artwork = document.getElementById('desk-art').innerHTML;
+  const KEY = 'china-exam-twelve-weeks-v1';
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const f = value => Number(value).toFixed(1).replace(/\.0$/, '');
+  const signed = value => (value > 0 ? '+' : '') + f(value);
+  const clone = value => JSON.parse(JSON.stringify(value));
+  const btn = (action, label, cls = 'text-btn', id = '', extra = '') => `<button type="button" class="${cls}" data-action="${action}"${id !== '' ? ` data-id="${esc(id)}"` : ''} ${extra}>${label}</button>`;
+  let engine = null, plan = [], screen = 'intro', selectedBackground = 0, selectedGoal = 0, tab = 'study';
+  let overlay = null, saved = null, storageAvailable = true, storageError = '', sound = false, nextSeed = config.seed;
+  let audioContext = null, toastTimer = null, lastFocus = null;
+
+  function readSave() {
+    try {
+      const data = localStorage.getItem(KEY);
+      if (!data) return;
+      const envelope = JSON.parse(data);
+      if (envelope.version !== 1 || !ExamEngine.validateState(config, envelope.state).valid) throw new Error('invalid-save');
+      saved = envelope;
+      sound = envelope.sound === true;
+      nextSeed = ((envelope.state.seed ?? config.seed) + 1) | 0;
+    } catch (error) {
+      if (error.message === 'invalid-save' || error instanceof SyntaxError) storageError = '上次进度未能读取。可以导入备份，或开始新的十二周。';
+      else { storageAvailable = false; storageError = '浏览器未允许本地保存；可以导出存档来保留进度。'; }
+    }
+  }
+  function save() {
+    if (!engine) return;
+    saved = {version: 1, state: clone(engine.state), sound};
+    try { localStorage.setItem(KEY, JSON.stringify(saved)); storageAvailable = true; storageError = ''; }
+    catch (_) { storageAvailable = false; storageError = '浏览器未允许本地保存；可以导出存档来保留进度。'; }
+  }
+  function notify(message) {
+    const element = document.getElementById('toast');
+    element.textContent = message;
+    element.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => element.classList.remove('show'), 2600);
+  }
+  function tone(kind = 'click') {
+    if (!sound) return;
+    try {
+      const Audio = window.AudioContext || window.webkitAudioContext;
+      if (!Audio) return;
+      audioContext ||= new Audio();
+      if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
+      const frequencies = kind === 'success' ? [392, 494, 587] : kind === 'week' ? [330, 440] : [520];
+      frequencies.forEach((hz, index) => {
+        const oscillator = audioContext.createOscillator(), gain = audioContext.createGain();
+        const start = audioContext.currentTime + index * .1;
+        oscillator.type = 'sine'; oscillator.frequency.value = hz;
+        gain.gain.setValueAtTime(0, start); gain.gain.linearRampToValueAtTime(.028, start + .018);
+        gain.gain.exponentialRampToValueAtTime(.001, start + .16);
+        oscillator.connect(gain); gain.connect(audioContext.destination);
+        oscillator.start(start); oscillator.stop(start + .19);
+      });
+    } catch (_) { sound = false; }
+  }
+  function startGame() {
+    engine = new ExamEngine(config, ExamEngine.newGame(config, selectedBackground, selectedGoal, nextSeed));
+    nextSeed = (nextSeed + 1) | 0;
+    plan = []; tab = 'study'; screen = 'play'; overlay = null;
+    save(); render(); window.scrollTo({top: 0, behavior: 'instant'}); tone('week');
+  }
+  function continueGame() {
+    if (!saved) return;
+    try {
+      engine = new ExamEngine(config, clone(saved.state));
+      selectedBackground = engine.state.background; selectedGoal = engine.state.goal;
+      plan = []; tab = 'study'; screen = engine.state.finished ? 'ending' : 'play';
+      overlay = engine.pendingEvent() ? {type: 'event'} : null;
+      render(); window.scrollTo({top: 0, behavior: 'instant'});
+    } catch (_) { notify('这份进度无法读取，请导入备份或开始新局。'); }
+  }
+  function records() {
+    if (!engine) return [];
+    return (engine.state.journal || []).filter(item => item.type === 'week').map(item => {
+      const event = engine.state.journal.find(e => e.type === 'event' && e.week === item.week);
+      return {...item, event, final: event ? event.after : item.after};
+    });
+  }
+  function preview() {
+    if (!engine || engine.state.finished || engine.pendingEvent()) return null;
+    return engine.preview([...plan, ...Array(Math.max(0, config.slots - plan.length)).fill('rest')]);
+  }
+  function subjectShortfall() {
+    const state = engine.state, goal = engine.goal();
+    const deficits = state.scores.map((score, i) => ({i, difference: goal.minimums[i] - score, ratio: score / goal.minimums[i]})).filter(item => item.difference > 0).sort((a, b) => a.ratio - b.ratio);
+    if (deficits.length) return `先补一补${config.subjectNames[deficits[0].i]}，距单科线还差 ${f(deficits[0].difference)} 分。`;
+    return engine.total(state) < goal.total ? `单科都过线了，总分还差 ${f(goal.total - engine.total(state))} 分。` : '总分与单科均已达线。稳住节奏，照顾好自己。';
+  }
+  function header(intro = false) {
+    return `<header class="site-header"><div class="brand"><span class="brand-mark" aria-hidden="true">研</span><div><strong>中国式考研</strong><small>THE LAST TWELVE WEEKS</small></div></div>${intro ? '<span class="header-note">把日子过好，把理想写近一点。</span>' : ''}<nav class="nav" aria-label="游戏菜单">${btn('sound', sound ? '♪ 音效开' : '♪ 音效关', 'text-btn', '', `aria-pressed="${sound}"`)}${!intro ? btn('diary', '日记') : ''}${btn('rules', '规则')}${!intro ? btn('restart', '重开', 'text-btn nav-reset') : ''}</nav></header>`;
+  }
+  function introHTML() {
+    return `<div class="wrap">${header(true)}<main class="reveal"><section class="intro-hero"><div class="intro-copy"><div class="eyebrow">生活模拟 · 最后十二周</div><h1 class="serif">人生不是<br>一张<em>满分卷。</em></h1><p>距离考试，还有十二周。<br>学习、生活、预算和压力，都放上了同一张桌子。<br>这一次，试着为自己排一份刚刚好的计划。</p><div class="intro-steps"><span><b>01</b>安排时间</span><span><b>02</b>照顾自己</span><span><b>03</b>走进考场</span></div></div><div class="hero-art">${artwork}<p class="art-caption">灯还亮着，故事由你来写。</p></div></section><section class="setup" aria-label="选择背景和目标"><div><div class="setup-title"><span>01</span> 从怎样的起点出发？</div><div class="choices">${config.backgrounds.map((b,i) => btn('background', `<strong>${esc(b.name)}</strong><p>${esc(b.description)}</p><div class="mini">政治 ${b.scores[0]} · 英语 ${b.scores[1]}<br>数学 ${b.scores[2]} · 专业 ${b.scores[3]}</div>`, `choice ${selectedBackground === i ? 'selected' : ''}`, i, `aria-pressed="${selectedBackground === i}"`)).join('')}</div></div><div><div class="setup-title"><span>02</span> 为自己定一个目标。</div><div class="choices">${config.goals.map((g,i) => btn('goal', `<strong>${esc(g.name)}</strong><span class="target-score">${g.total}<small>总分目标</small></span><p>${['稳稳地向前走','值得认真争取','给自己一次挑战'][i]}</p><div class="mini">单科线 ${g.minimums.join(' / ')}</div>`, `choice ${selectedGoal === i ? 'selected' : ''}`, i, `aria-pressed="${selectedGoal === i}"`)).join('')}</div></div></section><section class="start-bar"><div><p>每周三个时段 · 单局约 10–15 分钟</p><p>院校与分数线均为游戏设定，四科顺序：政治 / 英语 / 数学 / 专业。</p></div><div class="start-actions">${saved ? btn('continue', `继续上次${saved.state.finished ? ' · 查看成绩' : ` · 第${saved.state.week}周`}`, 'secondary') : btn('import', '导入存档', 'text-btn')}${btn('start', `开始这十二周 <span aria-hidden="true">↗</span>`, 'primary')}</div></section>${storageError ? `<div class="save-fallback">${esc(storageError)}</div>` : ''}</main><footer class="footer">从今天的一个小决定，走向自己的答案。</footer></div>`;
+  }
+  function scoresHTML() {
+    const state = engine.state, goal = engine.goal();
+    return `<aside class="sidebar"><section class="panel scores-panel"><div class="panel-label">我的目标<span>ADMISSION</span></div><div class="admission-heading"><span class="target-badge" aria-hidden="true">研</span><div><strong>${esc(goal.name)}</strong><small>${esc(config.backgrounds[state.background].name)}</small></div></div><div class="total-score"><strong data-value="total">${f(engine.total(state))}</strong><span>/ ${goal.total} 目标</span></div><div class="subject-list">${config.subjectNames.map((name,i) => `<div class="subject-row"><div class="subject-title"><span>${name}</span><b class="${state.scores[i] < goal.minimums[i] ? 'behind' : ''}">${f(state.scores[i])}<small> / ${goal.minimums[i]}</small></b></div><div class="bar" role="meter" aria-label="${name}成绩，单科线${goal.minimums[i]}" aria-valuemin="0" aria-valuemax="${config.caps[i]}" aria-valuenow="${f(state.scores[i])}"><span class="fill" style="width:${state.scores[i]/config.caps[i]*100}%"></span><i class="marker" style="left:${goal.minimums[i]/config.caps[i]*100}%"></i></div></div>`).join('')}</div><p class="shortfall">${subjectShortfall()}</p></section><section class="panel status-panel" aria-label="精力压力和预算"><div class="status-item"><div class="status-line"><span>精力</span><b>${f(state.energy)} <small>/ 100</small></b></div><div class="bar"><span class="fill" style="width:${state.energy}%"></span></div></div><div class="status-item stress"><div class="status-line"><span>压力</span><b class="${state.stress>70?'red':''}">${f(state.stress)} <small>/ 100</small></b></div><div class="bar"><span class="fill" style="width:${state.stress}%"></span></div></div><div class="cash-line"><span>生活预算<small>每周生活费 ¥${config.weeklyExpense}</small></span><b class="${state.money<0?'red':''}" data-value="money">¥${state.money}</b></div><div class="efficiency"><span>当前学习效率</span><b>${f(ExamEngine.rounded(engine.efficiency(state)*100))}%</b></div></section></aside>`;
+  }
+  function workspaceHTML() {
+    const state = engine.state;
+    const scene = state.stress > 65 ? ['慢一点，<br>也没关系。','脑子打结的时候，<br>先去操场走走吧。'] : state.energy < 35 ? ['灯可以晚点亮，<br>你需要先睡好。','恢复不是落后，<br>是给下一次学习留力气。'] : state.week > 8 ? ['一步一步，<br>走到这里了。','不必和所有人比较，<br>看看自己的计划。'] : ['今天，也在<br>向前一点点。','把难题拆开，<br>把日子慢慢过。'];
+    const shown = config.actions.filter(action => tab === 'life' ? action.subject < 0 : action.id.startsWith(tab));
+    return `<section class="workspace"><div class="desk-scene"><div class="scene-note"><div class="eyebrow">你的备考书桌</div><h2>${scene[0]}</h2><p>${scene[1]}</p></div>${artwork}</div><section class="panel actions-panel"><div class="section-head"><div><h2>这一周，把时间给……</h2><p>点击行动，放进右侧计划。</p></div><span class="muted" aria-hidden="true">＋</span></div><div class="tabs" role="tablist" aria-label="行动类型">${[['study','日常自习'],['sprint','冲刺训练'],['life','生活与恢复']].map(([id,name]) => btn('tab', name, `tab ${tab===id?'active':''}`, id, `role="tab" aria-selected="${tab===id}" aria-controls="action-list"`)).join('')}</div><div class="action-list" id="action-list" role="tabpanel">${shown.map(action => {
+      const badge = action.subject >= 0 ? config.subjectNames[action.subject][0] : ({rest:'眠',walk:'风',job:'余'})[action.id];
+      const gain = action.subject >= 0 ? `基础 +${action.gain} 分${action.cost ? ` · ¥${action.cost}` : ' · 免费'}` : action.income ? `生活预算 +${action.income}` : `精力 ${signed(action.energy)} · 压力 ${signed(action.stress)}`;
+      const cost = action.subject >= 0 || action.income ? `精力 ${signed(action.energy)} / 压力 ${signed(action.stress)}` : '留点空白，后面的学习会更从容';
+      return btn('add', `<div class="action-head"><span class="action-symbol" aria-hidden="true">${badge}</span><strong>${esc(action.name)}</strong></div><span class="add-sign" aria-hidden="true">＋</span><p class="gain">${gain}</p><p class="cost">${cost}</p>`, `action-card ${tab}`, action.id, `${plan.length>=config.slots?'disabled':''} title="${esc(action.description)}" aria-label="加入${esc(action.name)}"`);
+    }).join('')}</div><p class="action-tip">${tab==='life' ? '先恢复，再学习。<b>安排的先后顺序</b>也会影响这一周的收获。' : tab==='sprint' ? '冲刺增长更快，也更消耗身心和预算。<b>留一个恢复时段</b>，可能更划算。' : '卡片显示基础收益。实际涨分取决于行动前的状态，<b>右侧预览</b>会帮你算清楚。'}</p></section></section>`;
+  }
+  function planHTML() {
+    const p = preview();
+    return `<section class="panel plan-panel" aria-label="本周计划"><div class="section-head"><h2>本周计划</h2><span class="plan-count">${plan.length} <small>/ ${config.slots}</small></span></div><ol class="slots">${Array.from({length:config.slots},(_,i) => {
+      const action = plan[i] && engine.action(plan[i]);
+      return `<li class="slot ${action?'filled':'empty'}"><span class="slot-no">0${i+1}</span>${action ? `<div class="slot-content"><strong>${esc(action.name)}</strong><small>${action.subject>=0?`${config.subjectNames[action.subject]}学习 · ${action.cost?'付费冲刺':'免费自习'}`:action.id==='job'?'安顿生活，也是向前':'给自己充点电'}</small></div><div class="slot-controls">${btn('up','↑','icon-btn',i,`aria-label="上移时段${i+1}" ${i===0?'disabled':''}`)}${btn('down','↓','icon-btn',i,`aria-label="下移时段${i+1}" ${i===plan.length-1?'disabled':''}`)}${btn('remove','×','icon-btn delete',i,`aria-label="删除时段${i+1}"`)}</div>` : '<span class="slot-content">给这一格，安排一点什么。</span>'}</li>`;
+    }).join('')}</ol><div class="preview"><div class="preview-label"><h3>${plan.length===config.slots?'本周结算预览':'空位补休息后的预览'}</h3><span>不会提前消耗资源</span></div>${p?.valid ? `<div class="preview-total"><div><strong>${f(engine.total(p.after))}</strong><small>预计总分</small></div><b>${signed(ExamEngine.rounded(engine.total(p.after)-engine.total(engine.state)))} 分</b></div><div class="preview-subjects">${config.subjectNames.map((name,i) => `<span>${name}<b>${signed(ExamEngine.rounded(p.after.scores[i]-engine.state.scores[i]))}</b></span>`).join('')}</div><div class="preview-resources">周末精力 ${f(p.after.energy)} · 压力 ${f(p.after.stress)} · 预算 <span class="${p.after.money<0?'red':''}">¥${p.after.money}</span><br>已计生活费与周末恢复，未计生活事件。</div><details class="plan-details"><summary>看看每个时段的收益</summary>${p.steps.map((step,i) => `<p>${i+1}. ${esc(step.name)}<br>${step.subject>=0 ? `${config.subjectNames[step.subject]} +${f(step.gain)}，学习效率 ${f(ExamEngine.rounded(step.efficiency*100))}%` : `精力 ${f(step.after.energy)}，压力 ${f(step.after.stress)}`}</p>`).join('')}</details>` : `<div class="preview-error">${esc(p?.error || '先处理生活事件，再安排下一周。')}</div>`}</div>${btn('commit', `${engine.state.week===config.weeks?'确认安排，迎接考试':'确认安排，度过这一周'} <span aria-hidden="true">→</span>`, 'primary commit-btn', '', `${plan.length!==config.slots || !p?.valid?'disabled':''}`)}<p class="commit-note">${plan.length!==config.slots?'排满三个时段后，就可以出发了。':'确认后自动保存；这一周将不能撤回。'}</p></section>`;
+  }
+  function playHTML() {
+    const state = engine.state;
+    const phase = state.week<=4?'先把基础搭起来':state.week<=8?'找到自己的节奏':'冲刺，也要留点余地';
+    return `<div class="wrap">${header()}<main><section class="week-top"><div class="week-info"><h1>第 <b>${state.week}</b> 周 <span>/ ${config.weeks}</span></h1><span>${phase}</span></div><div class="week-track" aria-label="已经完成${state.week-1}周">${Array.from({length:config.weeks},(_,i)=>`<i class="${i<state.week-1?'done':i===state.week-1?'current':''}"></i>`).join('')}</div></section>${!storageAvailable?`<div class="save-fallback">${esc(storageError)} ${btn('export','导出存档','text-btn')}</div>`:''}<div class="game-grid">${scoresHTML()}${workspaceHTML()}${planHTML()}</div><div class="game-bottom"><span class="storage-state">${storageAvailable?'已自动保存确认后的进度 · 未确认计划不保存':'进度仅保留在本次打开期间'}</span><span>一次决定，三个时段。一周一周，慢慢来。</span></div></main></div>`;
+  }
+  function reflectionHTML() {
+    const state=engine.state, goal=engine.goal();
+    const short = config.subjectNames.map((name,i)=>({name,gap:goal.minimums[i]-state.scores[i]})).filter(item=>item.gap>0);
+    const allPlans = records().flatMap(record=>record.plan);
+    const restCount=allPlans.filter(id=>id==='rest'||id==='walk').length, jobCount=allPlans.filter(id=>id==='job').length;
+    let text = engine.isAdmitted() ? '你同时照顾了总分和单科线。这份安排，带你走到了想去的地方。' : short.length ? `这次还差在${short.map(item=>`${item.name} ${f(item.gap)} 分`).join('、')}。下一轮，可以更早把时段分给这些短板。` : `四科都过线了，总分还差 ${f(goal.total-engine.total(state))} 分。可以比较行动顺序，把恢复后的好状态留给收益更高的学习。`;
+    return `<div class="reflection"><h3>写在这一轮之后</h3><p>${text}</p><p>你留了 ${restCount} 个时段休息或散步，做了 ${jobCount} 次兼职。${state.money<0?`还留下 ¥${-state.money} 生活欠款，下次记得为生活留一点预算。`:`最终留下 ¥${state.money}。这些取舍，也都是你走过的路。`}</p></div>`;
+  }
+  function endingHTML() {
+    const state=engine.state,goal=engine.goal(),passed=engine.isAdmitted();
+    return `<div class="wrap">${header()}<main class="ending reveal"><div class="ending-head"><div class="eyebrow">最后一笔，写给自己</div><h1>${passed?'我们，真的走到了。':'这一程，也没有白走。'}</h1><p>十二周，三十六个时段。这是你交给自己的答卷。</p></div><section class="ending-paper"><div class="ending-score"><div class="panel-label" style="justify-content:center">${esc(goal.name)} · 考试成绩单</div><strong data-value="final-total">${f(engine.total(state))}</strong><p>目标总分 ${goal.total} / 满分 ${config.caps.reduce((a,b)=>a+b,0)}</p><div class="stamp ${passed?'':'failed'}">${passed?'如愿录取':'尚未达线'}</div></div><div class="ending-subjects">${config.subjectNames.map((name,i)=>`<div><span>${name}</span><strong>${f(state.scores[i])}</strong><small class="${state.scores[i]<goal.minimums[i]?'red':''}">${state.scores[i]>=goal.minimums[i]?'✓ 已达线':'差 '+f(goal.minimums[i]-state.scores[i])+' 分'} · 线${goal.minimums[i]}</small></div>`).join('')}</div>${reflectionHTML()}<div class="ending-buttons">${btn('diary','回看这十二周','secondary')}${btn('restart','再写一种可能 →','primary')}</div></section><p class="ending-quote">考试结束了，生活还在继续。${passed?'去看看，那个曾经想去的地方。':'先吃顿好饭，再决定下一步。'}</p></main><footer class="footer">本游戏的院校、分数与录取条件均为虚构。</footer></div>`;
+  }
+  function rulesHTML() {
+    return `<div class="modal-top"><div><div class="eyebrow">不必先读懂全部公式</div><h2>先记住这几件小事。</h2></div>${btn('close','×','modal-close','','aria-label="关闭规则"')}</div><div class="rule-grid"><section class="rule-card"><h3>01 / 先安排，再确认</h3><p>每周 ${config.slots} 个时段，共 ${config.weeks} 周。同一行动可以重复。箭头调整顺序，× 移除。确认之前可以随时修改。</p></section><section class="rule-card"><h3>02 / 恢复也会带来收获</h3><p>学习按行动开始前的状态算收益。精力低于60、压力高于35时效率下降；先休息再学习，可能比一直学收获更多。</p></section><section class="rule-card"><h3>03 / 生活也需要预算</h3><p>冲刺每次花费 ¥25。每周生活费 ¥${config.weeklyExpense}，周末精力 ${signed(config.weeklyEnergy)}、压力 ${signed(config.weeklyStress)}。兼职可以支付同周后面的冲刺。欠款时仍能自习、休息或兼职。</p></section><section class="rule-card"><h3>04 / 总分与单科都要过线</h3><p>政治、英语满分100，数学、专业满分150。积累的成绩就是最后的考试成绩，不会临时掷骰子决定录取。</p></section><section class="rule-card"><h3>05 / 计划外，也有生活</h3><p>第2、4、6、8、10、12周结算后有一个二选一事件。每局六个，不重复。效果直接显示，钱不够的付费选项不能选择。</p></section><section class="rule-card"><h3>06 / 随时回来，接着走</h3><p>新局、确认计划和处理事件后自动保存。未确认的计划不会保存。可以在日记中导出、导入存档，换浏览器时也能继续。</p></section></div><details class="rule-formula"><summary>想看清楚：学习效率怎样计算？</summary><p>精力系数 = min(1, 0.55 + 0.0075 × 精力)<br>压力系数 = 1 − max(0, 压力 − 35) × 0.005<br>实际涨分 = 基础收益 × 精力系数 × 压力系数<br>涨分四舍五入到一位小数，成绩不超过科目满分。先计算涨分，再改变状态。</p></details><div class="modal-actions">${btn('close','知道了，试着安排一下','primary')}</div>`;
+  }
+  function chartHTML(items) {
+    if (!items.length) return '';
+    const initial=config.backgrounds[engine.state.background].scores.reduce((a,b)=>a+b,0);
+    const values=[initial,...items.map(record=>engine.total(record.final))];
+    const max=Math.max(engine.goal().total+20,...values)+10;
+    const coords=values.map((value,i)=>[24+i*(570/Math.max(12,values.length-1)),115-(value/(max||1))*98]);
+    const line=coords.map(point=>point.join(',')).join(' ');
+    const targetY=115-(engine.goal().total/max)*98;
+    return `<div class="chart"><svg viewBox="0 0 650 138" role="img" aria-label="总分从${initial}增长到${f(values.at(-1))}"><path d="M24 ${targetY}H594" stroke="#c6a574" stroke-dasharray="4 5" fill="none"/><text x="602" y="${targetY+3}" font-size="10" fill="#ae8b58">${engine.goal().total}</text><polygon points="${coords[0][0]},115 ${line} ${coords.at(-1)[0]},115" fill="#d8e2ca"/><polyline points="${line}" fill="none" stroke="#739365" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>${coords.map(([x,y],i)=>`<circle cx="${x}" cy="${y}" r="3" fill="#70905f"/><text x="${x}" y="133" fill="#93a185" text-anchor="middle" font-size="9">${i===0?'开局':i+'周'}</text>`).join('')}</svg></div>`;
+  }
+  function diaryHTML() {
+    const items=records();
+    return `<div class="modal-top"><div><div class="eyebrow">那些认真生活过的日子</div><h2>我的备考日记</h2></div>${btn('close','×','modal-close','','aria-label="关闭日记"')}</div>${items.length?chartHTML(items):'<p class="empty-diary">第一页还空着。<br>从确认这一周的计划开始吧。</p>'}<div class="diary-list">${[...items].reverse().map(record=>`<article class="diary-entry"><h3><span>第 ${record.week} 周</span><span>${f(engine.total(record.final))} 分 · ¥${record.final.money}</span></h3><p>${record.plan.map(id=>esc(engine.action(id).name)).join(' → ')}</p><p>${config.subjectNames.map((name,i)=>`${name} ${signed(ExamEngine.rounded(record.final.scores[i]-record.before.scores[i]))}`).join(' · ')}</p>${record.event?`<p>生活插曲 / ${esc(record.event.title)}<br>你的选择：${esc(record.event.text)}（${esc(record.event.description)}）</p>`:''}</article>`).join('')}</div><div class="import-zone"><p>${storageAvailable?'已自动保存本机进度。导出一份备份，也可以在另一个浏览器继续。':'本地保存不可用，请导出存档保留本轮进度。'}未确认的计划不在存档中。</p>${btn('export','导出存档','secondary')}${btn('import','导入存档','secondary')}${btn('restart','重新开始','text-btn')}</div>`;
+  }
+  function weekHTML() {
+    const result=overlay.result, currentWeek=result.before.week;
+    return `<div class="eyebrow">第 ${currentWeek} 周 · 小小的收获</div><h2 style="margin-top:9px">又认真地，过了一周。</h2><div class="week-result"><div><span>本周总分</span><strong style="display:block">${f(engine.total(result.after))}</strong></div><span>积累了 <b style="font-size:22px;font-weight:400">${signed(ExamEngine.rounded(engine.total(result.after)-engine.total(result.before)))}</b> 分</span></div><div class="result-actions">${result.steps.map((step,i)=>`<div class="result-step"><span>0${i+1}</span><div><strong>${esc(step.name)}</strong><small>${step.subject>=0?`学习效率 ${f(ExamEngine.rounded(step.efficiency*100))}%`:step.name.includes('兼职')?'把生活安顿好。':'暂停一下，是为了继续向前。'}</small></div><b>${step.subject>=0?'+'+f(step.gain):'✓'}</b></div>`).join('')}</div><p class="result-note">生活费已记账 ¥${config.weeklyExpense}。周末精力 ${f(result.after.energy)}，压力 ${f(result.after.stress)}，剩余预算 ¥${result.after.money}。${result.after.money<0?'免费自习和兼职仍可继续安排。':''}</p><div class="modal-actions">${btn('next',engine.pendingEvent()?'这一周，还有一件小事 →':engine.state.finished?'带着这些，走进考场 →':'收好这一页，继续向前 →','primary')}</div>`;
+  }
+  function eventHTML() {
+    const event=engine.pendingEvent();
+    const symbols=['信','风','书','余','伴','望','灯','愿'];
+    return `<div class="event-label">第 ${engine.state.week} 周 / 计划之外的生活</div><div class="event-illustration" aria-hidden="true">${symbols[engine.state.eventIndex] || '记'}</div><h2>${esc(event.title)}</h2><p class="event-body">${esc(event.body)}</p><div class="event-choices">${event.options.map((option,i)=>btn('event',`<strong>${esc(option.text)} <span aria-hidden="true" style="float:right;color:#a8b298">↗</span></strong><p>${esc(option.description)}</p>${!engine.canChoose(i)?'<small>预算不足，可以选择另一种安排。</small>':''}`,'event-choice',i,engine.canChoose(i)?'':'disabled')).join('')}</div>`;
+  }
+  function restartHTML() {
+    return `<div class="modal-top"><h2>再写一种可能？</h2></div><p class="muted">${overlay.fromStart?'开始新的十二周，会替换本机上一次的进度。':'会先回到起点，让你重新选择背景与目标。确认开始新局后，才会替换本机旧进度。'}</p><p class="muted" style="font-size:12px;margin-top:10px">想保留这一轮，可以先去日记里导出存档。</p><div class="modal-actions">${btn('cancel','先继续这一轮','secondary')}${btn('confirm-restart',overlay.fromStart?'确认开始新局':'回到起点','primary')}</div>`;
+  }
+  function renderOverlay() {
+    if (!overlay) { overlayRoot.innerHTML=''; app.inert=false; document.body.style.overflow=''; return; }
+    let html='',wide=false;
+    if(overlay.type==='rules'){html=rulesHTML();wide=true;}
+    else if(overlay.type==='diary'){html=diaryHTML();wide=true;}
+    else if(overlay.type==='week')html=weekHTML();
+    else if(overlay.type==='event')html=eventHTML();
+    else if(overlay.type==='restart')html=restartHTML();
+    else if(overlay.type==='import-confirm')html=`<div class="modal-top"><h2>继续这份备考进度？</h2></div><p class="muted">${esc(config.backgrounds[overlay.data.state.background].name)} · ${esc(config.goals[overlay.data.state.goal].name)}<br>${overlay.data.state.finished?'已完成十二周':'第 '+overlay.data.state.week+' 周'}，总分 ${f(overlay.data.state.scores.reduce((a,b)=>a+b,0))}。导入后会替换本机已保存的进度。</p><div class="modal-actions">${btn('cancel','保留当前进度','secondary')}${btn('confirm-import','确认导入','primary')}</div>`;
+    overlayRoot.innerHTML=`<div class="overlay-backdrop"><section class="modal ${wide?'wide':''}" role="dialog" aria-modal="true" aria-label="${({rules:'规则说明',diary:'备考日记',week:'本周结算',event:'生活事件',restart:'重新开始确认','import-confirm':'导入确认'})[overlay.type]}">${html}</section></div>`;
+    app.inert=true;document.body.style.overflow='hidden';
+    const first=overlayRoot.querySelector('button:not(:disabled)'); if(first)first.focus({preventScroll:true});
+  }
+  function render() {
+    const focused=document.activeElement;
+    const focusAction=focused?.dataset?.action, focusId=focused?.dataset?.id;
+    app.innerHTML=screen==='intro'?introHTML():screen==='ending'?endingHTML():playHTML();
+    renderOverlay();
+    if(!overlay&&focusAction){
+      const candidate=[...app.querySelectorAll('[data-action]')].find(el=>el.dataset.action===focusAction&&el.dataset.id===focusId&&!el.disabled);
+      candidate?.focus({preventScroll:true});
+    }
+  }
+  function openOverlay(value) { lastFocus=document.activeElement;overlay=value;renderOverlay(); }
+  function closeOverlay() { overlay=null;renderOverlay();lastFocus?.isConnected&&lastFocus.focus({preventScroll:true}); }
+  function afterProgress() {
+    if(engine.pendingEvent()){overlay={type:'event'};screen='play';}
+    else {overlay=null;screen=engine.state.finished?'ending':'play';}
+    render();
+    if(screen==='ending'){window.scrollTo({top:0,behavior:'instant'});if(engine.isAdmitted()){tone('success');confetti();}}
+  }
+  function confetti() {
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const layer=document.createElement('div');layer.className='confetti';layer.setAttribute('aria-hidden','true');
+    layer.innerHTML=Array.from({length:32},(_,i)=>`<i style="left:${(i*37)%100}%;animation-delay:${(i%7)*.09}s;transform:rotate(${i*31}deg)"></i>`).join('');
+    document.body.appendChild(layer);setTimeout(()=>layer.remove(),3800);
+  }
+  function exportSave() {
+    if(!engine){notify('先开始这一轮备考，就能导出进度了。');return;}
+    const text=JSON.stringify({version:1,state:engine.state,sound},null,2);
+    const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));
+    const a=document.createElement('a');a.href=url;a.download=`中国式考研_第${Math.min(engine.state.week,config.weeks)}周存档.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
+    notify('存档已导出，可以带到另一个浏览器继续。');
+  }
+  document.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-action]');
+    if(!button||button.disabled)return;
+    const action=button.dataset.action,id=button.dataset.id,index=Number(id);
+    if(overlay&&!overlayRoot.contains(button))return;
+    if(action!=='sound')tone();
+    switch(action){
+      case 'background':selectedBackground=index;render();break;
+      case 'goal':selectedGoal=index;render();break;
+      case 'start':if(saved)openOverlay({type:'restart',fromStart:true});else startGame();break;
+      case 'continue':continueGame();break;
+      case 'sound':sound=!sound;tone('week');if(engine)save();render();break;
+      case 'tab':tab=id;render();break;
+      case 'add':if(!engine||engine.pendingEvent()||engine.state.finished||plan.length>=config.slots)return;plan.push(id);render();notify(`已安排「${engine.action(id).name}」 · ${plan.length}/${config.slots} 时段`);break;
+      case 'remove':plan.splice(index,1);render();break;
+      case 'up':if(index>0){[plan[index-1],plan[index]]=[plan[index],plan[index-1]];render();}break;
+      case 'down':if(index<plan.length-1){[plan[index+1],plan[index]]=[plan[index],plan[index+1]];render();}break;
+      case 'commit':{
+        if(plan.length!==config.slots)return;
+        const result=engine.commit(plan);
+        if(!result.ok){notify(result.error);return;}
+        plan=[];save();overlay={type:'week',result};screen=engine.state.finished?'ending':'play';render();tone('week');break;
+      }
+      case 'next':afterProgress();break;
+      case 'event':{
+        if(!engine||!engine.pendingEvent())return;
+        const eventTitle=engine.pendingEvent().options[index]?.text;
+        const result=engine.chooseEvent(index);
+        if(!result.ok){notify(result.error);return;}
+        save();afterProgress();notify(`记下了：${eventTitle}`);break;
+      }
+      case 'rules':openOverlay({type:'rules'});break;
+      case 'diary':if(engine)openOverlay({type:'diary'});break;
+      case 'close':case 'cancel':closeOverlay();break;
+      case 'restart':openOverlay({type:'restart',fromStart:false});break;
+      case 'confirm-restart':{
+        const immediate=overlay.fromStart;overlay=null;
+        if(immediate)startGame();else{screen='intro';plan=[];render();window.scrollTo({top:0,behavior:'instant'});}break;
+      }
+      case 'export':exportSave();break;
+      case 'import':document.getElementById('import-file').click();break;
+      case 'confirm-import':{
+        const data=overlay.data;
+        engine=new ExamEngine(config,data.state);sound=data.sound===true;save();nextSeed=(engine.state.seed+1)|0;continueGame();notify('存档已导入。接着写下一页吧。');break;
+      }
+    }
+  });
+  document.addEventListener('keydown',event=>{
+    if(!overlay)return;
+    if(event.key==='Escape'&&['rules','diary','restart','import-confirm'].includes(overlay.type)){event.preventDefault();closeOverlay();return;}
+    if(event.key==='Tab'){
+      const elements=[...overlayRoot.querySelectorAll('button:not(:disabled),summary,input')].filter(el=>el.getClientRects().length);
+      if(!elements.length)return;
+      const first=elements[0],last=elements.at(-1);
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    }
+  });
+  document.getElementById('import-file').addEventListener('change',async event=>{
+    const file=event.target.files[0];event.target.value='';if(!file)return;
+    if(file.size>2_000_000){notify('存档文件过大，请选择本游戏导出的 JSON。');return;}
+    try{
+      const data=JSON.parse(await file.text());
+      if(data.version!==1||!ExamEngine.validateState(config,data.state).valid)throw new Error('invalid');
+      openOverlay({type:'import-confirm',data});
+    }catch(_){notify('这不是可用的备考存档，当前进度已保留。');}
+  });
+  window.__examQA=Object.freeze({snapshot:()=>clone({state:engine?.state||null,plan,records:records(),screen,overlay:overlay?.type||null,storageAvailable,savedState:saved?.state||null})});
+  readSave();render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="高原｜系统 / 数值策划作品集｜可玩 Demo、系统与数值方法、产品判断。">
+<title>高原｜系统 / 数值策划作品集</title>
+<style>
+:root{
+  --bg:#0d1118;--panel:#141b25;--panel2:#101722;--line:#273140;--text:#edf2f7;--muted:#9aa9ba;
+  --blue:#7cb7ff;--mint:#8fe0c1;--amber:#ffc777;--red:#ff8f82;--shadow:0 24px 80px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(circle at 82% 10%,rgba(124,183,255,.14),transparent 26rem),
+  radial-gradient(circle at 12% 36%,rgba(143,224,193,.08),transparent 24rem),
+  var(--bg);color:var(--text);font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,calc(100% - 40px));margin:0 auto}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:24px 0;color:var(--muted);font-size:13px}
+.brand{font-weight:800;letter-spacing:.14em;color:var(--text)}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap}
+.hero{padding:72px 0 52px;border-bottom:1px solid var(--line)}
+.kicker{font-size:12px;letter-spacing:.2em;color:var(--blue);font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(42px,7.2vw,92px);line-height:.98;letter-spacing:-.06em;margin:0 0 24px;max-width:920px}
+.hero p{max-width:760px;color:var(--muted);font-size:17px;line-height:1.9;margin:0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:700;background:rgba(255,255,255,.03)}
+.btn.primary{background:var(--text);color:#0d1118;border-color:var(--text)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue);color:#07111d}
+.section{padding:58px 0;border-bottom:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}
+h2{font-size:clamp(26px,3.3vw,42px);letter-spacing:-.04em;margin:0}
+.section-head p{color:var(--muted);max-width:560px;margin:0;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:24px;min-height:220px;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .22s ease,border-color .22s ease}
+.card::after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:var(--accent,#7cb7ff);filter:blur(2px);opacity:.08;right:-80px;bottom:-100px;transition:transform .25s ease,opacity .25s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--accent,#7cb7ff)}
+.card:hover::after{transform:scale(1.15);opacity:.14}
+.card small{color:var(--accent,#7cb7ff);font-weight:800;letter-spacing:.08em}
+.card h3{font-size:23px;line-height:1.25;letter-spacing:-.03em;margin:18px 0 10px;max-width:90%}
+.card p{color:var(--muted);font-size:14px;margin:0}
+.card .meta{position:absolute;left:24px;bottom:20px;color:var(--muted);font-size:12px}
+.two{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.list{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px}
+.list h3{margin:0 0 16px;font-size:22px}
+.list ol,.list ul{margin:0;padding-left:22px;color:var(--muted)}
+.list li{margin:10px 0}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.tag{border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:var(--muted);font-size:12px}
+.proto{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.proto a{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;min-height:128px;display:flex;flex-direction:column;justify-content:space-between}
+.proto b{font-size:15px}
+.proto span{color:var(--muted);font-size:12px}
+.proto a:hover{border-color:var(--mint);color:var(--mint)}
+.footer{padding:40px 0 60px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.proto{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.wrap{width:min(100% - 28px,1160px)}.hero{padding-top:48px}.grid,.proto{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:12px}.nav{align-items:flex-start;gap:16px;flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <div class="brand">高原 / GAO YUAN</div>
+    <div class="nav-links">
+      <a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a>
+      <a href="https://github.com/LittleGrass1127/game-design-portfolio">GitHub</a>
+      <a href="#demos">可玩 Demo</a>
+      <a href="#thinking">产品判断</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="kicker">2027 CAMPUS · SYSTEM / NUMERICAL DESIGN</div>
+    <h1>把玩法做出来，<br>也把为什么做讲清楚。</h1>
+    <p>高原｜系统策划 / 数值策划。三段实习覆盖发行、系统、数值；做过活动系统、战斗数值、奖励拆分和试玩广告。这个仓库只放可以公开查看的 Demo、方法和复盘，重点回答“怎么想、怎么做、怎么验证”。</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#three">3 分钟看什么</a>
+      <a class="btn" href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">打开飞书完整版</a>
+      <a class="btn" href="https://github.com/LittleGrass1127/game-design-portfolio">看 GitHub 仓库</a>
+    </div>
+  </header>
+
+  <section class="section" id="three">
+    <div class="section-head">
+      <h2>先看这三个</h2>
+      <p>不是按“作品数量”排，而是按招聘方最关心的三层能力：数值能不能落地、系统能不能闭环、玩法值不值得做。</p>
+    </div>
+    <div class="grid">
+      <a class="card" style="--accent:var(--blue)" href="docs/numeric-design.md">
+        <small>01 / NUMERICAL</small>
+        <h3>数值怎么落地</h3>
+        <p>从活动总消耗反推成长、怪物、技能和奖励；用模拟、GM/Lua 和服务器日志验收。</p>
+        <div class="meta">方法说明 →</div>
+      </a>
+      <a class="card" style="--accent:var(--mint)" href="docs/system-design.md">
+        <small>02 / SYSTEM</small>
+        <h3>系统怎么闭环</h3>
+        <p>活动控制流、状态流转、配置字段、异常补偿和前后端边界，按上线标准拆分。</p>
+        <div class="meta">系统方法 →</div>
+      </a>
+      <a class="card" style="--accent:var(--amber)" href="docs/product-judgment.md">
+        <small>03 / PRODUCT</small>
+        <h3>玩法怎么判断</h3>
+        <p>先回答为什么做、为什么是我们、为什么不抄、怎么验证，再谈功能和排期。</p>
+        <div class="meta">产品判断 →</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="demos">
+    <div class="section-head">
+      <h2>可玩 Demo</h2>
+      <p>都可以直接在浏览器里运行。项目内部配置和未公开内容没有放进仓库。</p>
+    </div>
+    <div class="grid">
+      <a class="card" style="--accent:var(--blue)" href="demos/d20.html">
+        <small>D20 / FUSION</small>
+        <h3>二十面野心 · 孙哥纪事</h3>
+        <p>4 幕、12 个目标、12 次检定、3 段赛车、5 种结局。把生存、牌组、营地和赛车做成互相结算的融合系统。</p>
+        <div class="meta">打开 Demo →</div>
+      </a>
+      <a class="card" style="--accent:var(--mint)" href="demos/kaoyan.html">
+        <small>SYSTEM + DEMO</small>
+        <h3>中国式考研：最后十二周</h3>
+        <p>把时间分配和风险管理做成 4 科、3 时段、11 种行动、12 周的系统，HTML 直接试玩。</p>
+        <div class="meta">打开 Demo →</div>
+      </a>
+      <a class="card" style="--accent:var(--amber)" href="demos/tuanzi.html">
+        <small>2-MIN LOOP</small>
+        <h3>团子清洁队</h3>
+        <p>短局收集玩法：先定价值公式，再做 14 项局内升级，补状态边界和验收用例。</p>
+        <div class="meta">打开 Demo →</div>
+      </a>
+    </div>
+    <div class="proto">
+      <a href="prototypes/liufen.html"><b>六分街深夜剪辑室</b><span>素材选择 / 排序 / 试映反馈</span></a>
+      <a href="prototypes/chunfeng.html"><b>春风编花会</b><span>花材选择 / 环形布置 / 多目标评分</span></a>
+      <a href="prototypes/jiuying.html"><b>旧影回声</b><span>曝光修复 / 事实推断 / 核对归档</span></a>
+      <a href="prototypes/jingling.html"><b>精灵巡游季</b><span>传闻选择 / 环境判断 / 共鸣挑战</span></a>
+    </div>
+  </section>
+
+  <section class="section" id="thinking">
+    <div class="section-head">
+      <h2>我怎么判断一个玩法</h2>
+      <p>像制作人一样汇报：先讲方向，再讲功能；先讲验证，再讲排期。</p>
+    </div>
+    <div class="two">
+      <div class="list">
+        <h3>五个问题</h3>
+        <ol>
+          <li><b>为什么现在做：</b>市场是否同质，用户为什么换游戏，现有能力能不能形成差异。</li>
+          <li><b>为什么是我们：</b>我们已有的系统、内容、工具或数据能不能成为优势。</li>
+          <li><b>为什么不抄：</b>竞品只回答“它为什么有效”，不直接复制 UI 和功能。</li>
+          <li><b>怎么验证：</b>先用最小闭环、模拟、灰度和投放数据验证，再扩大投入。</li>
+          <li><b>失败怎么退：</b>上线前约定观察指标、停止条件和回滚方案。</li>
+        </ol>
+      </div>
+      <div class="list">
+        <h3>新玩法拆四层</h3>
+        <ul>
+          <li><b>机制：</b>有没有新的玩家决策。</li>
+          <li><b>节奏：</b>是否服务目标时长和用户习惯。</li>
+          <li><b>表达：</b>是否能被看见、理解和传播。</li>
+          <li><b>商业：</b>是否不破坏体验，且能形成可持续投放或付费。</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">目标</span><span class="tag">机制</span><span class="tag">数值</span><span class="tag">信息</span><span class="tag">验证</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>高原｜系统策划 / 数值策划｜2027 届</div>
+    <div><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a> · <a href="https://github.com/LittleGrass1127/game-design-portfolio">GitHub</a> · 内部数据已脱敏</div>
+  </footer>
+</div>
+</body>
+</html>
