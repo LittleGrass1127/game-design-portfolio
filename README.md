@@ -3,8 +3,7 @@
 2027 届本科｜大连理工大学（985 / 双一流 A 类）｜系统策划 / 数值策划
 
 - 飞书完整版：https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd
-- GitHub Pages：https://littlegrass1127.github.io/game-design-portfolio/
-- 高原个人作品集原版归档：https://ucnwdsitb71n.feishu.cn/wiki/IgKjwlMMlik2hQkkth0c7YisnXc
+- 唯一在线入口：https://littlegrass1127.github.io/game-design-portfolio/
 
 这里放我能公开的工作：三段实习、可玩 Demo、系统与数值方案，还有一些做完之后才想明白的复盘。内部配置、UID、Depot 路径和未公开数据没有放。
 
@@ -33,6 +32,8 @@
 
 ## 可以直接玩
 
+统一入口：[可玩游戏大厅](play.html)。可以切换游戏、全屏、单独打开 HTML，也可以只下载当前游戏。
+
 - [《二十面野心·孙哥纪事》](demos/d20.html)：4 幕、12 个目标、12 次检定、3 段赛车、5 种结局。
 - [《中国式考研：最后十二周》](demos/kaoyan.html)：把时间分配和风险管理做成 12 周系统。
 - [《团子清洁队》](demos/tuanzi.html)：2 分钟短局收集，14 项局内升级和 15 条验收。
@@ -40,7 +41,7 @@
 - [春风编花会](prototypes/chunfeng.html)：花材选择、环形布置和多目标评分。
 - [旧影回声](prototypes/jiuying.html)：曝光修复、事实推断和核对归档。
 - [精灵巡游季](prototypes/jingling.html)：传闻选择、环境判断和结伴挑战。
-- [下载全部 HTML 游戏（离线 ZIP）](downloads/playable-games.zip)：3 个完整 Demo + 4 个交互原型。
+- [下载全部 HTML 游戏（离线 ZIP）](downloads/playable-games.zip)：包含启动页、3 个完整 Demo 和 4 个交互原型。完整解压后双击 `play.html`，也可单独打开任意游戏 HTML。
 
 ## 我平时怎么做事
 

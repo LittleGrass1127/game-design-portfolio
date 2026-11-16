@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="高原的可玩游戏大厅：7 个无需安装、可在线或离线运行的 HTML 游戏与交互原型。">
+<title>可玩游戏大厅｜高原作品集</title>
+<style>
+:root{--bg:#101722;--panel:#172131;--line:#2c394b;--text:#f3f6f8;--muted:#a6b2c2;--lime:#d6ef72;--blue:#86bfff;--coral:#ff9b86}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif}button,a{font:inherit}button{color:inherit}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,iframe:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+body{min-height:100vh;background:radial-gradient(circle at 85% 0,#243a5355,transparent 32rem),var(--bg)}
+.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 28px;border-bottom:1px solid var(--line);background:#101722ed}
+.identity{display:flex;align-items:center;gap:14px;min-width:0}.mark{display:grid;place-items:center;width:36px;height:36px;flex:0 0 auto;background:var(--lime);color:#18202b;border-radius:9px;font-weight:950;transform:rotate(-4deg)}
+.identity b{display:block;font-size:15px}.identity small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.top-actions{display:flex;align-items:center;gap:10px}.mode{font-size:12px;color:var(--lime);padding:6px 10px;border:1px solid #d6ef7244;border-radius:99px;white-space:nowrap}
+.icon-btn,.action{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:#ffffff05;border-radius:9px;min-height:38px;padding:8px 13px;cursor:pointer;font-size:13px;font-weight:700}.icon-btn:hover,.action:hover{border-color:var(--blue);color:var(--blue)}.action.primary{background:var(--lime);border-color:var(--lime);color:#17202b}.action.primary:hover{background:#e4f69b;color:#17202b}
+.shell{display:grid;grid-template-columns:310px minmax(0,1fr);min-height:calc(100vh - 72px)}
+.library{border-right:1px solid var(--line);padding:25px 18px 30px;background:#121b28}.library-head{padding:0 9px 18px}.library h1{font-size:24px;letter-spacing:-.04em;margin:0 0 8px}.library-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+.game-list{display:grid;gap:7px}.game-button{width:100%;display:grid;grid-template-columns:36px 1fr 18px;align-items:center;gap:11px;text-align:left;border:1px solid transparent;background:transparent;border-radius:11px;padding:12px 10px;cursor:pointer}.game-button:hover{background:#ffffff06}.game-button.active{background:#223044;border-color:#3a4c63}.game-number{font:700 12px/1 ui-monospace,monospace;color:var(--muted)}.game-button.active .game-number{color:var(--lime)}.game-copy b{display:block;font-size:13px;line-height:1.4}.game-copy small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.game-arrow{color:var(--muted);opacity:0}.game-button.active .game-arrow{opacity:1;color:var(--lime)}
+.library-foot{margin:22px 9px 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.8}.library-foot a{color:var(--blue);font-weight:700}
+.player{min-width:0;padding:26px 30px 36px}.player-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}.eyebrow{color:var(--blue);font:700 11px/1.4 ui-monospace,monospace;letter-spacing:.08em}.player h2{font-size:clamp(25px,3vw,40px);letter-spacing:-.05em;line-height:1.15;margin:8px 0}.description{max-width:700px;color:var(--muted);font-size:13px;line-height:1.75;margin:0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tag{font-size:11px;color:#c8d3df;border:1px solid var(--line);border-radius:99px;padding:4px 9px}
+.head-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;flex:0 0 auto}.stage{position:relative;height:min(68vh,760px);min-height:460px;background:#080d14;border:1px solid #36465b;border-radius:14px;overflow:hidden;box-shadow:0 24px 70px #0005}.stage iframe{display:block;width:100%;height:100%;border:0;background:white}.stage-loading{position:absolute;inset:0;display:grid;place-items:center;background:#0b111a;color:var(--muted);font-size:13px;pointer-events:none;transition:opacity .18s}.stage-loading.done{opacity:0}.fullscreen-btn{position:absolute;right:12px;bottom:12px;width:40px;height:40px;padding:0;background:#101722dc;border-color:#ffffff44;color:white;opacity:.35}.stage:hover .fullscreen-btn,.fullscreen-btn:focus-visible{opacity:1}
+.player-foot{display:flex;justify-content:space-between;gap:20px;margin-top:14px;color:var(--muted);font-size:12px;line-height:1.7}.controls{max-width:720px}.controls b{color:#d8e0e9}.offline-note{text-align:right;white-space:nowrap}.offline-note a{color:var(--lime);font-weight:700}
+.mobile-select{display:none;width:100%;margin-bottom:14px;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;font:inherit}
+@media(max-width:1050px){.shell{grid-template-columns:260px minmax(0,1fr)}.player{padding:22px 20px 30px}.player-head{display:block}.head-actions{justify-content:flex-start;margin-top:16px}.stage{height:64vh;min-height:420px}}
+@media(max-width:720px){.topbar{height:auto;min-height:64px;padding:14px 16px}.identity small,.mode,.top-actions .label{display:none}.shell{display:block}.library{display:none}.mobile-select{display:block}.player{padding:20px 14px 28px}.player h2{font-size:28px}.stage{height:66vh;min-height:430px;border-radius:10px}.player-foot{display:block}.offline-note{text-align:left;margin-top:10px;white-space:normal}.head-actions .action{flex:1}.description{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="identity" href="index.html" aria-label="返回高原作品集首页"><span class="mark">高</span><span><b>可玩游戏大厅</b><small>GAO YUAN · PLAYABLE PORTFOLIO</small></span></a>
+  <div class="top-actions"><span class="mode" id="runMode">浏览器直接运行</span><a class="icon-btn" href="index.html"><span aria-hidden="true">←</span><span class="label">返回作品集</span></a></div>
+</header>
+<main class="shell">
+  <aside class="library" aria-label="游戏列表">
+    <div class="library-head"><h1>选一个，直接玩。</h1><p>3 个完整 Demo，4 个交互原型。<br>不用安装，不需要联网加载素材。</p></div>
+    <div class="game-list" id="gameList"></div>
+    <div class="library-foot">离线游玩：下载 ZIP 后完整解压，双击其中的 <b>play.html</b>。每个游戏也都是独立 HTML，可单独打开。<br><br><a href="downloads/playable-games.zip" download>下载全部游戏与启动页 ↓</a></div>
+  </aside>
+  <section class="player" aria-live="polite">
+    <label class="mobile-select"><select id="mobileSelect" aria-label="选择游戏" style="width:100%;background:transparent;color:inherit;border:0;outline:0"></select></label>
+    <div class="player-head">
+      <div><div class="eyebrow" id="gameType"></div><h2 id="gameTitle"></h2><p class="description" id="gameDescription"></p><div class="tags" id="gameTags"></div></div>
+      <div class="head-actions"><a class="action" id="openDirect" target="_blank" rel="noopener">单独打开 HTML ↗</a><a class="action primary" id="downloadCurrent" download>下载当前游戏 ↓</a></div>
+    </div>
+    <div class="stage" id="stage">
+      <iframe id="gameFrame" title="游戏运行窗口" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
+      <div class="stage-loading" id="loading">正在打开游戏…</div>
+      <button class="icon-btn fullscreen-btn" id="fullscreenButton" title="全屏游玩" aria-label="全屏游玩">⛶</button>
+    </div>
+    <div class="player-foot"><div class="controls"><b>操作：</b><span id="gameControls"></span><br>游戏内声音需首次点击后才会启用；建议电脑端 Chrome / Edge 游玩。</div><div class="offline-note"><a href="downloads/playable-games.zip" download>下载完整离线包</a><br><span id="fileHint">ZIP 内含启动页与全部单文件游戏</span></div></div>
+  </section>
+</main>
+<script>
+(() => {
+  'use strict';
+  const games = [
+    {id:'d20',path:'demos/d20.html',title:'二十面野心 · 孙哥纪事',type:'COMPLETE DEMO / D20 FUSION',short:'检定、牌组与多结局',description:'4 幕、12 个目标、12 次检定、3 段赛车与 5 种结局。把生存、牌组、营地和赛车放进同一套结算关系。',tags:['完整 Demo','多结局','鼠标操作'],controls:'鼠标点击进行选择与检定；按页面提示推进剧情。'},
+    {id:'kaoyan',path:'demos/kaoyan.html',title:'中国式考研 · 最后十二周',type:'COMPLETE DEMO / TIME & RISK',short:'12 周时间与风险管理',description:'4 科、3 时段、11 种行动、12 周。时间分配不是单纯堆收益，还要处理精力、压力、金钱与目标分数线。',tags:['完整 Demo','资源管理','鼠标操作'],controls:'鼠标点击安排每周行动，确认后进入下一周。'},
+    {id:'tuanzi',path:'demos/tuanzi.html',title:'团子清洁队',type:'COMPLETE DEMO / 2-MINUTE LOOP',short:'2 分钟收集与局内构筑',description:'移动、吸附、同色合成与回车交付组成 2 分钟短局；14 项升级改变容量、收益、移动和合成方式。',tags:['完整 Demo','键盘 / 触控','14 项升级'],controls:'WASD / 方向键移动，空格冲刺；也可点击或拖动画面移动。'},
+    {id:'liufen',path:'prototypes/liufen.html',title:'六分街深夜剪辑室',type:'INTERACTION PROTOTYPE / EDITING',short:'素材选择、排序与试映',description:'按委托选择素材、调整剪辑顺序并试映，让主题匹配与镜头节奏同时影响反馈。',tags:['交互原型','排序','选择'],controls:'鼠标选择素材并调整顺序，完成剪辑后试映。'},
+    {id:'chunfeng',path:'prototypes/chunfeng.html',title:'春风编花会',type:'INTERACTION PROTOTYPE / ARRANGEMENT',short:'花材布置与多目标评分',description:'选择花材并进行环形布置，在愿望、色彩和相邻关系之间寻找兼顾方案。',tags:['交互原型','空间布置','评分'],controls:'鼠标选择花材并点击位置布置，按提示提交作品。'},
+    {id:'jiuying',path:'prototypes/jiuying.html',title:'旧影回声',type:'INTERACTION PROTOTYPE / DEDUCTION',short:'修复、推断与核对归档',description:'先调整曝光修复照片，再区分事实与推断，最后核对证据并完成归档。',tags:['交互原型','观察','推断'],controls:'鼠标调整照片参数、选择线索分类并核对答案。'},
+    {id:'jingling',path:'prototypes/jingling.html',title:'精灵巡游季',type:'INTERACTION PROTOTYPE / CHOICE',short:'传闻判断与共鸣挑战',description:'根据传闻和环境判断精灵偏好，选择共鸣方式，再完成结伴挑战。',tags:['交互原型','环境判断','序列挑战'],controls:'鼠标阅读传闻、选择共鸣并依次完成挑战操作。'}
+  ];
+  const $ = id => document.getElementById(id);
+  const list = $('gameList'), select = $('mobileSelect'), frame = $('gameFrame');
+  let current = null;
+  games.forEach((game, index) => {
+    const button = document.createElement('button');
+    button.className = 'game-button'; button.dataset.game = game.id;
+    button.innerHTML = `<span class="game-number">${String(index + 1).padStart(2,'0')}</span><span class="game-copy"><b>${game.title}</b><small>${game.short}</small></span><span class="game-arrow">→</span>`;
+    button.addEventListener('click', () => openGame(game.id, true)); list.appendChild(button);
+    const option = document.createElement('option'); option.value = game.id; option.textContent = game.title; select.appendChild(option);
+  });
+  select.addEventListener('change', () => openGame(select.value, true));
+  frame.addEventListener('load', () => $('loading').classList.add('done'));
+  function openGame(id, updateUrl) {
+    const game = games.find(item => item.id === id) || games[0]; current = game;
+    document.querySelectorAll('.game-button').forEach(button => { const active = button.dataset.game === game.id; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+    select.value = game.id; $('gameType').textContent = game.type; $('gameTitle').textContent = game.title; $('gameDescription').textContent = game.description;
+    $('gameTags').replaceChildren(...game.tags.map(text => { const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = text; return tag; }));
+    $('gameControls').textContent = game.controls; $('openDirect').href = game.path; $('downloadCurrent').href = game.path; $('downloadCurrent').setAttribute('download', game.path.split('/').pop());
+    frame.title = `${game.title}｜游戏运行窗口`; $('loading').classList.remove('done'); frame.src = game.path;
+    document.title = `${game.title}｜可玩游戏大厅`;
+    if (updateUrl) { const url = new URL(location.href); url.searchParams.set('game', game.id); history.replaceState(null, '', url); }
+  }
+  $('fullscreenButton').addEventListener('click', async () => {
+    try { if (document.fullscreenElement) await document.exitFullscreen(); else await $('stage').requestFullscreen(); } catch (_) { window.open(current.path, '_blank'); }
+  });
+  if (location.protocol === 'file:') { $('runMode').textContent = '本地离线模式'; $('fileHint').textContent = '当前无需联网，游戏文件均在本机'; }
+  openGame(new URLSearchParams(location.search).get('game') || games[0].id, false);
+})();
+</script>
+</body>
+</html>
