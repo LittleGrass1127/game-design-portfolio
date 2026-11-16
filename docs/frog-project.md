@@ -28,6 +28,9 @@
 - **奖励与消耗：**商店分层、每日限购、活动货币产出与消耗、首杀 / 复刷 / 任务奖励的拆分。
 - **验证：**Excel 配表、Codex 批量模拟、UE 实机、GM/Lua 构造场景、服务器日志核对。
 
+### 协作接口
+
+作为设计与数值接口，对接 PM、战斗策划、系统策划、程序、美术和 QA；同步设计目的、数值链路、字段接口、状态流、资源需求、排期风险和验收口径，会议结论回写文档并跟踪行动项。
 ## 三、关键难点
 
 ### 1. 怪物强度不能先拍，再让玩家追
@@ -129,4 +132,5 @@
 
 - [叠纸实习｜活动数值设计与验证方法](https://ucnwdsitb71n.feishu.cn/wiki/H1npwl9xkimlxCkOjr0cnDYOnJo)
 - [效率系统｜AI、Lua、命令行](https://ucnwdsitb71n.feishu.cn/wiki/XUgcwjy6Mioh7BkfHk4cbbnNnzg)
+
 

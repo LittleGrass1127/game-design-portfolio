@@ -57,6 +57,9 @@
 - 用 Codex 做 AI 图像识别自动化脚本，辅助测试和素材检查。
 - 拆入口 Icon、预告、开启、完成、主界面、玩法说明、礼包、Popup、Localization 和美术需求，与程序、美术、QA 对齐交付。
 
+### 4. 协作接口
+
+作为系统设计接口，对接 PM、战斗策划、系统策划、程序、美术和 QA；同步活动流程、订单与积分规则、Config 字段、前后端边界、Icon / UI / 动效、本地化、排期风险和验收口径，并把会议结论转成文档和行动项。
 ## 四、关键设计判断
 
 ### 为什么不能直接抄竞品？
@@ -105,4 +108,5 @@
 
 - [海外休闲二合｜活动拆解](https://ucnwdsitb71n.feishu.cn/wiki/Q51wwgCe7iZtVHkBVrLcajA7nnd)
 - [项目实践与配置验证｜方法说明](https://ucnwdsitb71n.feishu.cn/wiki/YA6Fw88fLiHXKekMNfUcDHJanJf)
+
 
