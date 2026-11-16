@@ -41,6 +41,7 @@
 - [春风编花会](prototypes/chunfeng.html)：花材选择、环形布置、愿望与多目标评分。
 - [旧影回声](prototypes/jiuying.html)：曝光修复、事实/推断分类、核对与归档。
 - [精灵巡游季](prototypes/jingling.html)：传闻选择、环境判断、共鸣与结伴挑战。
+- [下载全部 HTML 游戏（离线 ZIP）](downloads/playable-games.zip)：包含 3 个完整 Demo 和 4 个交互原型，可直接解压打开。
 
 ## 我关注的三件事
 
