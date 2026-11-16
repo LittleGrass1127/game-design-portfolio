@@ -5,10 +5,11 @@
 - 飞书作品集：https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd
 - GitHub Pages：https://littlegrass1127.github.io/game-design-portfolio/
 - GitHub 仓库：https://github.com/LittleGrass1127/game-design-portfolio
+- 高原个人作品集原版归档：https://ucnwdsitb71n.feishu.cn/wiki/IgKjwlMMlik2hQkkth0c7YisnXc
 
 ## 这个仓库放什么
 
-这里只放可以公开查看的内容：可玩 Demo、系统/数值方法说明、产品判断、游戏经历与项目复盘。实习项目的内部配置、UID、Depot 路径、未公开内容和原始数据不在仓库中。
+这里放的是我能公开的工作：可玩 Demo、系统与数值方案、项目复盘，还有游戏经历。实习里的内部配置、UID、Depot 路径和未公开数据没有放上来。
 
 ## 3 分钟阅读路线
 
@@ -23,12 +24,13 @@
 
 - [面试复盘与原创设计｜青蛙、二合、暗黑4、原神](docs/interview-and-original-design.md)：整理飞书妙记中的原始问答、复盘后的更好回答、青蛙和二合的项目实际、暗黑4新职业“罪契使”和原神新角色“顾霜”。
 
-## 实习项目
+## 三段实习项目
 
 **项目定位：**《无限暖暖》是 UE 开发的换装开放世界手游；二合项目是一款面向欧美市场的卡通二合手游；《贪吃蛇大作战》是一款以吞噬成长、碰撞生存和多人竞技为核心的休闲手游。
 
 - [二合活动｜从玩法理解到项目落地](docs/merge-project.md)：生成器、物品链、订单、棋盘空间、阶段与商业奖励的系统拆解，以及通行证、积分、剧情、图鉴和 Chess & Board 的项目实践。
 - [青蛙战斗｜强数值活动的战斗与奖励闭环](docs/frog-project.md)：从成长上限反推怪物强度，279 个战斗情形、攻速改版重标、324 条合法路线验证，以及 GM/Lua 和服务器日志验收。
+- [试玩广告｜把 30 秒广告做成可玩原型](docs/trial-ad.md)：围绕第一次理解、第一次反馈和“差一点赢”的结束点设计 30 秒试玩原型；3 款上线，单款累计消耗 3 万元，ROAS 7d 10%。
 
 ## 可玩 Demo
 
