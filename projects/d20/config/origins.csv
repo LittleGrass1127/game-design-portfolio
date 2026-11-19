@@ -1,0 +1,5 @@
+id,title,description,stat,statBonus,trained,trait
+orator,演说家,你总能先说出那句后来被当作会议结论的话。但定义一件事，与承担它，是两门不同的手艺。,rhetoric,2,rhetoric,抢先定义
+hunter,协议猎手,你读合同的顺序是附录、脚注、签字，再到封面。沉默有时比条款更接近真实价格。,insight,2,insight,读懂沉默
+founder,连续创业者,你擅长在账户见底前找到下一张桌子。今晚，你想试一次不把代价留给后来的人。,nerve,2,nerve,下一张牌
+engineer,工程叛徒,你曾替别人把愿景接进电源，后来发现，最重要的开关从不画在结构图里。,craft,2,craft,看见接口

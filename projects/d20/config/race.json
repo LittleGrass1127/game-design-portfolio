@@ -1,0 +1,90 @@
+{
+  "_说明": "夜航赛车：车辆基础性能、吸收成长、夜雾走廊、车流与评分",
+  "track": {
+    "lengthBase": 2100,
+    "lengthPerAct": 120,
+    "timeLimit": 100
+  },
+  "road": {
+    "left": 230,
+    "right": 730,
+    "top": 0,
+    "bottom": 540
+  },
+  "lanes": [
+    280,
+    380,
+    480,
+    580,
+    680
+  ],
+  "base": {
+    "speed": 148,
+    "acceleration": 48,
+    "handling": 230,
+    "verticalSpeed": 195,
+    "energy": 100
+  },
+  "growth": {
+    "max": 8,
+    "speed": 0.04,
+    "acceleration": 0.055,
+    "handling": 0.018
+  },
+  "speedCeilingMultiplier": 1.35,
+  "boost": {
+    "speedMultiplier": 1.24,
+    "accelMultiplier": 1.3,
+    "minEnergy": 1
+  },
+  "brakeDecel": 100,
+  "precision": {
+    "minOffset": 8,
+    "energy": 8
+  },
+  "bumpImpulse": 105,
+  "corridor": {
+    "startDelay": 4,
+    "phaseDuration": 7,
+    "warningLead": 1.7,
+    "baseHalfWidth": 96,
+    "openHalfWidth": 250,
+    "laneOrder": [
+      0,
+      3,
+      1,
+      4,
+      2
+    ],
+    "actOffset": 3,
+    "drainPerSecond": 9
+  },
+  "traffic": {
+    "maxOnRoad": 12,
+    "total": 240,
+    "speedMin": 54,
+    "speedJitter": 33,
+    "laneChangeFirst": [
+      2.8,
+      2.2
+    ],
+    "laneChangeEvery": [
+      3,
+      2
+    ],
+    "colors": [
+      "#c49261",
+      "#709d99",
+      "#a15c51",
+      "#93a971",
+      "#a495b5"
+    ]
+  },
+  "score": {
+    "progress": 1200,
+    "absorbed": 82,
+    "maxCombo": 31,
+    "precisionHit": 68,
+    "safeSecond": 4
+  }
+}

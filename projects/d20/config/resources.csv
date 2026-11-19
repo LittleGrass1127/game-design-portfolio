@@ -1,0 +1,5 @@
+id,label,uiLabel,start,min,max
+capital,资本,资本,8,0,40
+reputation,声望,声誉,1,0,12
+pressure,压力,压力,0,0,6
+leverage,筹码,筹码,0,0,12

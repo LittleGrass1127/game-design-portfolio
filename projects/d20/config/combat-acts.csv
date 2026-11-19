@@ -1,0 +1,5 @@
+act,enemiesPerWave,enemyHp,enemySpeedMin,enemySpeedJitter,contactDamage,scrapValue
+1,5,32,36,7,4,2
+2,6,38,40,7,5,2
+3,7,44,44,7,6,3
+4,8,50,48,7,7,3

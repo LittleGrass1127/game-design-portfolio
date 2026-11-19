@@ -1,0 +1,383 @@
+{
+  "reply_on_record": {
+    "advantageIf": {
+      "condition": {
+        "trait": "抢先定义"
+      },
+      "reason": "抢先定义：你熟悉如何把一次谈话变成正式记录。"
+    }
+  },
+  "inspect_invitation": {
+    "advantageIf": {
+      "condition": {
+        "trait": "看见接口"
+      },
+      "reason": "看见接口：你辨认出机器打印与后来覆盖的痕迹。"
+    }
+  },
+  "board_without_answer": {
+    "advantageIf": {
+      "condition": {
+        "trait": "下一张牌"
+      },
+      "reason": "下一张牌：你习惯在条件齐备之前先抵达现场。"
+    }
+  },
+  "read_omission": {
+    "advantageIf": {
+      "condition": {
+        "trait": "读懂沉默"
+      },
+      "reason": "读懂沉默：你把缺席的签字当作一项信息。"
+    }
+  },
+  "buy_clean_copy": {
+    "required": {
+      "resource": "capital",
+      "gte": 2
+    }
+  },
+  "compare_lists": {
+    "advantageIf": {
+      "condition": {
+        "flag": "proxy_question"
+      },
+      "reason": "你已知道该找代理人，而不只是股东。"
+    }
+  },
+  "enter_terrace": {
+    "advantageIf": {
+      "condition": {
+        "relation": "broker",
+        "gte": 1
+      },
+      "reason": "莫小姐愿意替你的出现提供一个合适的说法。"
+    }
+  },
+  "enter_service": {
+    "advantageIf": {
+      "condition": {
+        "item": "维修通行证"
+      },
+      "reason": "维修通行证能让你少解释一次为什么在这里。"
+    }
+  },
+  "reserve_votes": {
+    "required": {
+      "resource": "capital",
+      "gte": 3
+    }
+  },
+  "follow_print_log": {
+    "advantageIf": {
+      "condition": {
+        "relation": "engineer",
+        "gte": 1
+      },
+      "reason": "乔工愿意解释值班系统里的内部简称。"
+    }
+  },
+  "ask_joint_witness": {
+    "required": {
+      "any": [
+        {
+          "relation": "engineer",
+          "gte": 1
+        },
+        {
+          "trait": "抢先定义"
+        },
+        {
+          "stat": "rhetoric",
+          "gte": 4
+        }
+      ]
+    }
+  },
+  "add_test_clause": {
+    "modifier": {
+      "condition": {
+        "trait": "有据可引"
+      },
+      "value": 1,
+      "reason": "有据可引：你练习过怎样把承诺写成可验收的条件。"
+    },
+    "advantageIf": {
+      "condition": {
+        "flag": "public_agenda"
+      },
+      "reason": "已有持票人要求把恢复方案写入议程。"
+    }
+  },
+  "question_proxy": {
+    "modifier": {
+      "condition": {
+        "flag": "shadow_mandate"
+      },
+      "value": 2,
+      "reason": "你掌握了代理席位的实际控制痕迹。"
+    }
+  },
+  "secure_bridge": {
+    "advantageIf": {
+      "condition": {
+        "relation": "broker",
+        "gte": 1
+      },
+      "reason": "莫小姐已见过你兑现一项不夸张的承诺。"
+    }
+  },
+  "check_circuits": {
+    "advantageIf": {
+      "condition": {
+        "any": [
+          {
+            "item": "维修通行证"
+          },
+          {
+            "relation": "engineer",
+            "gte": 2
+          }
+        ]
+      },
+      "reason": "你有维护入口，或得到乔工足够明确的协助。"
+    }
+  },
+  "use_maintenance_log": {
+    "required": {
+      "any": [
+        {
+          "item": "封存维护日志"
+        },
+        {
+          "item": "签发链副本"
+        },
+        {
+          "trait": "读懂沉默"
+        },
+        {
+          "flag": "shadow_mandate"
+        }
+      ],
+      "description": "持有维护或签发记录，或拥有「读懂沉默」，或已掌握代理席位的线索"
+    }
+  },
+  "preserve_evidence": {
+    "modifier": {
+      "condition": {
+        "any": [
+          {
+            "item": "签发链副本"
+          },
+          {
+            "item": "交接底稿"
+          }
+        ]
+      },
+      "value": 2,
+      "reason": "外部记录能够与机房账目相互核对。"
+    }
+  },
+  "map_open_access": {
+    "advantageIf": {
+      "condition": {
+        "relation": "engineer",
+        "gte": 2
+      },
+      "reason": "乔工愿意为你指出维护文档之外的实际限制。"
+    }
+  },
+  "price_liabilities": {
+    "modifier": {
+      "condition": {
+        "item": "保留意见"
+      },
+      "value": 2,
+      "reason": "先前写明的责任边界让你有据可谈。"
+    }
+  },
+  "run_minimal_test": {
+    "advantageIf": {
+      "condition": {
+        "any": [
+          {
+            "flag": "safe_circuit"
+          },
+          {
+            "item": "离线密钥"
+          }
+        ]
+      },
+      "reason": "已确认的回路或备用密钥降低了测试的不确定性。"
+    }
+  },
+  "demonstrate_evidence": {
+    "modifier": {
+      "condition": {
+        "flag": "audit_ready"
+      },
+      "value": 2,
+      "reason": "核验过的总账提供了明确的验证对象。"
+    }
+  },
+  "guarantee_maintenance": {
+    "required": {
+      "resource": "capital",
+      "gte": 2
+    }
+  },
+  "seat_counsel": {
+    "required": {
+      "all": [
+        {
+          "relation": "counsel",
+          "gte": 1
+        },
+        {
+          "not": {
+            "flag": "counsel_withdrew"
+          }
+        }
+      ],
+      "description": "晏律师关系≥1，且她尚未退出联合陈述"
+    },
+    "advantageIf": {
+      "condition": {
+        "relation": "counsel",
+        "gte": 3
+      },
+      "reason": "晏律师相信你会保留事实里的不方便。"
+    }
+  },
+  "show_test_log": {
+    "modifier": {
+      "condition": {
+        "any": [
+          {
+            "flag": "working_demo"
+          },
+          {
+            "flag": "safe_rollback"
+          }
+        ]
+      },
+      "value": 2,
+      "reason": "测试或回滚都有完整记录，不必靠回忆补齐。"
+    }
+  },
+  "own_the_room": {
+    "disadvantageIf": {
+      "condition": {
+        "resource": "pressure",
+        "gte": 5
+      },
+      "reason": "连续积累的压力让你更难独自接住整桌人的问题。"
+    }
+  },
+  "protect_disclosure": {
+    "modifier": {
+      "condition": {
+        "flag": "proxy_on_record"
+      },
+      "value": 2,
+      "reason": "代理席位的问题已经进入正式记录，无法轻易删去。"
+    }
+  },
+  "protect_public_access": {
+    "advantageIf": {
+      "condition": {
+        "any": [
+          {
+            "flag": "open_blueprint"
+          },
+          {
+            "flag": "users_documented"
+          }
+        ]
+      },
+      "reason": "你能说清开放给谁，以及怎样开始运行。"
+    }
+  },
+  "protect_control": {
+    "modifier": {
+      "condition": {
+        "flag": "priced_liabilities"
+      },
+      "value": 2,
+      "reason": "你已经给历史责任与恢复成本留出边界。"
+    },
+    "advantageIf": {
+      "condition": {
+        "relation": "broker",
+        "gte": 2
+      },
+      "reason": "莫小姐愿意公开确认资金安排的可信度。"
+    }
+  },
+  "final_control": {
+    "modifier": {
+      "condition": {
+        "flag": "funded_offer"
+      },
+      "value": 2,
+      "reason": "资金安排已经得到现场确认。"
+    }
+  },
+  "final_open": {
+    "modifier": {
+      "condition": {
+        "flag": "public_charter"
+      },
+      "value": 2,
+      "reason": "公共节点与维护安排已经进入讨论文本。"
+    },
+    "advantageIf": {
+      "condition": {
+        "all": [
+          {
+            "relation": "engineer",
+            "gte": 3
+          },
+          {
+            "not": {
+              "flag": "engineer_withdrew"
+            }
+          }
+        ]
+      },
+      "reason": "乔工愿意与其他工程师共同承担持续运行。"
+    }
+  },
+  "final_publish": {
+    "modifier": {
+      "condition": {
+        "any": [
+          {
+            "flag": "audit_ready"
+          },
+          {
+            "flag": "independent_custody"
+          }
+        ]
+      },
+      "value": 2,
+      "reason": "资料有可核验来源，或已脱离单方保管。"
+    },
+    "advantageIf": {
+      "condition": {
+        "all": [
+          {
+            "relation": "counsel",
+            "gte": 3
+          },
+          {
+            "not": {
+              "flag": "counsel_withdrew"
+            }
+          }
+        ]
+      },
+      "reason": "晏律师愿意为卷宗的来源与限定范围作正式说明。"
+    }
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "_说明": "合同远征地图：每幕 3 个合同节点（线索/同伴/出口）按顺序解锁",
+  "bounds": {
+    "x": 42,
+    "y": 88,
+    "w": 876,
+    "h": 402
+  },
+  "objectiveRadius": 32,
+  "objectiveRewards": [
+    {
+      "capital": 1
+    },
+    {
+      "leverage": 1
+    },
+    {
+      "reputation": 1
+    }
+  ],
+  "maps": [
+    {
+      "id": "rain-dock",
+      "title": "雨夜码头",
+      "theme": "dock",
+      "start": {
+        "x": 105,
+        "y": 435
+      },
+      "obstacles": [
+        {
+          "x": 305,
+          "y": 208,
+          "w": 150,
+          "h": 80,
+          "kind": "crate"
+        },
+        {
+          "x": 548,
+          "y": 104,
+          "w": 143,
+          "h": 108,
+          "kind": "customs"
+        },
+        {
+          "x": 190,
+          "y": 331,
+          "w": 68,
+          "h": 78,
+          "kind": "crate"
+        }
+      ],
+      "objectives": [
+        {
+          "x": 174,
+          "y": 142,
+          "title": "查验邀请函",
+          "description": "在雨棚下核对登船记录。",
+          "kind": "clue"
+        },
+        {
+          "x": 766,
+          "y": 365,
+          "title": "找到晏律师",
+          "description": "带着交接记录与晏律师碰面。",
+          "kind": "ally"
+        },
+        {
+          "x": 803,
+          "y": 135,
+          "title": "接驳艇入口",
+          "description": "材料齐备后前往玻璃宴厅。",
+          "kind": "exit"
+        }
+      ]
+    },
+    {
+      "id": "glass-banquet",
+      "title": "玻璃宴厅",
+      "theme": "banquet",
+      "start": {
+        "x": 104,
+        "y": 438
+      },
+      "obstacles": [
+        {
+          "x": 272,
+          "y": 184,
+          "w": 155,
+          "h": 90,
+          "kind": "table"
+        },
+        {
+          "x": 555,
+          "y": 295,
+          "w": 173,
+          "h": 90,
+          "kind": "table"
+        },
+        {
+          "x": 652,
+          "y": 103,
+          "w": 104,
+          "h": 72,
+          "kind": "bar"
+        }
+      ],
+      "objectives": [
+        {
+          "x": 172,
+          "y": 142,
+          "title": "核对访客名册",
+          "description": "找到真正持有代理票的人。",
+          "kind": "clue"
+        },
+        {
+          "x": 806,
+          "y": 245,
+          "title": "会合莫小姐",
+          "description": "绕过宴席，把条件谈到桌面上。",
+          "kind": "ally"
+        },
+        {
+          "x": 435,
+          "y": 429,
+          "title": "取得机房授权",
+          "description": "从服务通道前往地下机房。",
+          "kind": "exit"
+        }
+      ]
+    },
+    {
+      "id": "machine-room",
+      "title": "地下机房",
+      "theme": "machine",
+      "start": {
+        "x": 110,
+        "y": 439
+      },
+      "obstacles": [
+        {
+          "x": 251,
+          "y": 135,
+          "w": 75,
+          "h": 215,
+          "kind": "server"
+        },
+        {
+          "x": 452,
+          "y": 217,
+          "w": 78,
+          "h": 220,
+          "kind": "server"
+        },
+        {
+          "x": 661,
+          "y": 123,
+          "w": 90,
+          "h": 199,
+          "kind": "server"
+        }
+      ],
+      "objectives": [
+        {
+          "x": 148,
+          "y": 153,
+          "title": "检查隔离开关",
+          "description": "先确认停止条件，再接通电源。",
+          "kind": "clue"
+        },
+        {
+          "x": 591,
+          "y": 157,
+          "title": "与乔工核对日志",
+          "description": "绕过机柜，取得完整的维护记录。",
+          "kind": "ally"
+        },
+        {
+          "x": 824,
+          "y": 406,
+          "title": "提交测试报告",
+          "description": "把记录带到黎明议会。",
+          "kind": "exit"
+        }
+      ]
+    },
+    {
+      "id": "dawn-council",
+      "title": "黎明议会",
+      "theme": "council",
+      "start": {
+        "x": 110,
+        "y": 442
+      },
+      "obstacles": [
+        {
+          "x": 248,
+          "y": 259,
+          "w": 161,
+          "h": 78,
+          "kind": "bench"
+        },
+        {
+          "x": 552,
+          "y": 259,
+          "w": 161,
+          "h": 78,
+          "kind": "bench"
+        },
+        {
+          "x": 370,
+          "y": 117,
+          "w": 222,
+          "h": 71,
+          "kind": "council-table"
+        }
+      ],
+      "objectives": [
+        {
+          "x": 172,
+          "y": 155,
+          "title": "递交原始卷宗",
+          "description": "让证据先于陈述抵达书记席。",
+          "kind": "clue"
+        },
+        {
+          "x": 802,
+          "y": 156,
+          "title": "召集共同见证",
+          "description": "与留下来的同伴确认最后的承诺。",
+          "kind": "ally"
+        },
+        {
+          "x": 482,
+          "y": 419,
+          "title": "走向表决席",
+          "description": "所有准备就绪，决定晨星的未来。",
+          "kind": "exit"
+        }
+      ]
+    }
+  ]
+}

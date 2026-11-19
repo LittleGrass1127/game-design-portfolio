@@ -1,0 +1,17 @@
+{
+  "defaultSeed": 123,
+  "relationStart": 0,
+  "relationRange": [-2, 4],
+  "fateStart": 1,
+  "fateRange": [0, 5],
+  "crisisPressure": 6,
+  "proficiency": { "base": 2, "levelsPerStep": 2 },
+  "xp": { "success": 3, "failure": 2, "criticalBonus": 1, "cap": 99 },
+  "levelThresholds": [7, 15, 24, 34],
+  "criticalMultiplier": 1.5,
+  "maxChecks": 24,
+  "maxTraining": 3,
+  "checksPerRun": 12,
+  "dcRange": [1, 40],
+  "modifierRange": [-10, 10]
+}

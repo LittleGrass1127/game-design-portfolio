@@ -1,0 +1,12 @@
+{
+  "_说明": "合同远征：无人机波次与耐久。逐幕数值见 combat-acts.csv",
+  "waves": 3,
+  "firstWaveAt": 0.75,
+  "waveInterval": 6.5,
+  "spawnRadius": [185, 75],
+  "spawnMinGap": 170,
+  "hurtCooldown": 0.65,
+  "enemyRadius": 10,
+  "pickupRadius": 5,
+  "pickupPullSpeed": 230
+}

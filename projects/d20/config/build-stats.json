@@ -1,0 +1,21 @@
+{
+  "_说明": "buildStats(build) 的系数：行动卡 cards.* 与营地 rooms.* 的每层收益",
+  "maxCards": 12,
+  "maxRooms": 3,
+  "moveSpeed": { "base": 174, "perNerve": 0.035 },
+  "damage": { "base": 18, "perWorkshop": 0.25 },
+  "attackInterval": { "base": 0.52, "perCraft": 0.08 },
+  "attackRange": { "base": 235, "perCommand": 28 },
+  "attackTargets": { "base": 1, "perRhetoric": 1, "max": 4 },
+  "spreadRadius": { "base": 64, "perRhetoric": 4 },
+  "pickupRange": { "base": 34, "perInsight": 8 },
+  "raceHitbox": { "base": 1, "perInsight": 0.025 },
+  "raceSpeed": { "base": 1, "perNerve": 0.018 },
+  "raceRegen": { "perCraft": 0.7 },
+  "hitRefill": { "base": 14, "perWorkshop": 2 },
+  "hitKick": { "base": 7, "perWorkshop": 1 },
+  "maxHealth": { "base": 100, "perInfirmary": 25 },
+  "repair": { "perInfirmary": 0.6 },
+  "stormResistance": { "perInfirmary": 0.35 },
+  "corridorBonus": { "perCommand": 12 }
+}
