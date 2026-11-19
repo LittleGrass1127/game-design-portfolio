@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="高原的系统与数值策划作品集：叠纸、完美世界、微派实习经历，以及可玩 Demo 和项目复盘。">
+<meta name="description" content="高原的系统与数值策划作品集：可在线试玩的 HTML Demo、系统与数值方案的设计过程。">
 <title>高原｜游戏策划作品集</title>
 <style>
 :root{--bg:#10161e;--panel:#151e29;--line:#2b3644;--text:#edf1f4;--muted:#a6b0bc;--blue:#91bfe8;--lime:#d4e88a}
@@ -18,28 +18,28 @@
 </head>
 <body>
 <div class="wrap">
-<nav class="nav"><a class="name" href="#">高原 / GAO YUAN</a><div class="nav-links"><a href="#internship">实习经历</a><a href="#projects">项目经历</a><a href="play.html">可玩作品</a><a href="#experience">游戏经历与技能</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></nav>
+<nav class="nav"><a class="name" href="#">高原 / GAO YUAN</a><div class="nav-links"><a href="#demos">可玩 Demo</a><a href="#cases">设计过程</a><a href="#studies">拆解与方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></nav>
 <header class="hero">
-  <div class="meta">2027 届本科 · 大连理工大学 · 系统策划 / 数值策划</div>
-  <h1>高原，<br>游戏策划。</h1>
-  <p>三段实习分别在叠纸、完美世界和微派，做过活动战斗数值、怪物奖励、限时二合系统和试玩广告。这里按简历的口径整理我能公开的工作，也放了可以直接运行的 HTML 原型。</p>
-  <p>内部配置、UID、Depot 路径和未公开数据不在公开作品集中。模拟结果、项目内测试与线上数据分别标注。</p>
-  <div class="actions"><a class="btn primary" href="play.html">打开可玩游戏大厅</a><a class="btn" href="#internship">查看实习与项目</a><a class="btn" href="downloads/playable-games.zip" download>下载全部 HTML 游戏</a></div>
+  <div class="meta">系统策划 / 数值策划 · 设计作品</div>
+  <h1>先玩，<br>再看怎么想的。</h1>
+  <p>这里放的是能直接运行、能复核的设计作品。每个作品只回答三件事：要解决什么设计问题、做了哪些取舍、用什么方式验证。</p>
+  <p>模拟、项目内测试与线上数据分别标注；公开页面不含内部配置、ID 与未公开玩法。</p>
+  <div class="actions"><a class="btn primary" href="play.html">打开可玩游戏大厅</a><a class="btn" href="#cases">看设计过程</a><a class="btn" href="downloads/playable-games.zip" download>下载全部 HTML 游戏</a></div>
 </header>
-<section class="section" id="internship"><h2>实习经历</h2>
-  <article class="entry"><div class="entry-head"><h3>叠纸游戏</h3><p>数值与商业化策划实习生<br>《无限暖暖》<br>2026.08—至今 · 上海</p></div><div class="entry-body"><p>《无限暖暖》是一款 UE 开发的换装开放世界手游，核心体验为探索解谜、服装收集、角色养成与轻战斗。我参与 3.1 战斗活动数值设计和 3.0 怪物奖励配置。</p><ul><li>设计玩家与怪物属性、技能效果、材料消耗、商店价格、抽取概率和局内奖励，处理技能平衡、概率分布与不同投入玩家的体验。</li><li>完成任务条件、道具来源、配置表关联与具体数值搭建，并在游戏内核对结果。</li><li>在 UE / P4V 环境中按文档和 TAPD 工单完成分支同步、配置修改与提交；用 GM、命令行和 Lua 构造测试条件，结合服务器日志验收。</li></ul></div></article>
-  <article class="entry"><div class="entry-head"><h3>完美世界</h3><p>系统策划实习生<br>欧美卡通二合<br>2026.07—2026.08 · 北京</p></div><div class="entry-body"><p>项目面向欧美市场，核心循环是获取棋子、合成、完成订单并推进活动进度。我参与限时活动系统、规则、表现和测试。</p><ul><li>参与通行证、积分进度、剧情和图鉴，处理玩家分层、棋子权重、订单、多倍合成、障碍、溢出与棋盘暂存。</li><li>完善入口、预告、主界面、玩法说明、礼包和弹窗的信息、点击交互、动效与本地化，提出 Icon、UI 和动效需求。</li><li>用 SVN / Unity / GM 验证活动流程、状态切换、数值配置、奖励发放和异常场景，协助定位 Bug。</li></ul></div></article>
-  <article class="entry"><div class="entry-head"><h3>微派网络</h3><p>游戏策划实习生<br>《贪吃蛇大作战》<br>2026.03—2026.07 · 武汉</p></div><div class="entry-body"><p>《贪吃蛇大作战》是一款以吞噬成长、碰撞生存和多人竞技为核心的休闲手游。我主要参与新玩法和发行试玩广告。</p><ul><li>独立产出 3 款上线试玩广告并完成数据分析；单款累计消耗 3 万元，ROAS 7d 10%。</li><li>把广告做成 30 秒可玩原型，完成营销视频、传播素材、后台配置、测试和上线。</li><li>参与新玩法设计与原型，使用 AI 和 Cocos 辅助落地；用 Git / Fork 管理原型和工具，保留修改与回滚记录。</li></ul></div></article>
+<section class="section" id="demos"><h2>可玩 Demo</h2>
+  <article class="entry"><div class="entry-head"><h3>二十面野心 · 孙哥纪事</h3><p>D20 融合叙事 · 单文件 HTML<br>一局 12–18 分钟</p></div><div class="entry-body"><p>检定、动作、卡组、营地、赛车五套玩法，怎样共用一套资源和后果，而不是拼成五个小游戏？</p><ul><li>4 幕、12 次 D20 检定、3 段赛车、5 种结局；前一段的成败改变后一段的起点。</li><li>验证：1,600 局固定策略测试，37/37 个选项、74/74 条成败分支全部覆盖。</li></ul><a class="project-link" href="play.html?game=d20">在线试玩 →</a></div></article>
+  <article class="entry"><div class="entry-head"><h3>中国式考研：最后十二周</h3><p>时间分配系统 · C# 规则核心 + HTML 试玩版</p></div><div class="entry-body"><p>12 周、4 科、3 个时段、11 种行动，玩家怎样才能看懂自己的取舍，并在失败后复盘？</p><ul><li>行动预览与实际结算共用同一套规则，资源之间的关系都能解释。</li><li>验证：241 条规则断言、288 个事件场景通过；Unity 导出包的运行验收尚未完成。</li></ul><a class="project-link" href="play.html?game=kaoyan">在线试玩 →</a></div></article>
+  <article class="entry"><div class="entry-head"><h3>团子清洁队</h3><p>单操作合成 · 2 分钟短局</p></div><div class="entry-body"><p>只给玩家一个“移动”操作，能不能撑起收集、合成、交付的完整短局循环？</p><ul><li>自动吸附、自动合成、靠近即交付；物品价值按 (3^L−1)/2 增长，120 个团子、14 项局内升级。</li><li>验证：13 条验收用例。</li></ul><a class="project-link" href="play.html?game=tuanzi">在线试玩 →</a></div></article>
 </section>
-<section class="section" id="projects"><h2>项目经历</h2>
-  <article class="entry"><div class="entry-head"><h3>青蛙战斗</h3><p>3.1 活动战斗数值 · 叠纸<br>2026.10—2026.11</p></div><div class="entry-body"><p>活动用商店限购推动养成，再由 12 关 Boss 检验战力。换装用户更看重角色、探索和陪伴，所以难度不能变成必须高投入才能通过的考试。</p><ul><li>负责商店、成长、技能、怪物和奖励，并从玩家各阶段能达到的等级与资源反推怪物强度。</li><li>攻速调整后按 31 个属性等级、3 种战斗时长和 3 个槽位展开 279 个情形，分别处理直伤、灼烧、护盾、控制和吸血。</li><li>完成 12 关配置检查及 324 条合法路线模拟。结果用于验证规则与配置可达性，不等同于真人胜率或线上留存。</li></ul><a class="project-link" href="docs/frog-project.md">查看完整项目记录 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>二合活动</h3><p>限时二合系统 · 完美世界<br>2026.07—2026.08</p></div><div class="entry-body"><p>活动通过订单获得 Token / 棋子，合成后推进积分、阶段、通行证和图鉴，给主线订单之外的短期目标。</p><ul><li>负责活动需求、玩家分层、棋子权重、订单 / Token、积分 / 通行证 / 图鉴和异常补发。</li><li>把订单需求、棋子产出、棋盘空间和奖励节奏放在一起检查，同时写清表现、交互和前后端边界。</li><li>形成可替换主题、棋子、棋盘和奖励的活动框架与验收基线。项目尚未做线上效果验证。</li></ul><a class="project-link" href="docs/merge-project.md">查看完整项目记录 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>试玩广告</h3><p>30 秒可玩原型 · 微派<br>2026.04—2026.05</p></div><div class="entry-body"><p>试玩广告要在几秒内让冷启动用户理解操作并得到反馈。不同点击速度会改变难度，因此目标距离、障碍和结束点都要跟着测试调整。</p><ul><li>独立完成选题、30 秒原型、营销视频、投放素材和后台配置，按 CTR / CVR / CPM / ROAS 迭代版本。</li><li>用第一次操作、难度变化和“差一点赢”的结束点组织 30 秒体验，不用大段说明解释规则。</li><li>3 款试玩广告上线；单款累计消耗 3 万元，ROAS 7d 10%。</li></ul><a class="project-link" href="docs/trial-ad.md">查看完整项目记录 →</a></div></article>
+<section class="section" id="playable"><h2>全部可玩作品</h2><div class="game-box"><div><h3>不用安装，打开就能玩。</h3><p>3 个完整 Demo、4 个交互原型。也可以下载 ZIP，解压后离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅</a></div><div class="game-list"><a href="play.html?game=d20">二十面野心 · 孙哥纪事<span>4 幕、12 次检定、3 段赛车、5 种结局</span></a><a href="play.html?game=kaoyan">中国式考研：最后十二周<span>4 科、3 时段、11 种行动的时间分配</span></a><a href="play.html?game=tuanzi">团子清洁队<span>2 分钟收集、合成与 14 项局内升级</span></a><a href="play.html?game=liufen">六分街深夜剪辑室<span>素材选择、排序与试映反馈</span></a><a href="play.html?game=chunfeng">春风编花会<span>花材布置与多目标评分</span></a><a href="play.html?game=jiuying">旧影回声<span>照片修复、事实推断与核对</span></a><a href="play.html?game=jingling">精灵巡游季<span>传闻判断、共鸣与结伴挑战</span></a><a href="downloads/playable-games.zip" download>下载完整离线包<span>含启动页与全部单文件 HTML</span></a></div></section>
+<section class="section" id="cases"><h2>系统与数值方案 · 设计过程</h2>
+  <article class="entry"><div class="entry-head"><h3>青蛙战斗</h3><p>攻速改版后的数值重标</p></div><div class="entry-body"><p>攻速提高后，如果所有技能统一乘一个系数，吸血、灼烧、护盾这类机制会各自失衡。记录怎样按机制分别重标、怎样用情形矩阵和路线模拟找出风险，以及模拟结论的边界。</p><a class="project-link" href="docs/frog-project.md">阅读设计过程 →</a></div></article>
+  <article class="entry"><div class="entry-head"><h3>二合活动</h3><p>把棋盘空间当作核心资源</p></div><div class="entry-body"><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放在同一个系统里讨论，说明哪些框架可以复用、哪些规则需要做出差异。</p><a class="project-link" href="docs/merge-project.md">阅读设计过程 →</a></div></article>
+  <article class="entry"><div class="entry-head"><h3>试玩广告</h3><p>30 秒里的五个节点</p></div><div class="entry-body"><p>把 30 秒拆成入场理解、第一次成功、难度变化、接近失败、结束回看五个节点；结束点停在“差一点赢”，难度跟着点击速度调整，每轮迭代只改一个变量。</p><a class="project-link" href="docs/trial-ad.md">阅读设计过程 →</a></div></article>
+  <article class="entry"><div class="entry-head"><h3>断线托管 + 风迹手册</h3><p>状态机与代币方案对比</p></div><div class="entry-body"><p>断线托管用状态机和 90 秒回控预算处理“掉线后谁来操作”；风迹手册对比两套代币方案，选择让轻度用户也能拿到第一档奖励的方案（静态测算）。</p><a class="project-link" href="docs/system-numeric-case.md">阅读设计过程 →</a></div></article>
 </section>
-<section class="section" id="playable"><h2>可玩作品</h2><div class="game-box"><div><h3>不用安装，打开就能玩。</h3><p>3 个完整 Demo、4 个交互原型。也可以下载 ZIP，解压后离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅</a></div><div class="game-list"><a href="play.html?game=d20">二十面野心 · 孙哥纪事<span>4 幕、12 次检定、3 段赛车、5 种结局</span></a><a href="play.html?game=kaoyan">中国式考研：最后十二周<span>4 科、3 时段、11 种行动的时间分配</span></a><a href="play.html?game=tuanzi">团子清洁队<span>2 分钟收集、合成与 14 项局内升级</span></a><a href="play.html?game=liufen">六分街深夜剪辑室<span>素材选择、排序与试映反馈</span></a><a href="play.html?game=chunfeng">春风编花会<span>花材布置与多目标评分</span></a><a href="play.html?game=jiuying">旧影回声<span>照片修复、事实推断与核对</span></a><a href="play.html?game=jingling">精灵巡游季<span>传闻判断、共鸣与结伴挑战</span></a><a href="downloads/playable-games.zip" download>下载完整离线包<span>含启动页与全部单文件 HTML</span></a></div></section>
-<section class="section"><h2>其他文档</h2><div class="links"><a href="docs/game-experience.md">游戏经历与用户理解</a><a href="docs/system-numeric-case.md">断线托管与风迹手册｜系统数值方案</a><a href="docs/numeric-design.md">活动数值设计与验证方法</a><a href="docs/system-design.md">系统规则、状态与异常处理</a><a href="docs/interview-and-original-design.md">面试复盘与原创设计</a><a href="docs/efficiency-system.md">AI、Lua 与测试工具记录</a><a href="docs/product-judgment.md">立项、范围与交付复盘</a></div></section>
-<section class="section" id="experience"><h2>游戏经历与基本技能</h2><div class="two"><div><p>14 年玩家，长期玩 TCG、RPG、MOBA、SLG、暗黑类、休闲和单机 3A。比较深入的体验包括：</p><ul><li>《炉石传说》9 年、传说 200 名；《原神》活跃 1200 天、满星深渊。</li><li>《崩坏：星穹铁道》900 天、王骑 0T；《暗黑破坏神 4》500 小时、S12 电暴风雪深坑 125 层。</li><li>《王者荣耀》3000 天、1800+ 场；《皇室战争》1W+ 杯、《部落冲突》16 本。</li></ul><a class="project-link" href="docs/game-experience.md">完整游戏经历 →</a></div><div><p>工作中使用 UE / Unity / Cocos、P4V / SVN / Git / Fork、TAPD、Office、飞书、XMind、Axure、Figma 和 DaVinci Resolve。</p><p>会用 Lua / GM / 命令行构造测试条件，也会用 Claude Code / Codex 和多个 Agent 辅助文档、配表、原型与测试。AI 用来提高效率，目标、取舍和验收仍由自己负责。</p></div></div></section>
-<footer class="footer"><span>高原｜2027 届系统 / 数值策划</span><span><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a> · <a href="play.html">可玩游戏大厅</a></span></footer>
+<section class="section" id="studies"><h2>拆解、方法与复盘</h2><div class="links"><a href="docs/numeric-design.md">活动数值设计与验证方法</a><a href="docs/system-design.md">系统规则、状态与异常处理</a><a href="docs/efficiency-system.md">效率系统：AI、Lua 与测试工具</a><a href="docs/product-judgment.md">立项、范围与交付复盘</a><a href="docs/interview-and-original-design.md">面试复盘与原创设计</a><a href="docs/game-experience.md">游戏经历与用户理解</a></div></section>
+<footer class="footer"><span>高原｜系统 / 数值策划作品</span><span><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a> · <a href="play.html">可玩游戏大厅</a></span></footer>
 </div>
 </body>
 </html>
