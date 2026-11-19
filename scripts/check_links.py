@@ -36,6 +36,9 @@ def main() -> None:
     sources += sorted((ROOT / "demos").glob("*.html"))
     sources += sorted((ROOT / "prototypes").glob("*.html"))
     sources += sorted((ROOT / "docs").glob("*.md"))
+    sources += sorted((ROOT / "projects").glob("**/*.md"))
+    sources += sorted((ROOT / "projects").glob("*/src/index.html"))
+    sources += sorted((ROOT / "works").glob("**/*.md"))
     for source in sources:
         text = source.read_text(encoding="utf-8-sig")
         if source.suffix == ".html":
