@@ -6,40 +6,129 @@
 <meta name="description" content="高原的系统与数值策划作品集：可在线试玩的 HTML Demo、系统与数值方案的设计过程。">
 <title>高原｜游戏策划作品集</title>
 <style>
-:root{--bg:#10161e;--panel:#151e29;--line:#2b3644;--text:#edf1f4;--muted:#a6b0bc;--blue:#91bfe8;--lime:#d4e88a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif;line-height:1.8}a{color:inherit;text-decoration:none}a:hover{color:var(--blue)}.wrap{width:min(1060px,calc(100% - 40px));margin:auto}
-.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}.name{color:var(--text);font-weight:800}.nav-links{display:flex;gap:20px;flex-wrap:wrap}
-.hero{padding:68px 0 50px}.hero h1{font-size:clamp(46px,8vw,86px);line-height:1.05;letter-spacing:-.055em;margin:0 0 24px}.hero p{max-width:760px;color:var(--muted);font-size:16px;margin:10px 0}.meta{font-size:13px;color:var(--blue);margin-bottom:16px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;padding:10px 17px;border:1px solid var(--line);border-radius:8px;font-size:13px;font-weight:700}.btn.primary{background:var(--lime);border-color:var(--lime);color:#17202b}.btn:hover{border-color:var(--blue);color:var(--blue)}.btn.primary:hover{color:#17202b;background:#e2efac}
-.section{padding:48px 0;border-top:1px solid var(--line)}h2{font-size:30px;letter-spacing:-.035em;margin:0 0 28px}h3{font-size:20px;line-height:1.4;margin:0}.entry{display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;padding:28px 0;border-top:1px solid var(--line)}.entry:first-of-type{border-top:0;padding-top:0}.entry:last-child{padding-bottom:0}.entry-head p{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.7}.entry-body>p{margin:0 0 14px;color:#c7cfd8;font-size:14px}.entry-body ul{margin:0;padding-left:19px;color:var(--muted);font-size:14px}.entry-body li{margin:7px 0}.entry-body li::marker{color:var(--blue)}.project-link{display:inline-block;margin-top:14px;color:var(--blue);font-size:13px;font-weight:700}.note{font-size:12px;color:var(--muted)}
-.game-box{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 28px;background:var(--panel);border-left:4px solid var(--lime)}.game-box h3{font-size:24px}.game-box p{margin:8px 0 0;color:var(--muted);font-size:13px}.game-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 30px;margin-top:24px}.game-list a{padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}.game-list span{display:block;color:var(--muted);font-size:12px}.links{columns:2;column-gap:40px}.links a{display:block;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;break-inside:avoid}.two{display:grid;grid-template-columns:1.15fr .85fr;gap:48px}.two p,.two li{font-size:13px;color:var(--muted)}.two ul{padding-left:18px}.footer{padding:34px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:760px){.nav{align-items:flex-start;flex-direction:column}.entry{grid-template-columns:1fr;gap:16px}.two{grid-template-columns:1fr;gap:20px}.game-box{display:block}.game-box .btn{margin-top:18px}.links{columns:1}}
-@media(max-width:480px){.wrap{width:calc(100% - 28px)}.hero{padding-top:46px}.game-list{grid-template-columns:1fr}.nav-links{gap:12px}.section{padding:38px 0}}
+:root{--bg:#0f1621;--panel:#162030;--panel2:#1b2739;--line:#2a3749;--text:#f1f5f8;--muted:#9fadbf;--lime:#d6ef72;--blue:#86bfff;--coral:#ff9b86;--violet:#b9a4ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--text);font-family:"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif;line-height:1.75;background:radial-gradient(circle at 88% -5%,#2a4a6a66,transparent 36rem),radial-gradient(circle at 0% 30%,#3b2f5a33,transparent 30rem),var(--bg)}
+a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+.nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(10px);background:#0f1621d9;border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800}.mark{display:grid;place-items:center;width:34px;height:34px;background:var(--lime);color:#18202b;border-radius:9px;font-weight:950;transform:rotate(-4deg)}
+.nav-links{display:flex;gap:22px;font-size:13px;color:var(--muted)}.nav-links a:hover{color:var(--lime)}
+.hero{padding:84px 0 56px;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:12px;color:var(--lime);border:1px solid #d6ef7255;border-radius:999px;padding:5px 12px;margin-bottom:22px}
+.hero h1{font-size:clamp(44px,7.4vw,84px);line-height:1.04;letter-spacing:-.05em;margin:0 0 22px}.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{max-width:640px;color:var(--muted);font-size:16px;margin:0 0 10px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:700;background:#ffffff08;transition:.15s}
+.btn:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.btn.primary{background:var(--lime);border-color:var(--lime);color:#17202b}.btn.primary:hover{background:#e4f59c;color:#17202b}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}.stat b{display:block;font-size:30px;letter-spacing:-.03em;line-height:1.2}.stat span{font-size:12px;color:var(--muted)}
+.stat:nth-child(1) b{color:var(--lime)}.stat:nth-child(2) b{color:var(--blue)}.stat:nth-child(3) b{color:var(--coral)}.stat:nth-child(4) b{color:var(--violet)}
+.section{padding:64px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.sec-head h2{font-size:32px;letter-spacing:-.03em;margin:0}.sec-head p{margin:6px 0 0;color:var(--muted);font-size:14px}.sec-head .num{font-size:13px;color:var(--muted);font-family:ui-monospace,Consolas,monospace}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;display:flex;flex-direction:column;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;overflow:hidden;transition:.18s}
+.card:hover{transform:translateY(-3px);border-color:#46607f;box-shadow:0 18px 40px #0006}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--accent,var(--lime))}
+.card .icon{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:24px;background:#ffffff0d;margin-bottom:16px}
+.card h3{font-size:20px;line-height:1.35;margin:0 0 6px}.card .sub{font-size:12px;color:var(--muted);margin:0 0 14px}
+.card .q{font-size:14px;color:#d9e1ea;margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}.tag{font-size:11px;padding:3px 9px;border-radius:999px;background:#ffffff0f;color:var(--muted);border:1px solid var(--line)}
+.verify{margin-top:auto;font-size:12.5px;color:var(--muted);background:#0000002a;border-radius:10px;padding:10px 12px;border-left:3px solid var(--accent,var(--lime))}
+.verify b{color:var(--text)}
+.play{display:inline-flex;margin-top:16px;font-weight:800;font-size:14px;color:var(--accent,var(--lime))}.play:hover{text-decoration:underline}
+.c-lime{--accent:var(--lime)}.c-blue{--accent:var(--blue)}.c-coral{--accent:var(--coral)}.c-violet{--accent:var(--violet)}
+.protos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.proto{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:.15s}.proto:hover{border-color:var(--blue)}
+.proto b{display:block;font-size:14px}.proto span{font-size:12px;color:var(--muted)}
+.lobby{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:18px;padding:22px 26px;border-radius:16px;background:linear-gradient(90deg,#d6ef7222,#86bfff14);border:1px solid #d6ef7244}
+.lobby h3{margin:0;font-size:20px}.lobby p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.case{display:block;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 26px;transition:.18s}
+.case:hover{border-color:var(--accent);transform:translateY(-2px)}
+.case .k{font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:800}
+.case h3{font-size:19px;margin:6px 0 10px}.case p{font-size:14px;color:var(--muted);margin:0 0 14px}.case .more{font-size:13px;font-weight:700;color:var(--accent)}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;font-size:14px;transition:.15s}
+.links a::after{content:"→";color:var(--muted)}.links a:hover{border-color:var(--lime);color:var(--lime)}
+.note{margin-top:22px;font-size:12px;color:var(--muted);padding:14px 18px;border:1px dashed var(--line);border-radius:12px}
+.footer{padding:34px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer a:hover{color:var(--lime)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:56px}.cards{grid-template-columns:1fr}.protos{grid-template-columns:1fr 1fr}.cases{grid-template-columns:1fr}.links{grid-template-columns:1fr 1fr}.nav-links{display:none}.lobby{display:block}.lobby .btn{margin-top:14px}}
+@media(max-width:520px){.wrap{width:calc(100% - 28px)}.protos,.links{grid-template-columns:1fr}.section{padding:44px 0}}
 </style>
 </head>
 <body>
+<nav class="nav"><div class="wrap"><a class="brand" href="#"><span class="mark">高</span>高原 / GAO YUAN</a><div class="nav-links"><a href="#demos">可玩 Demo</a><a href="#cases">设计过程</a><a href="#studies">拆解与方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></div></nav>
 <div class="wrap">
-<nav class="nav"><a class="name" href="#">高原 / GAO YUAN</a><div class="nav-links"><a href="#demos">可玩 Demo</a><a href="#cases">设计过程</a><a href="#studies">拆解与方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></nav>
 <header class="hero">
-  <div class="meta">系统策划 / 数值策划 · 设计作品</div>
-  <h1>先玩，<br>再看怎么想的。</h1>
-  <p>这里放的是能直接运行、能复核的设计作品。每个作品只回答三件事：要解决什么设计问题、做了哪些取舍、用什么方式验证。</p>
-  <p>模拟、项目内测试与线上数据分别标注；公开页面不含内部配置、ID 与未公开玩法。</p>
-  <div class="actions"><a class="btn primary" href="play.html">打开可玩游戏大厅</a><a class="btn" href="#cases">看设计过程</a><a class="btn" href="downloads/playable-games.zip" download>下载全部 HTML 游戏</a></div>
+  <div>
+    <div class="eyebrow">● 系统策划 / 数值策划 · 设计作品</div>
+    <h1>先玩，<br>再看<em>怎么想的</em>。</h1>
+    <p>这里放的是能直接运行、能复核的设计作品。每个作品只回答三件事：要解决什么设计问题、做了哪些取舍、用什么方式验证。</p>
+    <div class="actions"><a class="btn primary" href="play.html">▶ 打开游戏大厅</a><a class="btn" href="#cases">看设计过程</a><a class="btn" href="downloads/playable-games.zip" download>⤓ 离线包</a></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>3 + 4</b><span>完整 Demo + 交互原型</span></div>
+    <div class="stat"><b>1,600</b><span>局固定策略测试</span></div>
+    <div class="stat"><b>241</b><span>条规则断言</span></div>
+    <div class="stat"><b>4</b><span>个系统 / 数值方案</span></div>
+  </div>
 </header>
-<section class="section" id="demos"><h2>可玩 Demo</h2>
-  <article class="entry"><div class="entry-head"><h3>二十面野心 · 孙哥纪事</h3><p>D20 融合叙事 · 单文件 HTML<br>一局 12–18 分钟</p></div><div class="entry-body"><p>检定、动作、卡组、营地、赛车五套玩法，怎样共用一套资源和后果，而不是拼成五个小游戏？</p><ul><li>4 幕、12 次 D20 检定、3 段赛车、5 种结局；前一段的成败改变后一段的起点。</li><li>验证：1,600 局固定策略测试，37/37 个选项、74/74 条成败分支全部覆盖。</li></ul><a class="project-link" href="play.html?game=d20">在线试玩 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>中国式考研：最后十二周</h3><p>时间分配系统 · C# 规则核心 + HTML 试玩版</p></div><div class="entry-body"><p>12 周、4 科、3 个时段、11 种行动，玩家怎样才能看懂自己的取舍，并在失败后复盘？</p><ul><li>行动预览与实际结算共用同一套规则，资源之间的关系都能解释。</li><li>验证：241 条规则断言、288 个事件场景通过；Unity 导出包的运行验收尚未完成。</li></ul><a class="project-link" href="play.html?game=kaoyan">在线试玩 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>团子清洁队</h3><p>单操作合成 · 2 分钟短局</p></div><div class="entry-body"><p>只给玩家一个“移动”操作，能不能撑起收集、合成、交付的完整短局循环？</p><ul><li>自动吸附、自动合成、靠近即交付；物品价值按 (3^L−1)/2 增长，120 个团子、14 项局内升级。</li><li>验证：13 条验收用例。</li></ul><a class="project-link" href="play.html?game=tuanzi">在线试玩 →</a></div></article>
+
+<section class="section" id="demos">
+  <div class="sec-head"><div><h2>可玩 Demo</h2><p>不用安装，点开就能玩。</p></div><span class="num">01</span></div>
+  <div class="cards">
+    <article class="card c-lime"><div class="icon">🎲</div><h3>二十面野心 · 孙哥纪事</h3><p class="sub">D20 融合叙事 · 一局 12–18 分钟</p>
+      <p class="q">检定、动作、卡组、营地、赛车五套玩法，怎样共用一套资源和后果，而不是拼成五个小游戏？</p>
+      <div class="tags"><span class="tag">4 幕</span><span class="tag">12 次检定</span><span class="tag">3 段赛车</span><span class="tag">5 种结局</span></div>
+      <div class="verify"><b>验证</b>　1,600 局固定策略测试；37/37 选项、74/74 成败分支全覆盖</div>
+      <a class="play" href="play.html?game=d20">在线试玩 →</a></article>
+    <article class="card c-blue"><div class="icon">📚</div><h3>中国式考研：最后十二周</h3><p class="sub">时间分配系统 · C# 规则核心 + HTML 版</p>
+      <p class="q">12 周、4 科、3 个时段、11 种行动，玩家怎样看懂自己的取舍，并在失败后复盘？</p>
+      <div class="tags"><span class="tag">预览即结算</span><span class="tag">可解释资源</span><span class="tag">12 周</span></div>
+      <div class="verify"><b>验证</b>　241 条规则断言、288 个事件场景通过；Unity 导出包验收未完成</div>
+      <a class="play" href="play.html?game=kaoyan">在线试玩 →</a></article>
+    <article class="card c-coral"><div class="icon">🧹</div><h3>团子清洁队</h3><p class="sub">单操作合成 · 2 分钟短局</p>
+      <p class="q">只给玩家一个“移动”操作，能不能撑起收集、合成、交付的完整短局循环？</p>
+      <div class="tags"><span class="tag">价值 (3^L−1)/2</span><span class="tag">120 个团子</span><span class="tag">14 项升级</span></div>
+      <div class="verify"><b>验证</b>　13 条验收用例</div>
+      <a class="play" href="play.html?game=tuanzi">在线试玩 →</a></article>
+  </div>
+  <div class="protos">
+    <a class="proto" href="play.html?game=liufen"><b>六分街深夜剪辑室</b><span>素材选择、排序与试映反馈</span></a>
+    <a class="proto" href="play.html?game=chunfeng"><b>春风编花会</b><span>花材布置与多目标评分</span></a>
+    <a class="proto" href="play.html?game=jiuying"><b>旧影回声</b><span>照片修复、事实推断与核对</span></a>
+    <a class="proto" href="play.html?game=jingling"><b>精灵巡游季</b><span>传闻判断、共鸣与结伴挑战</span></a>
+  </div>
+  <div class="lobby"><div><h3>全部 7 个作品都在游戏大厅里</h3><p>在线切换、全屏、单独打开 HTML；也可以下载 ZIP 离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅 →</a></div>
 </section>
-<section class="section" id="playable"><h2>全部可玩作品</h2><div class="game-box"><div><h3>不用安装，打开就能玩。</h3><p>3 个完整 Demo、4 个交互原型。也可以下载 ZIP，解压后离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅</a></div><div class="game-list"><a href="play.html?game=d20">二十面野心 · 孙哥纪事<span>4 幕、12 次检定、3 段赛车、5 种结局</span></a><a href="play.html?game=kaoyan">中国式考研：最后十二周<span>4 科、3 时段、11 种行动的时间分配</span></a><a href="play.html?game=tuanzi">团子清洁队<span>2 分钟收集、合成与 14 项局内升级</span></a><a href="play.html?game=liufen">六分街深夜剪辑室<span>素材选择、排序与试映反馈</span></a><a href="play.html?game=chunfeng">春风编花会<span>花材布置与多目标评分</span></a><a href="play.html?game=jiuying">旧影回声<span>照片修复、事实推断与核对</span></a><a href="play.html?game=jingling">精灵巡游季<span>传闻判断、共鸣与结伴挑战</span></a><a href="downloads/playable-games.zip" download>下载完整离线包<span>含启动页与全部单文件 HTML</span></a></div></section>
-<section class="section" id="cases"><h2>系统与数值方案 · 设计过程</h2>
-  <article class="entry"><div class="entry-head"><h3>青蛙战斗</h3><p>攻速改版后的数值重标</p></div><div class="entry-body"><p>攻速提高后，如果所有技能统一乘一个系数，吸血、灼烧、护盾这类机制会各自失衡。记录怎样按机制分别重标、怎样用情形矩阵和路线模拟找出风险，以及模拟结论的边界。</p><a class="project-link" href="docs/frog-project.md">阅读设计过程 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>二合活动</h3><p>把棋盘空间当作核心资源</p></div><div class="entry-body"><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放在同一个系统里讨论，说明哪些框架可以复用、哪些规则需要做出差异。</p><a class="project-link" href="docs/merge-project.md">阅读设计过程 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>试玩广告</h3><p>30 秒里的五个节点</p></div><div class="entry-body"><p>把 30 秒拆成入场理解、第一次成功、难度变化、接近失败、结束回看五个节点；结束点停在“差一点赢”，难度跟着点击速度调整，每轮迭代只改一个变量。</p><a class="project-link" href="docs/trial-ad.md">阅读设计过程 →</a></div></article>
-  <article class="entry"><div class="entry-head"><h3>断线托管 + 风迹手册</h3><p>状态机与代币方案对比</p></div><div class="entry-body"><p>断线托管用状态机和 90 秒回控预算处理“掉线后谁来操作”；风迹手册对比两套代币方案，选择让轻度用户也能拿到第一档奖励的方案（静态测算）。</p><a class="project-link" href="docs/system-numeric-case.md">阅读设计过程 →</a></div></article>
+
+<section class="section" id="cases">
+  <div class="sec-head"><div><h2>系统与数值方案 · 设计过程</h2><p>问题从哪来，取舍怎么做，结论的边界在哪里。</p></div><span class="num">02</span></div>
+  <div class="cases">
+    <a class="case c-lime" href="docs/frog-project.md"><div class="k">NUMERIC</div><h3>青蛙战斗｜攻速改版后的数值重标</h3><p>统一乘系数会让吸血、灼烧、护盾各自失衡。按机制分别重标，用情形矩阵和路线模拟找风险，并写清模拟结论的边界。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-blue" href="docs/merge-project.md"><div class="k">SYSTEM</div><h3>二合活动｜把棋盘空间当作核心资源</h3><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-coral" href="docs/trial-ad.md"><div class="k">PLAYABLE AD</div><h3>试玩广告｜30 秒里的五个节点</h3><p>入场理解、第一次成功、难度变化、接近失败、结束回看；结束点停在“差一点赢”，每轮迭代只改一个变量。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-violet" href="docs/system-numeric-case.md"><div class="k">SYSTEM + NUMERIC</div><h3>断线托管 + 风迹手册</h3><p>状态机和 90 秒回控预算处理“掉线后谁来操作”；两套代币方案对比，选让轻度用户也能拿到第一档的方案（静态测算）。</p><span class="more">阅读设计过程 →</span></a>
+  </div>
 </section>
-<section class="section" id="studies"><h2>拆解、方法与复盘</h2><div class="links"><a href="docs/numeric-design.md">活动数值设计与验证方法</a><a href="docs/system-design.md">系统规则、状态与异常处理</a><a href="docs/efficiency-system.md">效率系统：AI、Lua 与测试工具</a><a href="docs/product-judgment.md">立项、范围与交付复盘</a><a href="docs/interview-and-original-design.md">面试复盘与原创设计</a><a href="docs/game-experience.md">游戏经历与用户理解</a></div></section>
-<footer class="footer"><span>高原｜系统 / 数值策划作品</span><span><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a> · <a href="play.html">可玩游戏大厅</a></span></footer>
+
+<section class="section" id="studies">
+  <div class="sec-head"><div><h2>拆解、方法与复盘</h2><p>可复用的工作方法和长期积累。</p></div><span class="num">03</span></div>
+  <div class="links">
+    <a href="docs/numeric-design.md">活动数值设计与验证方法</a>
+    <a href="docs/system-design.md">系统规则、状态与异常处理</a>
+    <a href="docs/efficiency-system.md">效率系统：AI、Lua 与测试工具</a>
+    <a href="docs/product-judgment.md">立项、范围与交付复盘</a>
+    <a href="docs/interview-and-original-design.md">面试复盘与原创设计</a>
+    <a href="docs/game-experience.md">游戏经历与用户理解</a>
+  </div>
+  <p class="note">模拟、项目内测试与线上数据分别标注；公开页面不含内部配置、ID 与未公开玩法。</p>
+</section>
 </div>
+<footer class="footer"><div class="wrap"><span>高原｜系统 / 数值策划作品</span><span><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a> · <a href="play.html">可玩游戏大厅</a> · <a href="https://github.com/LittleGrass1127/game-design-portfolio">GitHub</a></span></div></footer>
 </body>
 </html>
