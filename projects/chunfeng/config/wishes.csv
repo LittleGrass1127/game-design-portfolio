@@ -1,0 +1,4 @@
+id,npc,text,stat,min
+colors,天鹅拉,想看到至少三种颜色,colors,3
+low,团团,保留两株低矮香花,low,2
+fragrant,米米,希望闻到两处浓香,fragrant,2

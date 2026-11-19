@@ -1,0 +1,12 @@
+{
+  "cardLabel": "{color}色 · {height} · {scent}",
+  "windTitle": "今日风向",
+  "windText": "西南风 2 级。低株花材更容易保留香气层。",
+  "wishLine": "{npc}：{text}",
+  "slotAria": "花环落点 {index}",
+  "progressLabel": "已种植 {used}/{min}",
+  "progressDone": "花环已提交",
+  "feedbackInitial": "选择一种花材，再点击环形落点。再次点击已种植的落点可以拔除。",
+  "submitGood": "三个愿望都被看见了。个人花环已汇入公共花路，并生成装饰蓝图。",
+  "submitRetry": "花环可以提交，但层次或愿望仍有提升空间。调整后再提交不会损耗花材。"
+}

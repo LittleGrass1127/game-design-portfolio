@@ -1,0 +1,11 @@
+key,text
+exposureDark,底片仍偏暗。提高曝光，直到编号边缘清楚但不过曝。
+exposureReadable,细节进入可识别区间：底片下方出现日期与相机编号。
+exposureOver,曝光过高，文字边缘开始丢失。向左微调可以恢复。
+needSelect,先选择一条线索。
+checkPass,夏彦核对：证据边界成立。日期与编号可直接核验，留言只支持动机推断。
+checkFail,核对未通过：确认底片处于可识别区间，并区分直接记录与关系推断。
+archived,第四卷底片已归档。照片墙变得清晰，并解锁共同相册批注。
+archiveToast,归档奖励已记录，同一底片重复修复不会重复发奖。
+progressLabel,修复进度 {step}%
+progressDone,照片已归档

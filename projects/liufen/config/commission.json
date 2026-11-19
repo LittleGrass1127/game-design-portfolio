@@ -1,0 +1,14 @@
+{
+  "id": "joint-premiere",
+  "title": "六分街联合首映",
+  "panelTag": "居民联映",
+  "brief": "街坊优先，希望在热闹之后以温暖的片尾结束。",
+  "objectives": [
+    "选择五段不同素材",
+    "控制相邻片段的情绪跳跃",
+    "必须保留一段温暖结尾"
+  ],
+  "timelineSize": 5,
+  "requiredEndingClip": "portrait",
+  "previewFlowThreshold": 70
+}

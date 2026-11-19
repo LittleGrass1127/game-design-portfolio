@@ -1,0 +1,16 @@
+{
+  "progressLabel": "时间轴 {count}/{size}",
+  "progressDone": "首映完成",
+  "cardLabel": "{tag} · 稳定度{stable}",
+  "slotIndex": "片段 {index}",
+  "slotEmpty": "点击右侧素材加入",
+  "feedbackInitial": "先选满五段素材。试映会指出问题类型，但不会直接给出标准答案。",
+  "toastTimelineFull": "时间轴已经有五段素材，先移除一段。",
+  "preview": {
+    "ending": "试映反馈：结尾情绪没有收住。街坊更期待一段能回到六分街日常的片尾。",
+    "flow": "试映反馈：中段情绪跳跃较大。尝试让相邻片段的情绪强度更接近。",
+    "good": "试映反馈：主题清楚、节奏完整。居民留言：像把这一晚真正留在了街区。"
+  },
+  "premiereFeedback": "正式放映完成，口碑 {score}。第五晚留言与自由混剪入口已解锁。",
+  "toastPremiere": "主线奖励已领取，重复放映只刷新评价。"
+}

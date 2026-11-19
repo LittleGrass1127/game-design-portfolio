@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="use-iframe" content="true"/>
+  <meta name="html-box-height-mode" content="viewport"/>
+
+  <title>六分街深夜剪辑室｜交互原型</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-game="zzz">
+  <main class="shell">
+    <nav class="topbar" aria-label="原型导航">
+      <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>RANDOM PLAY</strong><br/><span>六分街社区放映计划</span></div></div>
+      <div class="top-actions"><span class="text-link">交互原型</span><span class="status-chip"><i class="status-dot"></i>第五晚</span></div>
+    </nav>
+
+    <header class="game-heading">
+      <div><h1>深夜剪辑室</h1><p>从七段受损录像中剪出今晚的五段社区短片。素材分数不是答案，顺序、情绪回收和稳定度共同决定试映反馈。</p></div>
+      <div class="progress-block"><div class="progress-line"><span>放映准备</span><span id="progress-text">时间轴 0/5</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div></div>
+    </header>
+
+    <section class="game-grid">
+      <aside class="panel">
+        <div class="panel-head"><h2>今晚委托</h2><small id="brief-tag"></small></div>
+        <div class="panel-body">
+          <!-- 委托内容由 config/commission.json 生成 -->
+          <div class="brief"><strong id="brief-title"></strong><span id="brief-text"></span></div>
+          <div class="objective-list" id="objective-list"></div>
+          <div class="meter-stack" aria-label="剪辑评分">
+            <div class="meter-row"><span>主题契合</span><div class="meter"><i id="theme-meter"></i></div><b id="theme-meter-value">0</b></div>
+            <div class="meter-row"><span>节奏连贯</span><div class="meter"><i id="flow-meter"></i></div><b id="flow-meter-value">0</b></div>
+            <div class="meter-row"><span>信号稳定</span><div class="meter"><i id="stable-meter"></i></div><b id="stable-meter-value">0</b></div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="panel playfield">
+        <div class="playfield-title"><div><h2>剪辑时间轴</h2><p>点击右侧素材加入；点击时间轴中的素材移除。</p></div><div class="score-orb" aria-label="综合评分"><span id="score">0</span></div></div>
+        <div class="timeline" aria-label="五段剪辑时间轴"></div>
+        <div class="feedback" id="feedback"></div>
+        <div class="actions"><button class="primary" id="preview-btn" type="button">开始试映</button><button class="secondary" id="premiere-btn" type="button">正式放映</button><button class="ghost" id="reset-btn" type="button">清空时间轴</button></div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head"><h2>素材片段</h2><small id="clip-count"></small></div>
+        <!-- 素材卡由 config/clips.csv 生成 -->
+        <div class="panel-body cards" id="clip-cards"></div>
+      </aside>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/config.generated.js"></script>
+  <script src="js/rules.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

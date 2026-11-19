@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="use-iframe" content="true"/>
+  <meta name="html-box-height-mode" content="viewport"/>
+
+  <title>旧影回声｜交互原型</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-game="themis">
+  <main class="shell">
+    <nav class="topbar" aria-label="原型导航">
+      <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>未定事件簿</strong><br/><span>七日限定调查档案</span></div></div>
+      <div class="top-actions"><span class="text-link">交互原型</span><span class="status-chip"><i class="status-dot"></i>第 4 卷</span></div>
+    </nav>
+
+    <header class="game-heading">
+      <div><h1>旧影回声</h1><p>把底片调整到可识别区间，再区分“可直接核验的事实”和“需要关系判断的推断”。夏彦提供技术范围，最后的证据选择由玩家完成。</p></div>
+      <div class="progress-block"><div class="progress-line"><span>调查进度</span><span id="progress-text">修复进度 12%</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div></div>
+    </header>
+
+    <section class="game-grid">
+      <aside class="panel">
+        <div class="panel-head"><h2>今日委托</h2><small>未寄出的回执</small></div>
+        <div class="panel-body">
+          <div class="brief"><strong>照相馆底片 04</strong><span>确认照片拍摄日期、相机归属，以及原主人迟迟未领取的可能原因。</span></div>
+          <div class="objective-list">
+            <div class="objective">恢复可辨认的日期和编号</div>
+            <div class="objective">选择一条事实与一条推断</div>
+            <div class="objective">经夏彦核对后归档照片</div>
+          </div>
+          <div class="brief" style="margin-top:18px"><strong>分工记录</strong><span>夏彦：胶片材质、相机型号、损伤范围<br/>我：授权、证言、时间与归档判断</span></div>
+        </div>
+      </aside>
+
+      <section class="panel playfield">
+        <div class="playfield-title"><div><h2>暗房灯箱</h2><p>过度修复可以无成本回退，不会消耗提示次数。</p></div><div class="score-orb" aria-label="调查可信度"><span id="score">0</span></div></div>
+        <div class="lightbox"><div class="negative" id="negative"></div></div>
+        <label class="slider-row" for="exposure"><span>曝光强度</span><input id="exposure" type="range"/><b id="exposure-value">30%</b></label>
+        <div class="classify-grid">
+          <div class="dropzone"><strong>事实</strong><span id="fact-slot"></span></div>
+          <div class="dropzone"><strong>推断</strong><span id="inference-slot"></span></div>
+        </div>
+        <div class="feedback" id="feedback"></div>
+        <div class="actions"><button class="primary" id="check-evidence" type="button">与夏彦核对</button><button class="secondary" id="archive-photo" type="button">归档照片</button></div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head"><h2>线索片段</h2><small>点击选择</small></div>
+        <div class="panel-body cards" id="evidence-cards">
+          <!-- 线索卡片由 config/evidence.csv 生成 -->
+          <div class="actions"><button class="secondary" id="assign-fact" type="button">归为事实</button><button class="secondary" id="assign-inference" type="button">归为推断</button></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <!-- 顺序加载：配置 → 纯规则 → 界面 -->
+  <script src="js/config.generated.js"></script>
+  <script src="js/rules.js"></script>
+  <script src="js/ui/main.js"></script>
+</body>
+</html>

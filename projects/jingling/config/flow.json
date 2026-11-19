@@ -1,0 +1,5 @@
+{
+  "defaultRumor": "bridge",
+  "score": { "initial": 12, "resonance": 38, "partnered": 72, "complete": 100 },
+  "progress": { "initial": 15, "resonance": 38, "partneredBase": 60, "perStep": 13, "complete": 100 }
+}

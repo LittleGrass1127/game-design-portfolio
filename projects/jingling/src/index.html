@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="use-iframe" content="true"/>
+  <meta name="html-box-height-mode" content="viewport"/>
+
+  <title>精灵巡游季｜交互原型</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-game="yinyuan">
+  <main class="shell">
+    <nav class="topbar" aria-label="原型导航">
+      <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>崩坏：因缘精灵</strong><br/><span>城市巡游筹备记录</span></div></div>
+      <div class="top-actions"><span class="text-link">交互原型</span><span class="status-chip"><i class="status-dot"></i>结伴期</span></div>
+    </nav>
+
+    <header class="game-heading">
+      <div><h1>跟随传闻，找到回应</h1><p>先从传闻判断地点与环境，再选择匹配的共鸣方式。结伴不是数值门槛：错误选择会说明原因，并允许立即重试。</p></div>
+      <div class="progress-block"><div class="progress-line"><span>巡游准备</span><span id="progress-text">正在判断踪迹</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div></div>
+    </header>
+
+    <section class="game-grid">
+      <aside class="panel">
+        <div class="panel-head"><h2>城市传闻</h2><small>选择踪迹</small></div>
+        <div class="panel-body choice-list" id="rumor-list">
+          <!-- 选项由 config/rumors.csv 生成 -->
+          <div class="brief"><strong>探索规则</strong><span>每条传闻由地点、时间和环境条件构成；线索会展示，不直接隐藏事件。</span></div>
+        </div>
+      </aside>
+
+      <section class="panel playfield">
+        <div class="playfield-title"><div><h2 id="scene-title">桥边微光</h2><p id="spirit-name">未知精灵</p></div><div class="score-orb" aria-label="共鸣进度"><span id="score">0</span></div></div>
+        <div class="spirit-scene"><div class="spirit" aria-hidden="true"></div><div class="scene-note" id="scene-note">雨后石桥下有断续微光，风从水面吹向旧街。</div></div>
+        <div class="feedback" id="feedback"></div>
+        <div class="actions"><button class="primary" id="partner-btn" type="button">尝试结伴</button></div>
+        <div id="challenge-panel" hidden="hidden">
+          <div class="brief" style="margin-top:16px"><strong>结伴挑战</strong><span>按观察、稳定、同步的顺序完成三步协作。</span></div>
+          <div class="actions" id="challenge-actions"><!-- 由 config/challenge-actions.csv 生成 --></div>
+        </div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head"><h2>共鸣方式</h2><small>选择一项</small></div>
+        <div class="panel-body choice-list" id="resonance-list">
+          <!-- 选项由 config/resonances.csv 生成 -->
+          <div class="brief"><strong>图鉴记录</strong><span>成功结伴后收录精灵与心念说明，并点亮一段公共巡游路线。</span></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <!-- 顺序加载：配置 → 纯规则 → 界面 -->
+  <script src="js/config.generated.js"></script>
+  <script src="js/rules.js"></script>
+  <script src="js/ui/main.js"></script>
+</body>
+</html>

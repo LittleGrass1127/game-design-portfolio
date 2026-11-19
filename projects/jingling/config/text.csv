@@ -1,0 +1,12 @@
+key,text
+intro,先读环境与传闻，再选择一种共鸣方式。错误选择会返回可解释反馈。
+partnerOk,{spirit}回应了你的选择。完成三步协作即可收录图鉴。
+partnerFail,共鸣没有建立：{hint} 可以更换选项后重试。
+challengeBroken,协作节奏被打断：先观察，再稳定共鸣，最后同步步伐。
+challengeStep,协作步骤 {step}/{total} 完成。
+complete,{spirit}已收录图鉴，并加入今晚的城市巡游。
+completeToast,公共巡游路线已点亮一段，个人奖励已记录。
+unknownSpirit,未知精灵
+progressSearching,正在判断踪迹
+progressChallenge,协作挑战 {step}/{total}
+progressDone,已收录图鉴

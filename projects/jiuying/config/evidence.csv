@@ -1,0 +1,5 @@
+id,title,detail,slotName,type
+receipt,送洗单据,记录日期为 6 月 17 日,送洗单据：6月17日,fact
+camera,相机编号,机身记录为 X-071,相机编号：X-071,fact
+note,匿名留言,“不想让人认出”,匿名留言：不想让人认出,inference
+scratch,划痕方向,与旧邮筒边缘相似,划痕方向与邮筒边缘相似,inference

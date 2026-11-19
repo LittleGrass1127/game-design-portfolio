@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="use-iframe" content="true"/>
+  <meta name="html-box-height-mode" content="viewport"/>
+
+  <title>春风编花会｜交互原型</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-game="starry">
+  <main class="shell">
+    <nav class="topbar" aria-label="原型导航">
+      <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>星布谷地</strong><br/><span>春风编花会</span></div></div>
+      <div class="top-actions"><span class="text-link">交互原型</span><span class="status-chip"><i class="status-dot"></i>花会期</span></div>
+    </nav>
+
+    <header class="game-heading">
+      <div><h1>把愿望种进花环</h1><p>选择花材并种入十六个环形落点。颜色、株高、香型与友邻愿望共同决定评价，提交前可以无损拔除与重摆。</p></div>
+      <div class="progress-block"><div class="progress-line"><span>个人花环</span><span id="progress-text">已种植 0/12</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div></div>
+    </header>
+
+    <section class="game-grid">
+      <aside class="panel">
+        <div class="panel-head"><h2>种子篮</h2><small>先选花材</small></div>
+        <!-- 花材卡由 config/flowers.csv + attribute-levels.csv 生成 -->
+        <div class="panel-body cards" id="seed-cards"></div>
+      </aside>
+
+      <section class="panel playfield">
+        <div class="playfield-title"><div><h2>环形花坛</h2><p>点击空位种植，再次点击可拔除。目标是至少种满十二株。</p></div><div class="score-orb" aria-label="综合评分"><span id="score">0</span></div></div>
+        <div class="flower-stage"><div class="flower-ring" id="flower-ring" aria-label="十六个花环落点"></div></div>
+        <div class="feedback" id="feedback"></div>
+        <div class="actions"><button class="primary" id="flower-submit" type="button">提交花环</button><button class="ghost" id="flower-clear" type="button">重新布置</button></div>
+      </section>
+
+      <aside class="panel">
+        <div class="panel-head"><h2>友邻愿望</h2><small id="wish-count"></small></div>
+        <div class="panel-body">
+          <!-- 愿望由 config/wishes.csv 生成 -->
+          <div class="objective-list" id="wish-list"></div>
+          <div class="brief" style="margin-top:18px"><strong>实时评价</strong><span>色彩和谐 <b id="harmony">0</b><br/>高低层次 <b id="layers">0</b><br/>愿望命中 <b id="wishes">0/3</b></span></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="js/config.generated.js"></script>
+  <script src="js/rules.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

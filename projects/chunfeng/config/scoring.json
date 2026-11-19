@@ -1,0 +1,37 @@
+{
+  "ring": {
+    "slotCount": 16,
+    "minPlanted": 12,
+    "radiusPercent": 48,
+    "defaultFlower": "bell"
+  },
+  "stats": {
+    "lowHeight": 1,
+    "fragrantScentMin": 3
+  },
+  "harmony": {
+    "perColor": 21,
+    "perPlanted": 2,
+    "plantedCap": 12,
+    "max": 100
+  },
+  "layers": {
+    "perHeight": 25,
+    "lowBonus": 20,
+    "lowBonusMin": 2,
+    "max": 100
+  },
+  "weights": {
+    "harmony": 0.42,
+    "layers": 0.36,
+    "wishes": 22
+  },
+  "pass": {
+    "requireAllWishes": true,
+    "minTotal": 72
+  },
+  "progress": {
+    "plantedSpan": 82,
+    "submitted": 100
+  }
+}

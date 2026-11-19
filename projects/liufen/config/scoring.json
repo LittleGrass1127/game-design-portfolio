@@ -1,0 +1,26 @@
+{
+  "theme": {
+    "tagIncludes": ["温暖"],
+    "tagEquals": ["轻松"],
+    "perThemeClip": 24,
+    "endingTag": "温暖结尾",
+    "endingBonus": 28,
+    "max": 100
+  },
+  "flow": {
+    "base": 100,
+    "jumpPenalty": 15,
+    "lengthPenalty": 12,
+    "min": 20
+  },
+  "weights": {
+    "theme": 0.42,
+    "flow": 0.38,
+    "stable": 0.2
+  },
+  "progress": {
+    "perClip": 11,
+    "previewed": 76,
+    "finished": 100
+  }
+}

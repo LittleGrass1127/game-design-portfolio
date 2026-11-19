@@ -1,0 +1,9 @@
+{
+  "min": 10,
+  "max": 100,
+  "initial": 30,
+  "readableMin": 52,
+  "readableMax": 76,
+  "visualBase": 0.25,
+  "visualDivisor": 90
+}

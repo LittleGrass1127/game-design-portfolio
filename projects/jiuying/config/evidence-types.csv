@@ -1,0 +1,3 @@
+id,label,slotId,assignButtonId,placeholder
+fact,事实,fact-slot,assign-fact,选择一条可直接核验的信息
+inference,推断,inference-slot,assign-inference,选择一条需要关系推断的信息
