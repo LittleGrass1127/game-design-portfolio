@@ -1,0 +1,45 @@
+{
+  "_comment": "界面文案与阈值：阶段标题、书桌场景提示（按优先级从上到下匹配）、压力警示线；previewFiller 为计划未排满时预览用来补位的行动 id",
+  "previewFiller": "rest",
+  "stressWarn": 70,
+  "phases": [
+    {
+      "maxWeek": 4,
+      "text": "先把基础搭起来"
+    },
+    {
+      "maxWeek": 8,
+      "text": "找到自己的节奏"
+    },
+    {
+      "maxWeek": 99,
+      "text": "冲刺，也要留点余地"
+    }
+  ],
+  "scenes": [
+    {
+      "when": "stressAbove",
+      "value": 65,
+      "title": "慢一点，<br>也没关系。",
+      "note": "脑子打结的时候，<br>先去操场走走吧。"
+    },
+    {
+      "when": "energyBelow",
+      "value": 35,
+      "title": "灯可以晚点亮，<br>你需要先睡好。",
+      "note": "恢复不是落后，<br>是给下一次学习留力气。"
+    },
+    {
+      "when": "weekAbove",
+      "value": 8,
+      "title": "一步一步，<br>走到这里了。",
+      "note": "不必和所有人比较，<br>看看自己的计划。"
+    },
+    {
+      "when": "always",
+      "value": 0,
+      "title": "今天，也在<br>向前一点点。",
+      "note": "把难题拆开，<br>把日子慢慢过。"
+    }
+  ]
+}

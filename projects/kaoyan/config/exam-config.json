@@ -1,0 +1,20 @@
+{
+  "_comment": "基础参数：来自原 Unity 工程 exam_config.json；efficiency 为学习效率公式系数（原规则脚本中的常量）",
+  "weeks": 12,
+  "slots": 3,
+  "seed": 2027,
+  "initialEnergy": 75,
+  "initialStress": 20,
+  "initialMoney": 950,
+  "weeklyExpense": 60,
+  "weeklyEnergy": 12,
+  "weeklyStress": -5,
+  "resourceMax": 100,
+  "eventEveryWeeks": 2,
+  "efficiency": {
+    "base": 0.55,
+    "energySlope": 0.0075,
+    "stressThreshold": 35,
+    "stressSlope": 0.005
+  }
+}
