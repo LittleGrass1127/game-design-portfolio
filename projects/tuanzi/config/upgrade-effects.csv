@@ -1,0 +1,16 @@
+upgradeId,target,op,value
+magnet,player.suction,mul,1.32
+skates,player.speed,mul,1.22
+basket,player.capacity,add,4
+sign,player.value,mul,1.3
+rainbow,player.rainbowEvery,set,5
+dash,player.dashCd,set,0
+dash,player.dashCooldown,set,2
+vacuum,player.pullPower,mul,1.55
+cart,cart.deliveryRadius,add,55
+receipt,player.comboWindow,add,5
+clock,time,add,18
+skewer,player.highLevelBonus,mul,1.4
+packer,player.mergeNeed,set,2
+sticker,player.mergeCoin,set,3
+sneakers,player.emptyBoost,set,1.35

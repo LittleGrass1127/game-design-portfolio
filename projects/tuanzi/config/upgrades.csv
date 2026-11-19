@@ -1,0 +1,15 @@
+id,icon,name,desc,category,weight,unique
+magnet,🧲,大号磁铁,吸取范围扩大 32%,效率,1,true
+skates,🛼,果冻轮滑,移动速度提高 22%,效率,1,true
+basket,🧺,伸缩篮筐,可以多带 4 只团子,容量,1,true
+sign,🍓,草莓招牌,每次交付收入提高 30%,价值,1,true
+rainbow,🌈,彩虹糖纸,每第 5 只团子自动变成同色,合成,1,true
+dash,⚡,汽水冲刺,空格冲刺，冷却缩短为 2 秒,移动,1,true
+vacuum,🌀,双倍吸管,团子飞向你的速度提高 55%,效率,1,true
+cart,🚚,移动餐车,交付范围扩大 55 米,交付,1,true
+receipt,🧾,保温小票,连送保留时间增加 5 秒,交付,1,true
+clock,⏰,加班闹钟,本局立刻增加 18 秒,时间,1,true
+skewer,🍡,金色竹签,2 级以上团子价值提高 40%,价值,1,true
+packer,🎁,二合打包机,两只同级同色团子即可合成,规则,1,true
+sticker,⭐,合成贴纸,每次合成立刻获得 3 金币,价值,1,true
+sneakers,👟,空篮快跑,没有携带团子时速度提高 35%,移动,1,true

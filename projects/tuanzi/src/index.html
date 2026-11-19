@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#26315f">
+  <title>团子清洁队</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="stage" aria-label="团子清洁队游戏区域">
+    <canvas id="game" width="1280" height="720" aria-label="雨后街区清洁画面"></canvas>
+
+    <header id="hud">
+      <section class="brand"><span class="brand-mark">●●●</span><b>团子清洁队</b></section>
+      <section class="progress-wrap">
+        <div class="progress-copy"><span>街区清爽度</span><b id="cleanText">0%</b></div>
+        <div class="progress"><i id="cleanBar"></i></div>
+      </section>
+      <section class="run-stats">
+        <span class="coin"><i>¥</i><b id="coins">0</b></span>
+        <span class="clock"><b id="clock">2:00</b></span>
+        <button id="sound" aria-label="切换声音">♪</button>
+      </section>
+    </header>
+
+    <div id="combo" aria-live="polite"><b id="comboNum">2</b><span>连送</span></div>
+    <div id="prompt">团子装满啦，回到餐车交付！</div>
+
+    <section id="startScreen" class="screen show">
+      <div class="start-card">
+        <div class="mascot" aria-hidden="true"><i></i><b>˙ᴗ˙</b><span></span></div>
+        <div class="title-lockup">
+          <p>雨停了，甜点街却一团糟</p>
+          <h1>团子清洁队</h1>
+          <h2>吸走、合成、送回餐车</h2>
+        </div>
+        <div class="how">
+          <div><b>移动</b><span>点击 / 拖动<br>或 WASD</span></div>
+          <i>›</i>
+          <div><b>靠近</b><span>自动吸走<br>散落团子</span></div>
+          <i>›</i>
+          <div><b>送回</b><span>靠近餐车<br>自动结算</span></div>
+        </div>
+        <button id="startButton" class="primary">开始清洁</button>
+        <small>不用攻击，不会失败 · 两分钟一局</small>
+      </div>
+    </section>
+
+    <section id="upgradeScreen" class="screen" aria-live="polite">
+      <div class="upgrade-panel">
+        <p>队长，换个新工具</p>
+        <h2>选一个，马上生效</h2>
+        <div id="upgradeChoices" class="upgrade-choices"></div>
+      </div>
+    </section>
+
+    <section id="endScreen" class="screen">
+      <div class="end-card">
+        <div id="stamp">清爽</div>
+        <p>本轮收摊</p>
+        <h2 id="endTitle">甜点街重新亮起来了</h2>
+        <div class="end-score"><span>总金币<b id="finalCoins">0</b></span><span>时间奖励<b id="timeBonus">+0</b></span><span>清爽度<b id="finalClean">0%</b></span><span>最佳金币<b id="bestScore">0</b></span></div>
+        <button id="restartButton" class="primary">再清一条街</button>
+      </div>
+    </section>
+
+    <footer id="controls">移动：WASD / 方向键 / 点击或拖动　　冲刺：空格</footer>
+  </main>
+  <script src="js/config.generated.js"></script>
+  <script src="js/rules.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
