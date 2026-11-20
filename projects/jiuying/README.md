@@ -4,7 +4,7 @@
 
 - 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=jiuying
 - 仓库内试玩：[../../play.html?game=jiuying](../../play.html?game=jiuying)
-- 原单文件版本：[../../prototypes/jiuying.html](../../prototypes/jiuying.html)
+- 单文件版本：[../../prototypes/jiuying.html](../../prototypes/jiuying.html)
 - 逆推策划文档：[docs/design.md](docs/design.md)
 
 ## 怎么运行

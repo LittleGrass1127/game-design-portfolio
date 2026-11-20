@@ -4,7 +4,7 @@
 
 - 在线试玩：<https://littlegrass1127.github.io/game-design-portfolio/play.html?game=kaoyan>
 - 仓库内试玩入口：[../../play.html?game=kaoyan](../../play.html?game=kaoyan)
-- 原单文件版本：[../../demos/kaoyan.html](../../demos/kaoyan.html)
+- 单文件版本：[../../demos/kaoyan.html](../../demos/kaoyan.html)
 - 逆推策划文档：[docs/design.md](docs/design.md)
 
 本目录是从单文件 Demo 逆推整理出的工程结构：配置表、纯规则核心、界面三层分开。规则核心是原 C# 规则核心的 JS 移植；原 Unity 工程不在本仓库。

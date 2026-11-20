@@ -4,7 +4,7 @@
 
 - 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=chunfeng
 - 仓库内入口：[../../play.html?game=chunfeng](../../play.html?game=chunfeng)
-- 原单文件版本：[../../prototypes/chunfeng.html](../../prototypes/chunfeng.html)
+- 单文件版本：[../../prototypes/chunfeng.html](../../prototypes/chunfeng.html)
 - 设计文档：[docs/design.md](docs/design.md)
 
 ## 运行

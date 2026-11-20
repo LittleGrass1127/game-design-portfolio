@@ -208,7 +208,7 @@ assert.strictEqual(Engine.chance({ dc: 11, bonus: 0, mode: 'disadvantage' }), (1
   for (const policy of ['random', 'greedy', 'risky', 'last']) for (let i = 0; i < 25; i++) {
     const seed = 5000 + i * 37;
     const mine = playEpisode(Engine, STORY, seed, policy), theirs = playEpisode(O.SunD20Engine, O.SunD20Story, seed, policy);
-    deq(JSON.parse(mine.engine.serialize()), JSON.parse(theirs.engine.serialize()), '与原版状态一致 seed=' + seed + ' ' + policy);
+    deq(JSON.parse(mine.engine.serialize()), JSON.parse(theirs.engine.serialize()), '与单文件版状态一致 seed=' + seed + ' ' + policy);
     same++;
   }
   assert.strictEqual(same, 100);

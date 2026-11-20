@@ -1,4 +1,4 @@
-/* 六分街深夜剪辑室：纯规则（无 DOM），全部数值取自 GAME_CONFIG */
+/* 夜灯街深夜剪辑室：纯规则（无 DOM），全部数值取自 GAME_CONFIG */
 (function (root) {
   'use strict';
 

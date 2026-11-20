@@ -26,9 +26,9 @@ const build = (cards = {}, rooms = {}) => ({ cards: { rhetoric: 0, insight: 0, n
   assert.strictEqual(s1.damage, 22.5, '工坊伤害 +25%');
   assert.strictEqual(s1.maxHealth, 125); assert.strictEqual(s1.repair, 0.6);
   assert.ok(Math.abs(s1.stormResistance - 1 / 1.35) < 1e-12, '医务室风暴耗能 ÷(1+0.35)');
-  // 与原版同一组构筑结果逐项相等
+  // 与单文件版同一组构筑结果逐项相等
   for (const b of [build(), build({ rhetoric: 3, craft: 4 }, { workshop: 2 }), build({ insight: 6, nerve: 6 }, { command: 1, infirmary: 2 })]) {
-    deq(new Sim({ build: b }).buildStats(), new OSim({ build: b }).buildStats(), '构筑属性与原版一致');
+    deq(new Sim({ build: b }).buildStats(), new OSim({ build: b }).buildStats(), '构筑属性与单文件版一致');
   }
   assert.strictEqual(new Sim({}).syncBuild(build({ rhetoric: 13 })).ok, false, '卡组超过 12 层被拒绝');
   assert.throws(() => new Sim({ build: build({}, { command: 4 }) }), '营地超过 3 级被拒绝');
@@ -40,7 +40,7 @@ const build = (cards = {}, rooms = {}) => ({ cards: { rhetoric: 0, insight: 0, n
   assert.strictEqual(c0.active, false); assert.strictEqual(c0.remaining, 2);
   for (const t of [4, 9.5, 11, 18.2, 40]) for (const seed of [0, 1, 99]) for (const act of [1, 2, 3]) {
     const st = { time: t, seed, act, player: { x: 400 }, build: build({}, { command: 2 }) };
-    deq(Sim.corridorFor(st), OSim.corridorFor(st), '走廊与原版一致 t=' + t);
+    deq(Sim.corridorFor(st), OSim.corridorFor(st), '走廊与单文件版一致 t=' + t);
   }
   assert.strictEqual(Sim.corridorFor({ time: 5, seed: 0, act: 1, build: build({}, { command: 2 }) }).halfWidth, 96 + 24, '指挥室每层半宽 +12');
 }
@@ -50,7 +50,7 @@ for (const [absorbed, combo, tier] of [[20, 8, 'gold'], [19, 8, 'silver'], [20, 
   assert.strictEqual(Sim.tierFor(absorbed, combo), tier, absorbed + '/' + combo + ' -> ' + tier);
 }
 
-// ---------- 4. 合同远征：站桩自动攻击，四幕 × 2 构筑，与原版逐帧对照 ----------
+// ---------- 4. 合同远征：站桩自动攻击，四幕 × 2 构筑，与单文件版逐帧对照 ----------
 const exploreStats = [];
 for (const act of [1, 2, 3, 4]) for (const b of [build(), build({ rhetoric: 3, craft: 3, insight: 2 }, { command: 1, workshop: 1, infirmary: 1 })]) {
   const seed = 1000 + act;
@@ -61,7 +61,7 @@ for (const act of [1, 2, 3, 4]) for (const b of [build(), build({ rhetoric: 3, c
     const input = i < 600 ? {} : { target: mine.state.objectives[0] };
     mine.step(0.05, input); theirs.step(0.05, i < 600 ? {} : { target: theirs.state.objectives[0] });
     minHealth = Math.min(minHealth, mine.state.health); frames++;
-    if (i % 100 === 99) deq(mine.snapshot(), theirs.snapshot(), '远征快照与原版一致 act=' + act + ' f=' + i);
+    if (i % 100 === 99) deq(mine.snapshot(), theirs.snapshot(), '远征快照与单文件版一致 act=' + act + ' f=' + i);
   }
   const s = mine.state, A = CFG.combatActs.find(r => r.act === act);
   assert.strictEqual(s.enemiesSpawned, CFG.combat.waves * A.enemiesPerWave, '三波共 ' + 3 * A.enemiesPerWave + ' 架');
@@ -87,7 +87,7 @@ assert.ok(exploreStats.every(r => r.cleared), '站桩 40 秒内四幕均清场�
   assert.ok(sim.setAct(2).ok, '完成后可进入下一幕');
 }
 
-// ---------- 6. 夜航赛车：3 段 × 3 模组，固定追车策略，与原版逐帧对照 ----------
+// ---------- 6. 夜航赛车：3 段 × 3 模组，固定追车策略，与单文件版逐帧对照 ----------
 function driver(sim) {
   const s = sim.state, p = s.player;
   const ahead = s.traffic.filter(c => !c.absorbed && c.y < p.y + 20 && c.y > p.y - 260).sort((a, b) => Math.abs(a.x - p.x) + (p.y - a.y) * 0.3 - Math.abs(b.x - p.x) - (p.y - b.y) * 0.3)[0];
@@ -101,9 +101,9 @@ for (const leg of [1, 2, 3]) for (const module of ['turbo', 'magnet', 'reactor']
   let i = 0;
   while (mine.state.phase === 'playing' && i < 4000) {
     mine.step(0.05, driver(mine)); theirs.step(0.05, driver(theirs)); i++;
-    if (i % 150 === 0) deq(mine.snapshot(), theirs.snapshot(), '赛车快照与原版一致 leg=' + leg + ' ' + module);
+    if (i % 150 === 0) deq(mine.snapshot(), theirs.snapshot(), '赛车快照与单文件版一致 leg=' + leg + ' ' + module);
   }
-  deq(mine.snapshot(), theirs.snapshot(), '赛车终局与原版一致 leg=' + leg + ' ' + module);
+  deq(mine.snapshot(), theirs.snapshot(), '赛车终局与单文件版一致 leg=' + leg + ' ' + module);
   const r = mine.state.result;
   assert.ok(r && r.finished, '在时限内跑完赛段 leg=' + leg + ' ' + module);
   assert.strictEqual(mine.state.length, CFG.race.track.lengthBase + leg * CFG.race.track.lengthPerAct, '赛段长度');

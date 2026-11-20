@@ -7,7 +7,7 @@
 | [d20 · 二十面野心·孙哥纪事](d20/README.md) | 完整 Demo | 23 | 3 组，2,752 条断言 | [试玩](../play.html?game=d20) |
 | [kaoyan · 中国式考研：最后十二周](kaoyan/README.md) | 完整 Demo | 8 | 3 组，23,871 条断言 | [试玩](../play.html?game=kaoyan) |
 | [tuanzi · 团子清洁队](tuanzi/README.md) | 完整 Demo | 6 | 378 条断言 | [试玩](../play.html?game=tuanzi) |
-| [liufen · 六分街深夜剪辑室](liufen/README.md) | 交互原型 | 4 | 86 条断言 | [试玩](../play.html?game=liufen) |
+| [yedeng · 夜灯街深夜剪辑室](yedeng/README.md) | 交互原型 | 4 | 86 条断言 | [试玩](../play.html?game=yedeng) |
 | [chunfeng · 春风编花会](chunfeng/README.md) | 交互原型 | 5 | 64 条断言 | [试玩](../play.html?game=chunfeng) |
 | [jiuying · 旧影回声](jiuying/README.md) | 交互原型 | 5 | 118 条断言 | [试玩](../play.html?game=jiuying) |
 | [jingling · 精灵巡游季](jingling/README.md) | 交互原型 | 5 | 115 条断言 | [试玩](../play.html?game=jingling) |

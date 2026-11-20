@@ -4,7 +4,7 @@
 
 - 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=tuanzi
 - 仓库内试玩入口：[../../play.html?game=tuanzi](../../play.html?game=tuanzi)
-- 原单文件版本：[../../demos/tuanzi.html](../../demos/tuanzi.html)
+- 单文件版本：[../../demos/tuanzi.html](../../demos/tuanzi.html)
 - 逆推策划文档：[docs/design.md](docs/design.md)
 
 ## 怎么运行

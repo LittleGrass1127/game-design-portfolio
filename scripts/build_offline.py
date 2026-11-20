@@ -6,7 +6,7 @@ from zipfile import ZIP_DEFLATED, ZipFile
 ROOT = Path(__file__).resolve().parents[1]
 GAMES = (
     "demos/d20.html", "demos/kaoyan.html", "demos/tuanzi.html",
-    "prototypes/liufen.html", "prototypes/chunfeng.html",
+    "prototypes/yedeng.html", "prototypes/chunfeng.html",
     "prototypes/jiuying.html", "prototypes/jingling.html",
 )
 README = """高原｜可玩游戏大厅（离线版）

@@ -9,7 +9,7 @@ const output = process.env.SMOKE_OUTPUT ? path.resolve(process.env.SMOKE_OUTPUT)
 fs.mkdirSync(output, { recursive: true });
 const games = [
   ['d20', 'demos/d20.html'], ['kaoyan', 'demos/kaoyan.html'],
-  ['tuanzi', 'demos/tuanzi.html'], ['liufen', 'prototypes/liufen.html'],
+  ['tuanzi', 'demos/tuanzi.html'], ['yedeng', 'prototypes/yedeng.html'],
   ['chunfeng', 'prototypes/chunfeng.html'], ['jiuying', 'prototypes/jiuying.html'],
   ['jingling', 'prototypes/jingling.html'],
 ];

@@ -82,9 +82,9 @@ CSV 一行一条、首行字段名；多值字段用 `|` 分隔（如 `flags`、
 ## 测试
 
 ```bash
-node tests/rules.test.cjs     # 配置完整性、公式、规则、结局、存档、与原版逐局一致、导出一致
-node tests/action.test.cjs    # 构筑公式、夜雾走廊、档位、远征与赛车逐帧对照原版
+node tests/rules.test.cjs     # 配置完整性、公式、规则、结局、存档、与单文件版逐局一致、导出一致
+node tests/action.test.cjs    # 构筑公式、夜雾走廊、档位、远征与赛车逐帧对照单文件版
 node tests/simulate.test.cjs  # 1,600 局固定种子批量模拟与覆盖统计
 ```
 
-测试用 `tests/helpers/load.cjs` 在 vm 沙箱加载纯逻辑脚本；`tests/helpers/original.cjs` 从 `../../demos/d20.html` 取出原版的故事、规则、动作模拟脚本作为对照组。实际结果见 [docs/design.md](docs/design.md#验证方法)。
+测试用 `tests/helpers/load.cjs` 在 vm 沙箱加载纯逻辑脚本；`tests/helpers/original.cjs` 从 `../../demos/d20.html` 取出单文件版的故事、规则、动作模拟脚本作为对照组。实际结果见 [docs/design.md](docs/design.md#验证方法)。

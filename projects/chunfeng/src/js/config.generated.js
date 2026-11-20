@@ -114,7 +114,7 @@ window.GAME_CONFIG = {
   "wishes": [
     {
       "id": "colors",
-      "npc": "天鹅拉",
+      "npc": "阿柳",
       "text": "想看到至少三种颜色",
       "stat": "colors",
       "min": 3

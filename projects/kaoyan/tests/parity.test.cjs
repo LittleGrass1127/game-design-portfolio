@@ -54,7 +54,7 @@ for (let g = 0; g < 90; g++) {
   A.strictEqual(b.admitted, a.admitted);
   games++; if (b.admitted) admitted++;
 }
-// 新工程的存档原版可读、原版存档新工程可读
+// 新工程的存档单文件版可读、单文件版存档新工程可读
 const s1 = play(New, C, 5, 1, 1, 5).state;
 A.ok(Old.validateState(origConfig, JSON.parse(s1)).valid);
 A.ok(New.validateState(C, JSON.parse(play(Old, origConfig, 5, 1, 1, 5).state)).valid);

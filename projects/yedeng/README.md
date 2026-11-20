@@ -1,10 +1,10 @@
-# 六分街深夜剪辑室（交互原型工程）
+# 夜灯街深夜剪辑室（交互原型工程）
 
 从七段受损录像里选五段、排好顺序再试映：主题契合、节奏连贯和信号稳定度共同决定反馈。只验证"选择 + 排序 + 试映反馈"这一条操作链。
 
-- 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=liufen
-- 仓库内入口：[../../play.html?game=liufen](../../play.html?game=liufen)
-- 原单文件版本：[../../prototypes/liufen.html](../../prototypes/liufen.html)
+- 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=yedeng
+- 仓库内入口：[../../play.html?game=yedeng](../../play.html?game=yedeng)
+- 单文件版本：[../../prototypes/yedeng.html](../../prototypes/yedeng.html)
 - 设计文档：[docs/design.md](docs/design.md)
 
 ## 运行
@@ -14,7 +14,7 @@
 ## 目录结构
 
 ```
-projects/liufen/
+projects/yedeng/
   README.md
   config/                  策划配置表（改这里）
     clips.csv              素材片段

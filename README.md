@@ -24,7 +24,7 @@
 | 📚 [中国式考研：最后十二周](play.html?game=kaoyan) | 12 周、4 科、3 时段、11 种行动，玩家怎样看懂自己的取舍？ | 行动预览与实际结算共用同一套规则；C# 规则核心 + HTML 试玩版 | 241 条规则断言、288 个事件场景通过（Unity 导出包运行验收未完成） |
 | 🧹 [团子清洁队](play.html?game=tuanzi) | 只有“移动”一个操作，能否撑起收集、合成、交付的短局循环？ | 自动吸附与合成；价值按 (3^L−1)/2 增长；2 分钟、120 个团子、14 项升级 | 13 条验收用例 |
 
-另有 4 个交互原型：六分街深夜剪辑室、春风编花会、旧影回声、精灵巡游季，每个只保留一个核心操作和规则反馈。
+另有 4 个交互原型：夜灯街深夜剪辑室、春风编花会、旧影回声、精灵巡游季，每个只保留一个核心操作和规则反馈。
 
 统一入口：[可玩游戏大厅](play.html)。[下载完整离线包](downloads/playable-games.zip)，解压后双击 `play.html`；也可以单独打开任意游戏 HTML。
 
@@ -37,7 +37,7 @@
 | [d20](projects/d20/README.md) | 幕 / 场景 / 37 个选项 / 78 条后果 / 5 结局 / 赛车与远征等 23 张 | 3 组 2,752 条断言（含 1,600 局固定种子模拟：37/37 选项、74/74 分支） | [design.md](projects/d20/docs/design.md) |
 | [kaoyan](projects/kaoyan/README.md) | 基础参数、4 科、起点、目标线、11 种行动、事件与选项等 8 张 | 3 组 23,871 条断言（预览即结算穷举、与单文件版对拍） | [design.md](projects/kaoyan/docs/design.md) |
 | [tuanzi](projects/tuanzi/README.md) | 局内参数、污渍区、团子等级价值、14 项升级与效果等 6 张 | 378 条断言（公式、升级逐项、可自动化验收用例、固定种子整局） | [design.md](projects/tuanzi/docs/design.md) |
-| [liufen](projects/liufen/README.md) · [chunfeng](projects/chunfeng/README.md) · [jiuying](projects/jiuying/README.md) · [jingling](projects/jingling/README.md) | 每个原型 4–5 张：素材 / 花材 / 线索 / 传闻、评分系数、文案 | 配置完整性 + 判定函数，86 / 64 / 118 / 115 条断言 | 各自 `docs/design.md` |
+| [yedeng](projects/yedeng/README.md) · [chunfeng](projects/chunfeng/README.md) · [jiuying](projects/jiuying/README.md) · [jingling](projects/jingling/README.md) | 每个原型 4–5 张：素材 / 花材 / 线索 / 传闻、评分系数、文案 | 配置完整性 + 判定函数，86 / 64 / 118 / 115 条断言 | 各自 `docs/design.md` |
 
 断言数大头来自穷举和批量模拟的逐步比对，不等于独立规则点数量。
 

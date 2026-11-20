@@ -31,7 +31,7 @@ window.GAME_CONFIG = {
     },
     {
       "id": "chase",
-      "name": "空洞追逐",
+      "name": "隧道追逐",
       "tag": "行动",
       "mood": 5,
       "stable": 82
@@ -45,7 +45,7 @@ window.GAME_CONFIG = {
     },
     {
       "id": "cat",
-      "name": "猫又巡街",
+      "name": "花猫巡街",
       "tag": "轻松",
       "mood": 3,
       "stable": 89
@@ -53,7 +53,7 @@ window.GAME_CONFIG = {
   ],
   "commission": {
     "id": "joint-premiere",
-    "title": "六分街联合首映",
+    "title": "夜灯街联合首映",
     "panelTag": "居民联映",
     "brief": "街坊优先，希望在热闹之后以温暖的片尾结束。",
     "objectives": [
@@ -104,7 +104,7 @@ window.GAME_CONFIG = {
     "feedbackInitial": "先选满五段素材。试映会指出问题类型，但不会直接给出标准答案。",
     "toastTimelineFull": "时间轴已经有五段素材，先移除一段。",
     "preview": {
-      "ending": "试映反馈：结尾情绪没有收住。街坊更期待一段能回到六分街日常的片尾。",
+      "ending": "试映反馈：结尾情绪没有收住。街坊更期待一段能回到夜灯街日常的片尾。",
       "flow": "试映反馈：中段情绪跳跃较大。尝试让相邻片段的情绪强度更接近。",
       "good": "试映反馈：主题清楚、节奏完整。居民留言：像把这一晚真正留在了街区。"
     },
