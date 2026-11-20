@@ -2,7 +2,7 @@
   "theme": {
     "tagIncludes": ["温暖"],
     "tagEquals": ["轻松"],
-    "perThemeClip": 24,
+    "perThemeClip": 18,
     "endingTag": "温暖结尾",
     "endingBonus": 28,
     "max": 100

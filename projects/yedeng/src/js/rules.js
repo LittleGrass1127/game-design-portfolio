@@ -73,5 +73,5 @@
     return { value, label };
   }
 
-  root.LiufenRules = { fill, clipMap, isThemeClip, moodJumps, calculate, toggleClip, removeAt, canPreview, previewVerdict, progress };
+  root.YedengRules = { fill, clipMap, isThemeClip, moodJumps, calculate, toggleClip, removeAt, canPreview, previewVerdict, progress };
 })(window);

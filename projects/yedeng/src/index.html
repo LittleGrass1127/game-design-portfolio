@@ -9,7 +9,7 @@
   <title>夜灯街深夜剪辑室｜交互原型</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body data-game="zzz">
+<body data-game="yedeng">
   <main class="shell">
     <nav class="topbar" aria-label="原型导航">
       <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>NIGHT REEL</strong><br/><span>夜灯街社区放映计划</span></div></div>
@@ -37,7 +37,7 @@
       </aside>
 
       <section class="panel playfield">
-        <div class="playfield-title"><div><h2>剪辑时间轴</h2><p>点击右侧素材加入；点击时间轴中的素材移除。</p></div><div class="score-orb" aria-label="综合评分"><span id="score">0</span></div></div>
+        <div class="playfield-title"><div><h2>剪辑时间轴</h2><p id="play-hint"></p></div><div class="score-orb" aria-label="综合评分"><span id="score">0</span></div></div>
         <div class="timeline" aria-label="五段剪辑时间轴"></div>
         <div class="feedback" id="feedback"></div>
         <div class="actions"><button class="primary" id="preview-btn" type="button">开始试映</button><button class="secondary" id="premiere-btn" type="button">正式放映</button><button class="ghost" id="reset-btn" type="button">清空时间轴</button></div>

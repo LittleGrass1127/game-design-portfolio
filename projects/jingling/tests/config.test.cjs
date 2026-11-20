@@ -52,7 +52,7 @@ a.strictEqual(sc.complete, 100); a.strictEqual(pg.complete, 100);
 // 6. 文案表：key 唯一，代码用到的 key 都存在
 const keys = C.text.map(r => r.key);
 a.strictEqual(new Set(keys).size, keys.length, 'text key 重复');
-for (const k of ['intro', 'partnerOk', 'partnerFail', 'challengeBroken', 'challengeStep', 'complete', 'completeToast', 'unknownSpirit', 'progressSearching', 'progressChallenge', 'progressDone'])
+for (const k of ['intro', 'partnerOk', 'partnerFail', 'challengeBroken', 'challengeStep', 'complete', 'completeAll', 'completeToast', 'completeAllToast', 'unknownSpirit', 'progressSearching', 'progressChallenge', 'progressDone'])
   a.ok(keys.includes(k), `缺少文案 ${k}`);
 
 // 7. 结伴判定穷举：仅正确共鸣成功，失败返回该传闻的提示
@@ -82,5 +82,16 @@ s.resonance = 'wind'; a.strictEqual(R.progressValue(s), pg.resonance);
 s.partnered = true; s.challenge = ['observe', 'steady'];
 a.strictEqual(R.progressValue(s), pg.partneredBase + 2 * pg.perStep);
 a.strictEqual(R.text('progressChallenge', { step: 2, total: 3 }), '协作挑战 2/3');
+
+// 10. 图鉴收集进度：切换传闻不清空，集齐后 all = true
+const plain = x => JSON.parse(JSON.stringify(x));
+a.deepStrictEqual(plain(R.collectionSummary([])), { count: 0, total: C.rumors.length, all: false });
+a.deepStrictEqual(plain(R.collectionSummary(['bridge'])), { count: 1, total: 3, all: false });
+a.deepStrictEqual(plain(R.collectionSummary(['bridge', 'bridge', 'nope'])), { count: 1, total: 3, all: false });
+a.strictEqual(R.collectionSummary(C.rumors.map(r => r.id)).all, true);
+a.strictEqual(R.text('progressDone', { count: 2, total: 3 }), '已收录图鉴 2/3');
+a.strictEqual(R.text('complete', { spirit: '风铃精灵', count: 1, total: 3 }).includes('1/3'), true);
+// 挑战按钮文案对三只精灵通用（不绑定某一条传闻的道具）
+a.ok(!C.challengeActions.some(x => /风铃|糖|回声/.test(x.label)), '挑战按钮不应只适用于某一只精灵');
 
 console.log(`${a.count()} assertions passed`);

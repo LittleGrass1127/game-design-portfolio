@@ -35,6 +35,13 @@
     if (text && label) text.textContent = label;
   }
 
+  function setScore(value) {
+    const score = $('#score');
+    if (!score) return;
+    score.textContent = Math.round(value);
+    score.parentElement.style.setProperty('--score-angle', `${value * 3.6}deg`);
+  }
+
   // 线索卡片由 evidence.csv 生成，插在“归为事实/推断”按钮前
   function buildCards() {
     const box = $('#evidence-cards');
@@ -54,16 +61,25 @@
     const lightbox = $('#negative');
     lightbox.style.setProperty('--exposure', String(R.exposureVisual(state.exposure)));
     lightbox.style.setProperty('--clue-opacity', R.isReadable(state.exposure) ? '1' : '0');
+    $('#exposure').value = state.exposure;
     $('#exposure-value').textContent = `${state.exposure}%`;
     $$('.card[data-evidence]').forEach(card => card.classList.toggle('selected', card.dataset.evidence === state.selected));
     CFG.evidenceTypes.forEach(t => {
       const picked = state[t.id];
       $('#' + t.slotId).textContent = picked ? R.getEvidence(picked).slotName : t.placeholder;
     });
-    $('#check-evidence').disabled = !state.fact || !state.inference;
+    $('#check-evidence').disabled = !state.fact || !state.inference || state.archived;
     $('#archive-photo').disabled = !state.checked || state.archived;
     const step = R.progressStep(state);
     setProgress(step, state.archived ? R.text('progressDone') : R.text('progressLabel', { step }));
+    setScore(step);
+  }
+
+  function exposureFeedback() {
+    const zone = R.exposureZone(state.exposure);
+    if (zone === 'readable') setFeedback(R.text('exposureReadable'), 'good');
+    else if (zone === 'over') setFeedback(R.text('exposureOver'), 'warn');
+    else setFeedback(R.text('exposureDark'));
   }
 
   function init() {
@@ -74,12 +90,10 @@
     slider.value = CFG.exposure.initial;
 
     slider.addEventListener('input', event => {
+      if (state.archived) return render();
       state.exposure = Number(event.target.value);
       state.checked = false;
-      const zone = R.exposureZone(state.exposure);
-      if (zone === 'readable') setFeedback(R.text('exposureReadable'), 'good');
-      else if (zone === 'over') setFeedback(R.text('exposureOver'), 'warn');
-      else setFeedback(R.text('exposureDark'));
+      exposureFeedback();
       render();
     });
     $$('.card[data-evidence]').forEach(card => card.addEventListener('click', () => {
@@ -89,15 +103,17 @@
     // 归类按钮：把当前选中线索放入对应槽位
     CFG.evidenceTypes.forEach(t => {
       $('#' + t.assignButtonId).addEventListener('click', () => {
+        if (state.archived) return toast(R.text('archivedLocked'));
         if (!state.selected) return toast(R.text('needSelect'));
-        state[t.id] = state.selected;
+        Object.assign(state, R.assignEvidence(state, t.id, state.selected));
         state.checked = false;
         render();
       });
     });
     $('#check-evidence').addEventListener('click', () => {
-      state.checked = R.checkEvidence(state);
-      setFeedback(state.checked ? R.text('checkPass') : R.text('checkFail'), state.checked ? 'good' : 'warn');
+      const reason = R.checkFailReason(state);
+      state.checked = !reason;
+      setFeedback(R.text(reason === 'exposure' ? 'checkFailExposure' : reason === 'type' ? 'checkFailType' : 'checkPass'), state.checked ? 'good' : 'warn');
       render();
     });
     $('#archive-photo').addEventListener('click', () => {
@@ -106,7 +122,13 @@
       toast(R.text('archiveToast'));
       render();
     });
-    setFeedback(R.text('exposureDark'));
+    $('#reset-case').addEventListener('click', () => {
+      Object.assign(state, R.createState());
+      exposureFeedback();
+      render();
+    });
+    $('#play-hint').textContent = R.text('playHint');
+    exposureFeedback();
     render();
   }
 

@@ -60,6 +60,8 @@ a.strictEqual(s1.harmony, 45);   // 1×21 + 12×2
 a.strictEqual(s1.layers, 25);
 a.strictEqual(s1.wishes, 0);
 a.strictEqual(R.submitVerdict(mono, cfg).pass, false);
+a.strictEqual(R.submitVerdict(mono, cfg).reason, 'missing');
+a.strictEqual(R.submitVerdict(mono, cfg).missing.length, 3);
 // 混合布置：4 色、3 高、低株≥2、浓香≥2
 const mix = mono.slice();
 mix[0] = 'wind'; mix[1] = 'wind'; mix[2] = 'sun'; mix[3] = 'rose'; mix[4] = 'rose';
@@ -69,6 +71,7 @@ a.strictEqual(s2.layers, 95);    // 3×25 + 20
 a.strictEqual(s2.wishes, 3);
 a.strictEqual(Math.round(s2.total), 98);
 a.strictEqual(R.submitVerdict(mix, cfg).pass, true);
+a.strictEqual(R.submitVerdict(mix, cfg).reason, null);
 // 拔除操作
 a.strictEqual(R.toggleSlot(mix, 0, 'bell')[0], null);
 a.strictEqual(R.canSubmit(R.toggleSlot(mix, 0, 'bell'), false, cfg), false);  // 11 株不能提交
@@ -76,5 +79,30 @@ a.strictEqual(R.canSubmit(mix, true, cfg), false);                              
 // 落点 0 在正上方
 const p0 = R.slotPosition(0, cfg);
 a.ok(Math.abs(p0.left - 50) < 1e-9 && Math.abs(p0.top - 2) < 1e-9);
+
+// 6. 通过线真正起作用：三愿望全中但只有两种株高（没有高株）的花环，总分 83.74 < 通过线，原因是 lowScore
+const flat = slots.map((_, i) => (i < 2 ? 'wind' : i < 7 ? 'bell' : i < 12 ? 'rose' : null));
+const vFlat = R.submitVerdict(flat, cfg);
+a.strictEqual(vFlat.score.wishes, 3);
+a.strictEqual(vFlat.score.layers, 70);   // 2×25 + 20
+a.ok(Math.abs(vFlat.score.total - 83.74) < 1e-9);
+a.strictEqual(vFlat.pass, false);
+a.strictEqual(vFlat.reason, 'lowScore');
+a.strictEqual(vFlat.missing.length, 0);
+// 只差一条愿望时，missing 指出是哪一条
+const oneLow = mix.slice(); oneLow[1] = 'bell';   // 低株只剩 1 株
+a.deepStrictEqual(plain(R.submitVerdict(oneLow, cfg).missing.map(w => w.id)), ['low']);
+// 穷举 12–16 株的全部数量组合：通过线把“愿望全中”的组合分成通过与不通过两部分
+let all3 = 0, all3Fail = 0, passed = 0;
+for (let b = 0; b <= 16; b++) for (let s = 0; b + s <= 16; s++) for (let w = 0; b + s + w <= 16; w++) for (let r = 0; b + s + w + r <= 16; r++) {
+  const n = b + s + w + r; if (n < sc.ring.minPlanted) continue;
+  const v = R.submitVerdict([].concat(Array(b).fill('bell'), Array(s).fill('sun'), Array(w).fill('wind'), Array(r).fill('rose'), Array(16 - n).fill(null)), cfg);
+  if (v.pass) passed++;
+  if (v.score.wishes === 3) { all3++; if (!v.pass) all3Fail++; }
+}
+a.strictEqual(all3, 2160);
+a.strictEqual(all3Fail, 335);
+a.strictEqual(passed, 1825);
+for (const k of ['playHint', 'feedbackInitial', 'submitGood', 'submitMissing', 'missingItem', 'submitLowScore', 'toastLocked']) a.ok(cfg.texts[k], `缺少文案 ${k}`);
 
 console.log(`${a.count()} assertions passed`);

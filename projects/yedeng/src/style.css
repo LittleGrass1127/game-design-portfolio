@@ -28,7 +28,7 @@ body {
     linear-gradient(145deg, color-mix(in srgb, var(--bg) 88%, #000), var(--bg));
 }
 
-body[data-game="starry"] {
+body[data-game="chunfeng"] {
   --bg: #173f3d;
   --surface: #f3f0df;
   --surface-2: #dce9d5;
@@ -41,15 +41,15 @@ body[data-game="starry"] {
   color-scheme: light;
 }
 
-body[data-game="starry"] .panel {
+body[data-game="chunfeng"] .panel {
   --text: #163536;
   --muted: #58706d;
   color: var(--text);
 }
 
-body[data-game="starry"] .status-chip { color: #163536; }
+body[data-game="chunfeng"] .status-chip { color: #163536; }
 
-body[data-game="themis"] {
+body[data-game="jiuying"] {
   --bg: #0f1929;
   --surface: #1d2c44;
   --surface-2: #273a56;
@@ -61,7 +61,7 @@ body[data-game="themis"] {
   --good: #73c7ad;
 }
 
-body[data-game="yinyuan"] {
+body[data-game="jingling"] {
   --bg: #171022;
   --surface: #2b2141;
   --surface-2: #382b55;
@@ -481,6 +481,14 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 
 .debug-panel { margin-top: 16px; padding: 12px 16px; border: 1px dashed var(--line); border-radius: 7px; color: var(--muted); font-size: 11px; }
 .debug-panel code { color: var(--text); }
+
+/* 目标达成标记与浅色主题下的反馈对比度 */
+.objective.done { color: var(--good); }
+.objective.done::before { background: var(--good); border-color: var(--good); }
+.choice.done strong::after { content: "  ✓ 已收录"; color: var(--good); font-size: 11px; font-weight: 400; }
+body[data-game="chunfeng"] .feedback { background: rgb(255 255 255 / 62%); color: #2f4a47; }
+body[data-game="chunfeng"] .feedback.good { color: #1f6b4a; }
+body[data-game="chunfeng"] .feedback.warn { color: #8a4b12; border-color: #c98a3a; }
 
 @media (max-width: 980px) {
   .game-heading { grid-template-columns: 1fr; }

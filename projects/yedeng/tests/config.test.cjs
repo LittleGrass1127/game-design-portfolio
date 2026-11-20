@@ -10,7 +10,7 @@ const a = makeAssert();
 const plain = x => JSON.parse(JSON.stringify(x));
 const win = loadScripts(['src/js/config.generated.js', 'src/js/rules.js']);
 const cfg = win.GAME_CONFIG;
-const R = win.LiufenRules;
+const R = win.YedengRules;
 
 // 1. 生成文件与配置表一致（等价于 export-config --check）
 const generated = fs.readFileSync(path.join(__dirname, '..', 'src', 'js', 'config.generated.js'), 'utf8');
@@ -44,12 +44,14 @@ a.ok(cm.timelineSize * cfg.scoring.progress.perClip <= cfg.scoring.progress.prev
 
 // 5. 文案：三种试映反馈都有
 for (const k of ['ending', 'flow', 'good']) a.ok(cfg.texts.preview[k], `缺少试映文案 ${k}`);
+for (const k of ['playHint', 'feedbackInitial', 'cardLabel', 'slotTag', 'premiereGood', 'premiereWarn', 'resetLabel', 'resetLabelDone']) a.ok(cfg.texts[k], `缺少文案 ${k}`);
+a.ok(cfg.texts.cardLabel.includes('{mood}'), '素材卡要显示情绪强度（节奏分的依据）');
 
 // 6. 评分函数
 a.deepStrictEqual(plain(R.calculate([], cfg)), { theme: 0, flow: 0, stable: 0, total: 0 });
 const best = ['breakfast', 'cat', 'noodles', 'blooper', 'portrait'];
 const s1 = R.calculate(best, cfg);
-a.strictEqual(s1.theme, 100);           // 5×24+28 封顶 100
+a.strictEqual(s1.theme, 100);           // 5×18+28=118 封顶 100
 a.strictEqual(s1.flow, 70);             // 情绪跳跃 1+0+0+1=2 → 100-30
 a.strictEqual(s1.stable, 88);           // (94+89+91+68+98)/5
 a.strictEqual(Math.round(s1.total), 86);
@@ -71,5 +73,25 @@ a.strictEqual(R.toggleClip(tl, 'neon', cfg).full, true);
 a.deepStrictEqual(plain(R.toggleClip(tl, 'cat', cfg).timeline), ['breakfast', 'noodles', 'blooper', 'portrait']);
 a.deepStrictEqual(plain(R.removeAt(tl, 0)), ['cat', 'noodles', 'blooper', 'portrait']);
 a.strictEqual(R.progress({ timeline: tl, previewed: false, finished: false }, cfg).label, '时间轴 5/5');
+
+// 8. 结尾要求体现在分数上：不以合影结尾的排列，主题分到不了满分，总分最高值也低于通过方案的最高值
+const th = cfg.scoring.theme;
+a.ok(cfg.clips.filter(c => R.isThemeClip(c, th)).length >= cm.timelineSize, '主题素材足够排满时间轴');
+a.ok(cm.timelineSize * th.perThemeClip < th.max, '只靠主题素材数量不能把主题分堆满');
+a.ok(cm.timelineSize * th.perThemeClip + th.endingBonus >= th.max, '主题素材 + 结尾加分可以到满分');
+const noEnding = ['breakfast', 'cat', 'noodles', 'blooper', 'neon'];
+a.strictEqual(R.calculate(noEnding, cfg).theme, 72);       // 4×18，无结尾加分
+a.strictEqual(R.calculate(['breakfast', 'noodles', 'cat', 'portrait', 'blooper'], cfg).theme, 90);  // 5 段主题素材但合影不在结尾
+let bestPass = 0, bestFail = 0, passCount = 0;
+(function walk(cur) {
+  if (cur.length === cm.timelineSize) {
+    const v = R.previewVerdict(cur, cfg);
+    if (v.key === 'good') { passCount++; bestPass = Math.max(bestPass, v.score.total); } else bestFail = Math.max(bestFail, v.score.total);
+    return;
+  }
+  for (const c of cfg.clips) if (!cur.includes(c.id)) walk(cur.concat(c.id));
+})([]);
+a.strictEqual(passCount, 24);
+a.ok(bestPass > bestFail, `最高分必须来自试映通过的方案（${bestPass.toFixed(2)} vs ${bestFail.toFixed(2)}）`);
 
 console.log(`${a.count()} assertions passed`);

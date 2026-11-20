@@ -63,13 +63,15 @@
     return slots.filter(Boolean).length >= cfg.scoring.ring.minPlanted && !submitted;
   }
 
-  // 提交判定：愿望全中且总分达标才算通过
+  // 提交判定：愿望全中且总分达标才算通过；未通过时给出原因（missing = 未满足的愿望 / lowScore = 总分不够）
   function submitVerdict(slots, cfg) {
     const score = calculate(slots, cfg);
     const p = cfg.scoring.pass;
-    const wishesOk = !p.requireAllWishes || score.wishes === cfg.wishes.length;
-    const pass = wishesOk && score.total >= p.minTotal;
-    return { pass, tone: pass ? 'good' : 'warn', score };
+    const hits = wishHits(stats(slots, cfg), cfg);
+    const missing = p.requireAllWishes ? cfg.wishes.filter((w, i) => !hits[i].hit) : [];
+    const pass = !missing.length && score.total >= p.minTotal;
+    const reason = pass ? null : missing.length ? 'missing' : 'lowScore';
+    return { pass, tone: pass ? 'good' : 'warn', score, missing, reason };
   }
 
   // 落点在环上的位置（百分比），从正上方顺时针

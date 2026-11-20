@@ -1,12 +1,14 @@
 key,text
-intro,先读环境与传闻，再选择一种共鸣方式。错误选择会返回可解释反馈。
+intro,目标：收录三只精灵。左侧选一条传闻，读环境，再在右侧选共鸣方式并尝试结伴；选错会给提示，可以立即重试。
 partnerOk,{spirit}回应了你的选择。完成三步协作即可收录图鉴。
 partnerFail,共鸣没有建立：{hint} 可以更换选项后重试。
 challengeBroken,协作节奏被打断：先观察，再稳定共鸣，最后同步步伐。
 challengeStep,协作步骤 {step}/{total} 完成。
-complete,{spirit}已收录图鉴，并加入今晚的城市巡游。
-completeToast,公共巡游路线已点亮一段，个人奖励已记录。
+complete,{spirit}已收录图鉴（{count}/{total}）。从左侧换一条传闻，继续寻找下一只。
+completeAll,{spirit}已收录图鉴（{count}/{total}）。三只精灵都已结伴，今晚的巡游路线全部点亮。
+completeToast,公共巡游路线已点亮一段。
+completeAllToast,图鉴已集齐，巡游路线全部点亮。
 unknownSpirit,未知精灵
 progressSearching,正在判断踪迹
 progressChallenge,协作挑战 {step}/{total}
-progressDone,已收录图鉴
+progressDone,已收录图鉴 {count}/{total}

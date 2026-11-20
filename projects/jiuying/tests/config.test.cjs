@@ -45,7 +45,7 @@ a.strictEqual(C.progress.archived, 100);
 // 6. 文案表：key 唯一，代码用到的 key 都存在
 const keys = C.text.map(r => r.key);
 a.strictEqual(new Set(keys).size, keys.length, 'text key 重复');
-const used = ['exposureDark', 'exposureReadable', 'exposureOver', 'needSelect', 'checkPass', 'checkFail', 'archived', 'archiveToast', 'progressLabel', 'progressDone'];
+const used = ['exposureDark', 'exposureReadable', 'exposureOver', 'needSelect', 'checkPass', 'checkFailExposure', 'checkFailType', 'archived', 'archivedLocked', 'archiveToast', 'progressLabel', 'progressDone', 'playHint'];
 for (const k of used) a.ok(keys.includes(k), `缺少文案 ${k}`);
 
 // 7. 判定函数：曝光区间边界
@@ -77,5 +77,21 @@ s.fact = 'receipt'; s.inference = 'note'; a.strictEqual(R.progressStep(s), C.pro
 s.checked = R.checkEvidence(s); a.strictEqual(R.progressStep(s), C.progress.checked);
 s.archived = true; a.strictEqual(R.progressStep(s), 100);
 a.strictEqual(R.text('progressLabel', { step: 38 }), '修复进度 38%');
+
+// 10. 核对失败原因：曝光不对优先报曝光，曝光对了才报分类
+a.strictEqual(R.checkFailReason({ exposure: 60, fact: 'receipt', inference: 'note' }), null);
+a.strictEqual(R.checkFailReason({ exposure: ex.initial, fact: 'receipt', inference: 'note' }), 'exposure');
+a.strictEqual(R.checkFailReason({ exposure: 90, fact: 'note', inference: 'receipt' }), 'exposure');
+a.strictEqual(R.checkFailReason({ exposure: 60, fact: 'note', inference: 'receipt' }), 'type');
+a.strictEqual(R.checkFailReason({ exposure: 60, fact: 'receipt', inference: 'camera' }), 'type');
+for (const exposure of [ex.initial, 60, 90]) for (const f of C.evidence) for (const i of C.evidence)
+  a.strictEqual(R.checkFailReason({ exposure, fact: f.id, inference: i.id }) === null, R.checkEvidence({ exposure, fact: f.id, inference: i.id }));
+
+// 11. 归类：同一条线索不能同时占两栏
+const plain = x => JSON.parse(JSON.stringify(x));
+a.deepStrictEqual(plain(R.assignEvidence({ fact: null, inference: null }, 'fact', 'receipt')), { fact: 'receipt', inference: null });
+a.deepStrictEqual(plain(R.assignEvidence({ fact: 'receipt', inference: null }, 'inference', 'receipt')), { fact: null, inference: 'receipt' });
+a.deepStrictEqual(plain(R.assignEvidence({ fact: 'receipt', inference: 'note' }, 'fact', 'note')), { fact: 'note', inference: null });
+a.deepStrictEqual(plain(R.assignEvidence({ fact: 'receipt', inference: 'note' }, 'fact', 'camera')), { fact: 'camera', inference: 'note' });
 
 console.log(`${a.count()} assertions passed`);

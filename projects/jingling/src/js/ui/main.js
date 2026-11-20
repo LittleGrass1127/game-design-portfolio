@@ -71,10 +71,14 @@
 
   const total = R.challengeSequence().length;
   let state = R.createState();
+  const collected = [];
 
   function render() {
     const rumor = R.getRumor(state.rumor);
-    $$('.choice[data-rumor]').forEach(node => node.setAttribute('aria-pressed', String(node.dataset.rumor === state.rumor)));
+    $$('.choice[data-rumor]').forEach(node => {
+      node.setAttribute('aria-pressed', String(node.dataset.rumor === state.rumor));
+      node.classList.toggle('done', collected.includes(node.dataset.rumor));
+    });
     $$('.choice[data-resonance]').forEach(node => node.setAttribute('aria-pressed', String(node.dataset.resonance === state.resonance)));
     $('#scene-title').textContent = rumor.name;
     $('#scene-note').textContent = rumor.scene;
@@ -82,7 +86,7 @@
     $('#challenge-panel').hidden = !state.partnered;
     $('#spirit-name').textContent = state.partnered ? rumor.spirit : R.text('unknownSpirit');
     setScore(R.scoreValue(state));
-    const label = state.complete ? R.text('progressDone')
+    const label = state.complete ? R.text('progressDone', R.collectionSummary(collected))
       : state.partnered ? R.text('progressChallenge', { step: state.challenge.length, total })
       : R.text('progressSearching');
     setProgress(R.progressValue(state), label);
@@ -105,6 +109,7 @@
       render();
     }));
     $$('.choice[data-resonance]').forEach(node => node.addEventListener('click', () => {
+      if (state.partnered) return;
       state.resonance = node.dataset.resonance;
       render();
     }));
@@ -127,8 +132,10 @@
         setFeedback(R.text('challengeStep', { step: state.challenge.length, total }), 'good');
         if (result.complete) {
           state.complete = true;
-          setFeedback(R.text('complete', { spirit: R.getRumor(state.rumor).spirit }), 'good');
-          toast(R.text('completeToast'));
+          if (!collected.includes(state.rumor)) collected.push(state.rumor);
+          const sum = R.collectionSummary(collected);
+          setFeedback(R.text(sum.all ? 'completeAll' : 'complete', { spirit: R.getRumor(state.rumor).spirit, count: sum.count, total: sum.total }), 'good');
+          toast(R.text(sum.all ? 'completeAllToast' : 'completeToast'));
         }
       }
       render();

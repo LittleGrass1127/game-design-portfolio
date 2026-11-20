@@ -39,6 +39,13 @@
     return { ok: true, challenge: next, complete: next.length === seq.length };
   }
 
+  // 图鉴收集进度：collected 为已收录的传闻 id 列表（切换传闻不清空）
+  function collectionSummary(collected) {
+    const total = C().rumors.length;
+    const count = C().rumors.filter(r => collected.includes(r.id)).length;
+    return { count, total, all: count === total };
+  }
+
   // 共鸣进度圆环
   function scoreValue(state) {
     const s = C().flow.score;
@@ -53,5 +60,5 @@
       : state.resonance ? p.resonance : p.initial;
   }
 
-  global.JinglingRules = { text, getRumor, challengeSequence, createState, tryPartner, applyChallengeAction, scoreValue, progressValue };
+  global.JinglingRules = { text, getRumor, challengeSequence, createState, tryPartner, applyChallengeAction, collectionSummary, scoreValue, progressValue };
 })(window);

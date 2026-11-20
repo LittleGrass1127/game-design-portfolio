@@ -3,11 +3,13 @@
   'use strict';
   const cfg = window.GAME_CONFIG;
   const R = window.ChunfengRules;
-  const { $, $$, setFeedback, setProgress, setScore } = window.UI;
+  const { $, $$, toast, setFeedback, setProgress, setScore } = window.UI;
   const flowers = R.flowerMap(cfg);
   const T = cfg.texts;
   const state = { selected: cfg.scoring.ring.defaultFlower, slots: R.emptySlots(cfg), submitted: false };
   const ring = $('#flower-ring');
+  const hintVars = { min: cfg.scoring.ring.minPlanted, pass: cfg.scoring.pass.minTotal };
+  const initialFeedback = R.fill(T.feedbackInitial, hintVars);
 
   function buildStatic() {
     $('#seed-cards').innerHTML = cfg.flowers.map(f => {
@@ -15,8 +17,9 @@
       return `<button class="card" data-flower="${f.id}" type="button"><strong>${f.name}</strong><span>${label}</span></button>`;
     }).join('') + `<div class="brief"><strong>${T.windTitle}</strong><span>${T.windText}</span></div>`;
     $('#wish-count').textContent = `${cfg.wishes.length} 条`;
-    $('#wish-list').innerHTML = cfg.wishes.map(w => `<div class="objective">${R.fill(T.wishLine, w)}</div>`).join('');
-    setFeedback(T.feedbackInitial);
+    $('#wish-list').innerHTML = cfg.wishes.map(w => `<div class="objective" data-wish="${w.id}">${R.fill(T.wishLine, w)}</div>`).join('');
+    $('#play-hint').textContent = R.fill(T.playHint, hintVars);
+    setFeedback(initialFeedback);
 
     for (let i = 0; i < cfg.scoring.ring.slotCount; i += 1) {
       const button = document.createElement('button');
@@ -27,7 +30,7 @@
       button.style.left = `${pos.left}%`;
       button.style.top = `${pos.top}%`;
       button.addEventListener('click', () => {
-        if (state.submitted) return;
+        if (state.submitted) return toast(T.toastLocked);
         state.slots = R.toggleSlot(state.slots, i, state.selected);
         render();
       });
@@ -48,6 +51,8 @@
     $('#harmony').textContent = Math.round(score.harmony);
     $('#layers').textContent = Math.round(score.layers);
     $('#wishes').textContent = `${score.wishes}/${cfg.wishes.length}`;
+    const hits = R.wishHits(R.stats(state.slots, cfg), cfg);
+    $$('.objective[data-wish]').forEach(node => node.classList.toggle('done', hits.some(h => h.id === node.dataset.wish && h.hit)));
     const p = R.progress(state.slots, state.submitted, cfg);
     setProgress(p.value, p.label);
     $('#flower-submit').disabled = !R.canSubmit(state.slots, state.submitted, cfg);
@@ -61,14 +66,17 @@
     $('#flower-clear').addEventListener('click', () => {
       state.slots = R.emptySlots(cfg);
       state.submitted = false;
-      setFeedback(T.feedbackInitial);
+      setFeedback(initialFeedback);
       render();
     });
     $('#flower-submit').addEventListener('click', () => {
       const v = R.submitVerdict(state.slots, cfg);
       // 未达标不锁定花环，可继续调整后再提交
       state.submitted = v.pass;
-      setFeedback(v.pass ? T.submitGood : T.submitRetry, v.tone);
+      const vars = { score: Math.round(v.score.total), layers: Math.round(v.score.layers), pass: cfg.scoring.pass.minTotal,
+        missing: v.missing.map(w => R.fill(T.missingItem, w)).join('、') };
+      const tpl = v.pass ? T.submitGood : v.reason === 'missing' ? T.submitMissing : T.submitLowScore;
+      setFeedback(R.fill(tpl, vars), v.tone);
       render();
     });
   }

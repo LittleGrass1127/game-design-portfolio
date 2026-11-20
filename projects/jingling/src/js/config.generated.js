@@ -3,13 +3,13 @@ window.GAME_CONFIG = {
   "challengeActions": [
     {
       "id": "steady",
-      "label": "稳住风铃",
+      "label": "稳定共鸣",
       "displayOrder": 1,
       "step": 2
     },
     {
       "id": "observe",
-      "label": "观察微光",
+      "label": "观察踪迹",
       "displayOrder": 2,
       "step": 1
     },
@@ -88,7 +88,7 @@ window.GAME_CONFIG = {
   "text": [
     {
       "key": "intro",
-      "text": "先读环境与传闻，再选择一种共鸣方式。错误选择会返回可解释反馈。"
+      "text": "目标：收录三只精灵。左侧选一条传闻，读环境，再在右侧选共鸣方式并尝试结伴；选错会给提示，可以立即重试。"
     },
     {
       "key": "partnerOk",
@@ -108,11 +108,19 @@ window.GAME_CONFIG = {
     },
     {
       "key": "complete",
-      "text": "{spirit}已收录图鉴，并加入今晚的城市巡游。"
+      "text": "{spirit}已收录图鉴（{count}/{total}）。从左侧换一条传闻，继续寻找下一只。"
+    },
+    {
+      "key": "completeAll",
+      "text": "{spirit}已收录图鉴（{count}/{total}）。三只精灵都已结伴，今晚的巡游路线全部点亮。"
     },
     {
       "key": "completeToast",
-      "text": "公共巡游路线已点亮一段，个人奖励已记录。"
+      "text": "公共巡游路线已点亮一段。"
+    },
+    {
+      "key": "completeAllToast",
+      "text": "图鉴已集齐，巡游路线全部点亮。"
     },
     {
       "key": "unknownSpirit",
@@ -128,7 +136,7 @@ window.GAME_CONFIG = {
     },
     {
       "key": "progressDone",
-      "text": "已收录图鉴"
+      "text": "已收录图鉴 {count}/{total}"
     }
   ]
 };

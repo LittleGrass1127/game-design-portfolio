@@ -45,6 +45,21 @@
     return isReadable(state.exposure) && fact.type === 'fact' && inference.type === 'inference';
   }
 
+  // 核对失败的原因：exposure = 曝光不在可识别区间；type = 有线索放错了栏；null = 通过
+  function checkFailReason(state) {
+    if (checkEvidence(state)) return null;
+    return isReadable(state.exposure) ? 'type' : 'exposure';
+  }
+
+  // 归类：把线索放进 slot（fact / inference）；同一条线索不能同时占两栏
+  function assignEvidence(state, slot, evidenceId) {
+    const other = slot === 'fact' ? 'inference' : 'fact';
+    const next = { fact: state.fact, inference: state.inference };
+    next[slot] = evidenceId;
+    if (next[other] === evidenceId) next[other] = null;
+    return next;
+  }
+
   // 进度条：取当前达到的最高阶段
   function progressStep(state) {
     const p = C().progress;
@@ -55,5 +70,5 @@
     return p.initial;
   }
 
-  global.JiuyingRules = { text, getEvidence, createState, isReadable, exposureZone, exposureVisual, checkEvidence, progressStep };
+  global.JiuyingRules = { text, getEvidence, createState, isReadable, exposureZone, exposureVisual, checkEvidence, checkFailReason, assignEvidence, progressStep };
 })(window);

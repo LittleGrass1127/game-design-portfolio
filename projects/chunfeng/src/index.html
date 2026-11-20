@@ -9,7 +9,7 @@
   <title>春风编花会｜交互原型</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body data-game="starry">
+<body data-game="chunfeng">
   <main class="shell">
     <nav class="topbar" aria-label="原型导航">
       <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>花溪谷</strong><br/><span>春风编花会</span></div></div>
@@ -29,7 +29,7 @@
       </aside>
 
       <section class="panel playfield">
-        <div class="playfield-title"><div><h2>环形花坛</h2><p>点击空位种植，再次点击可拔除。目标是至少种满十二株。</p></div><div class="score-orb" aria-label="综合评分"><span id="score">0</span></div></div>
+        <div class="playfield-title"><div><h2>环形花坛</h2><p id="play-hint"></p></div><div class="score-orb" aria-label="综合评分"><span id="score">0</span></div></div>
         <div class="flower-stage"><div class="flower-ring" id="flower-ring" aria-label="十六个花环落点"></div></div>
         <div class="feedback" id="feedback"></div>
         <div class="actions"><button class="primary" id="flower-submit" type="button">提交花环</button><button class="ghost" id="flower-clear" type="button">重新布置</button></div>

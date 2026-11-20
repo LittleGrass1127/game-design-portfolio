@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const cfg = window.GAME_CONFIG;
-  const R = window.LiufenRules;
+  const R = window.YedengRules;
   const { $, $$, toast, setFeedback, setProgress, setScore } = window.UI;
   const clips = R.clipMap(cfg);
   const T = cfg.texts;
@@ -19,6 +19,7 @@
     $('#clip-cards').innerHTML = cfg.clips.map(clip =>
       `<button class="card" data-clip="${clip.id}" type="button"><strong>${clip.name}</strong><span>${R.fill(T.cardLabel, clip)}</span></button>`
     ).join('');
+    $('#play-hint').textContent = T.playHint;
     $('.timeline').innerHTML = Array.from({ length: c.timelineSize }, () => '<button class="timeline-slot" type="button"></button>').join('');
     setFeedback(T.feedbackInitial);
   }
@@ -30,7 +31,7 @@
       const head = `<div class="slot-index">${R.fill(T.slotIndex, { index: index + 1 })}</div>`;
       slot.classList.toggle('filled', Boolean(clip));
       slot.innerHTML = clip
-        ? `${head}<div class="slot-name">${clip.name}</div><div class="slot-tag">${clip.tag}</div>`
+        ? `${head}<div class="slot-name">${clip.name}</div><div class="slot-tag">${R.fill(T.slotTag, clip)}</div>`
         : `${head}<div class="slot-name">${T.slotEmpty}</div>`;
     });
     const score = R.calculate(state.timeline, cfg);
@@ -45,21 +46,29 @@
     setProgress(p.value, p.label);
     $('#preview-btn').disabled = !R.canPreview(state.timeline, cfg);
     $('#premiere-btn').disabled = !state.previewed || state.finished;
+    $('#reset-btn').textContent = state.finished ? T.resetLabelDone : T.resetLabel;
+  }
+
+  // 任何改动都回到“未试映、未放映”，放映后也可以直接继续改
+  function edited() {
+    if (state.finished) setFeedback(T.feedbackInitial);
+    state.previewed = false;
+    state.finished = false;
   }
 
   function bind() {
     $$('.card[data-clip]').forEach(card => card.addEventListener('click', () => {
       const res = R.toggleClip(state.timeline, card.dataset.clip, cfg);
-      if (res.full) toast(T.toastTimelineFull);
+      if (res.full) { toast(T.toastTimelineFull); return; }
       state.timeline = res.timeline;
-      state.previewed = false;
+      edited();
       render();
     }));
 
     $$('.timeline-slot').forEach((slot, index) => slot.addEventListener('click', () => {
       if (!state.timeline[index]) return;
       state.timeline = R.removeAt(state.timeline, index);
-      state.previewed = false;
+      edited();
       render();
     }));
 
@@ -73,8 +82,8 @@
     $('#premiere-btn').addEventListener('click', () => {
       state.finished = true;
       const score = Math.round(R.calculate(state.timeline, cfg).total);
-      setFeedback(R.fill(T.premiereFeedback, { score }), 'good');
-      toast(T.toastPremiere);
+      const v = R.previewVerdict(state.timeline, cfg);
+      setFeedback(R.fill(v.key === 'good' ? T.premiereGood : T.premiereWarn, { score }), v.tone);
       render();
     });
 

@@ -9,7 +9,7 @@
   <title>旧影回声｜交互原型</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body data-game="themis">
+<body data-game="jiuying">
   <main class="shell">
     <nav class="topbar" aria-label="原型导航">
       <div class="brand"><i class="brand-mark" aria-hidden="true"></i><div><strong>旧影事务所</strong><br/><span>七日限定调查档案</span></div></div>
@@ -36,7 +36,7 @@
       </aside>
 
       <section class="panel playfield">
-        <div class="playfield-title"><div><h2>暗房灯箱</h2><p>过度修复可以无成本回退，不会消耗提示次数。</p></div><div class="score-orb" aria-label="调查可信度"><span id="score">0</span></div></div>
+        <div class="playfield-title"><div><h2>暗房灯箱</h2><p id="play-hint"></p></div><div class="score-orb" aria-label="调查可信度"><span id="score">0</span></div></div>
         <div class="lightbox"><div class="negative" id="negative"></div></div>
         <label class="slider-row" for="exposure"><span>曝光强度</span><input id="exposure" type="range"/><b id="exposure-value">30%</b></label>
         <div class="classify-grid">
@@ -44,7 +44,7 @@
           <div class="dropzone"><strong>推断</strong><span id="inference-slot"></span></div>
         </div>
         <div class="feedback" id="feedback"></div>
-        <div class="actions"><button class="primary" id="check-evidence" type="button">与沈砚核对</button><button class="secondary" id="archive-photo" type="button">收录照片</button></div>
+        <div class="actions"><button class="primary" id="check-evidence" type="button">与沈砚核对</button><button class="secondary" id="archive-photo" type="button">收录照片</button><button class="ghost" id="reset-case" type="button">重新开始</button></div>
       </section>
 
       <aside class="panel">

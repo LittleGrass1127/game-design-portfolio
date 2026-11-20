@@ -28,7 +28,7 @@
   },
   "pass": {
     "requireAllWishes": true,
-    "minTotal": 72
+    "minTotal": 88
   },
   "progress": {
     "plantedSpan": 82,
