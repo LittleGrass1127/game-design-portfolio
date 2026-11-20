@@ -314,4 +314,22 @@ let pickNext = null;
   console.log('模拟(seed 42):', JSON.stringify(r1));
 }
 
+// ---- 冲刺冷却比例（冲刺按钮的冷却条）与界面缩放基准 ----
+{
+  const s = W.createState(R.makeRng(7)); s.mode = 'play';
+  a.strictEqual(R.dashCooldownRatio(s.player), 0);
+  a.ok(R.tryDash(s));
+  a.strictEqual(R.dashCooldownRatio(s.player), 1);
+  W.tickTimers(s, G.player.dashCooldown / 2);
+  a.ok(Math.abs(R.dashCooldownRatio(s.player) - 0.5) < 1e-9);
+  a.strictEqual(R.tryDash(s), false, '冷却中不能再次冲刺');
+  W.tickTimers(s, G.player.dashCooldown);
+  a.strictEqual(R.dashCooldownRatio(s.player), 0);
+  R.applyUpgrade(s, 'dash');
+  a.ok(R.tryDash(s));
+  a.strictEqual(s.player.dashCd, 2);
+  a.strictEqual(R.dashCooldownRatio(s.player), 1, '汽水冲刺后冷却条按新的 2 秒计算');
+  a.ok(G.hud.uiBaseWidth > 0 && G.hud.uiBaseWidth <= G.view.w, '界面缩放基准宽度应在 (0, 视口宽度]');
+}
+
 console.log(`${a.count()} assertions passed`);

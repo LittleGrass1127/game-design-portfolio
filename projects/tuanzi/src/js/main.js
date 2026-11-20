@@ -10,7 +10,7 @@
     combo: $('combo'), comboNum: $('comboNum'), prompt: $('prompt'),
     start: $('startScreen'), upgrade: $('upgradeScreen'), choices: $('upgradeChoices'), end: $('endScreen'),
     finalCoins: $('finalCoins'), timeBonus: $('timeBonus'), finalClean: $('finalClean'),
-    best: $('bestScore'), endTitle: $('endTitle'), stamp: $('stamp')
+    best: $('bestScore'), endTitle: $('endTitle'), stamp: $('stamp'), dash: $('dashButton')
   };
   const canvas = $('game');
   let state = null;
@@ -45,10 +45,17 @@
     A.tone(523, .07, 'triangle', .04); A.tone(659, .07, 'triangle', .035, .07); A.tone(784, .12, 'triangle', .03, .14);
   }
 
+  // 最高分存 localStorage；隐私模式或被禁用时读写失败也不影响结算
+  function readBest() { try { return Number(localStorage.getItem(G.bestScoreKey) || 0) || 0; } catch (_) { return 0; } }
+  function writeBest(value) { try { localStorage.setItem(G.bestScoreKey, value); } catch (_) {} }
+  // 界面按舞台宽度整体缩放，窄屏 / 竖屏 / 小 iframe 下卡片不被裁切
+  function fitUi() { const stage = $('stage'); stage.style.setProperty('--ui', Math.min(1, stage.clientWidth / G.hud.uiBaseWidth).toFixed(4)); }
+
   // ---- 状态流转 ----
   function startGame() {
     state = W.createState();
     state.mode = 'play';
+    I.clear();
     ui.start.classList.remove('show');
     ui.end.classList.remove('show');
     A.ensure();
@@ -98,8 +105,8 @@
     const res = R.finish(state);
     if (!res) return;
     if (res.settled) onSettle(res.settled);
-    const best = Math.max(res.coins, Number(localStorage.getItem(G.bestScoreKey) || 0));
-    localStorage.setItem(G.bestScoreKey, best);
+    const best = Math.max(res.coins, readBest());
+    writeBest(best);
     ui.finalCoins.textContent = state.coins; ui.timeBonus.textContent = `+${res.timeBonus}`; ui.finalClean.textContent = res.clean + '%'; ui.best.textContent = best;
     ui.endTitle.textContent = res.tier.title;
     ui.stamp.textContent = res.tier.stamp;
@@ -113,7 +120,9 @@
     ui.clock.textContent = R.formatClock(state.time);
     ui.clock.parentElement.classList.toggle('danger', Math.ceil(state.time) <= G.hud.dangerSeconds);
     ui.combo.classList.toggle('show', state.combo >= G.combo.showAt && state.comboTimer > 0);
-    ui.prompt.classList.toggle('show', state.player.cargo.length >= state.player.capacity);
+    ui.prompt.classList.toggle('show', state.mode === 'play' && state.player.cargo.length >= state.player.capacity);
+    ui.dash.classList.toggle('cooling', state.player.dashCd > 0);
+    ui.dash.style.setProperty('--cd', R.dashCooldownRatio(state.player).toFixed(3));
   }
 
   function frame(now) {
@@ -127,13 +136,15 @@
   I.bind(canvas, {
     getCamera: () => state.camera,
     onDash: dash,
+    onConfirm: () => { if (state?.mode === 'title' || state?.mode === 'end') { startGame(); return true; } return false; },
     onNumber: n => { if (state?.mode === 'upgrade') ui.choices.children[n - 1]?.click(); }
   });
   $('startButton').addEventListener('click', startGame);
   $('restartButton').addEventListener('click', startGame);
   ui.sound.addEventListener('click', () => { const on = A.toggle(); ui.sound.classList.toggle('off', !on); if (on) { A.ensure(); A.tone(660); } });
-  window.addEventListener('resize', V.resize);
+  ui.dash.addEventListener('pointerdown', e => { e.preventDefault(); dash(); });
+  window.addEventListener('resize', () => { V.resize(); fitUi(); });
 
-  V.init(canvas); state = W.createState(); requestAnimationFrame(frame);
+  V.init(canvas); fitUi(); state = W.createState(); requestAnimationFrame(frame);
   window.__tuanzi = { get state() { return state; } }; // 调试 / 自动化测试入口
 })();

@@ -20,7 +20,10 @@
     return { dx, dy };
   }
 
-  // handlers: getCamera(), onDash(), onNumber(n)
+  // 清空输入：开局、失焦时调用，避免上一局的目标点或卡住的按键带进来
+  function clear() { input.keys.clear(); input.pointer = false; input.target = null; }
+
+  // handlers: getCamera(), onDash(), onNumber(n), onConfirm() -> 返回 true 表示已处理回车
   function bind(canvas, handlers) {
     const toWorld = event => {
       const r = canvas.getBoundingClientRect(), cam = handlers.getCamera();
@@ -30,6 +33,7 @@
       const key = e.key.toLowerCase();
       if (MOVE_KEYS.includes(key) || key === ' ') e.preventDefault();
       if (MOVE_KEYS.includes(key)) input.target = null; // 键盘方向清除指针目标
+      if (key === 'enter' && handlers.onConfirm && handlers.onConfirm()) { e.preventDefault(); return; }
       input.keys.add(key);
       if (key === ' ') handlers.onDash();
       if (['1', '2', '3', '4'].includes(key)) handlers.onNumber(Number(key));
@@ -39,7 +43,8 @@
     canvas.addEventListener('pointermove', e => { if (input.pointer) input.target = toWorld(e); });
     canvas.addEventListener('pointerup', () => { input.pointer = false; });
     canvas.addEventListener('pointercancel', () => { input.pointer = false; });
+    root.addEventListener('blur', clear);
   }
 
-  root.TuanziInput = { state: input, direction, bind };
+  root.TuanziInput = { state: input, direction, bind, clear };
 })(window);

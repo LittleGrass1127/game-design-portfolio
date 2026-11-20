@@ -36,14 +36,14 @@
           <h2>吸走、合成、送回餐车</h2>
         </div>
         <div class="how">
-          <div><b>移动</b><span>点击 / 拖动<br>或 WASD</span></div>
+          <div><b>移动</b><span>WASD / 方向键<br>或点击、拖动</span></div>
           <i>›</i>
           <div><b>靠近</b><span>自动吸走<br>散落团子</span></div>
           <i>›</i>
-          <div><b>送回</b><span>靠近餐车<br>自动结算</span></div>
+          <div><b>送回</b><span>回到中央餐车<br>自动换成金币</span></div>
         </div>
         <button id="startButton" class="primary">开始清洁</button>
-        <small>不用攻击，不会失败 · 两分钟一局</small>
+        <small>目标：两分钟内把 120 只团子全部送回餐车 · 不用攻击，不会失败 · 按回车也能开始</small>
       </div>
     </section>
 
@@ -65,7 +65,8 @@
       </div>
     </section>
 
-    <footer id="controls">移动：WASD / 方向键 / 点击或拖动　　冲刺：空格</footer>
+    <button id="dashButton" type="button" aria-label="冲刺（空格）">冲刺<i></i></button>
+    <footer id="controls">移动：WASD / 方向键 / 点击或拖动　　冲刺：空格　　开始 / 再来一局：回车</footer>
   </main>
   <script src="js/config.generated.js"></script>
   <script src="js/rules.js"></script>

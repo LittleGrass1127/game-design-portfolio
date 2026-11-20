@@ -35,7 +35,7 @@
   "camera": { "smoothBase": 0.001 },
   "pointerArriveDist": 18,
   "maxFrameDt": 0.033,
-  "hud": { "dangerSeconds": 15 },
+  "hud": { "dangerSeconds": 15, "uiBaseWidth": 1040 },
   "decorations": { "count": 34, "treeRatio": 0.58 },
   "endTiers": [
     { "minClean": 100, "title": "甜点街重新亮起来了", "stamp": "闪亮" },

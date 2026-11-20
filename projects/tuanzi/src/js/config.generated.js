@@ -140,7 +140,8 @@ window.GAME_CONFIG = {
     "pointerArriveDist": 18,
     "maxFrameDt": 0.033,
     "hud": {
-      "dangerSeconds": 15
+      "dangerSeconds": 15,
+      "uiBaseWidth": 1040
     },
     "decorations": {
       "count": 34,

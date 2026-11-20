@@ -43,7 +43,7 @@ button{font:inherit;color:inherit}
 #controls{position:absolute;z-index:4;right:22px;bottom:15px;padding:7px 12px;border-radius:13px;background:#fffbe8b8;font-size:11px;font-weight:700;color:#374267aa;pointer-events:none}
 .screen{position:absolute;z-index:12;inset:0;display:none;place-items:center;padding:28px;background:#26315f4a;backdrop-filter:blur(7px)}
 .screen.show{display:grid}
-.start-card,.end-card,.upgrade-panel{position:relative;width:min(750px,92vw);padding:35px 42px 30px;border:4px solid var(--ink);border-radius:35px;background:var(--paper);box-shadow:0 13px 0 var(--ink),0 28px 70px #26315f66;text-align:center}
+.start-card,.end-card,.upgrade-panel{position:relative;width:min(750px,92%);padding:35px 42px 30px;border:4px solid var(--ink);border-radius:35px;background:var(--paper);box-shadow:0 13px 0 var(--ink),0 28px 70px #26315f66;text-align:center}
 .start-card:before,.end-card:before{content:"";position:absolute;inset:8px;border:2px dashed #e7b9c5;border-radius:25px;pointer-events:none}
 .mascot{position:absolute;left:55px;top:-66px;width:118px;height:104px;border:4px solid var(--ink);border-radius:56% 44% 48% 52%;background:var(--berry);box-shadow:0 8px 0 #26315f33;transform:rotate(-8deg)}
 .mascot:before,.mascot:after{content:"";position:absolute;top:-15px;width:29px;height:42px;border:4px solid var(--ink);background:var(--berry);z-index:-1}.mascot:before{left:16px;border-radius:70% 30% 0 0;transform:rotate(-16deg)}.mascot:after{right:16px;border-radius:30% 70% 0 0;transform:rotate(16deg)}
@@ -56,16 +56,22 @@ button{font:inherit;color:inherit}
 .primary{position:relative;min-width:220px;padding:14px 28px;border:3px solid var(--ink);border-radius:18px;background:var(--lemon);font-weight:900;font-size:18px;box-shadow:0 6px 0 var(--ink);cursor:pointer;transition:transform .08s,box-shadow .08s}
 .primary:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--ink)}.primary:active{transform:translateY(5px);box-shadow:0 1px 0 var(--ink)}
 .start-card small{display:block;margin-top:18px;color:#8991aa;font-size:11px}
-.upgrade-panel{width:min(1100px,96vw);padding-top:30px}
+.upgrade-panel{width:min(1100px,96%);padding-top:30px}
 .upgrade-panel h2{margin:0 0 22px;font-size:32px}
 .upgrade-choices{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .upgrade-choice{min-height:186px;padding:20px 16px 18px;border:3px solid var(--ink);border-radius:24px;background:#fff;box-shadow:0 7px 0 #26315f;cursor:pointer;transition:transform .12s,background .12s}
 .upgrade-choice:nth-child(2){background:#effaf3}.upgrade-choice:nth-child(3){background:#fff9dc}.upgrade-choice:nth-child(4){background:#eef8ff}.upgrade-choice:hover{transform:translateY(-5px) rotate(-1deg);background:#fff5b7}.upgrade-choice:focus-visible,.primary:focus-visible,#sound:focus-visible{outline:4px solid #fff;outline-offset:4px}
 .upgrade-choice i{display:grid;place-items:center;width:62px;height:62px;margin:0 auto 12px;border:3px solid var(--ink);border-radius:22px;background:var(--sky);font-style:normal;font-size:30px}.upgrade-choice:nth-child(2) i{background:var(--berry)}.upgrade-choice:nth-child(3) i{background:var(--lemon)}.upgrade-choice:nth-child(4) i{background:var(--mint)}
 .upgrade-choice b,.upgrade-choice span{display:block}.upgrade-choice b{font-size:18px}.upgrade-choice span{margin-top:8px;color:#687293;font-size:12px;line-height:1.5}
-.end-card{width:min(690px,92vw);padding-top:45px}.end-card h2{margin:8px 0 24px;font-size:28px}.end-score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px}.end-score span{padding:13px 8px;border-radius:18px;background:#e9f8f3;font-size:12px;color:#7780a0}.end-score b{display:block;margin-top:5px;font-size:22px;color:var(--ink)}
+.end-card{width:min(690px,92%);padding-top:45px}.end-card h2{margin:8px 0 24px;font-size:28px}.end-score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:26px}.end-score span{padding:13px 8px;border-radius:18px;background:#e9f8f3;font-size:12px;color:#7780a0}.end-score b{display:block;margin-top:5px;font-size:22px;color:var(--ink)}
 #stamp{position:absolute;right:35px;top:-35px;display:grid;place-items:center;width:90px;height:90px;border:6px double #ec6f91;border-radius:50%;color:#ec6f91;font-size:22px;font-weight:900;transform:rotate(12deg);background:#fffdf2}
-@media(max-width:760px){#hud{left:10px;right:10px;top:10px;grid-template-columns:1fr 1.4fr 1fr;gap:8px}.brand b{display:none}.progress-wrap{padding:8px 10px 9px}.run-stats{gap:5px}.run-stats>span,.run-stats button{height:34px;border-radius:11px}.coin{min-width:62px;padding:0 8px}.coin i{width:19px;height:19px}.clock{min-width:53px;padding:0 7px}#sound{width:34px}.start-card{padding:28px 18px 22px}.mascot{display:none}.title-lockup h1{font-size:42px}.how{gap:5px;padding:12px 5px}.how div{min-width:0;flex:1}.how i{font-size:22px}.upgrade-panel{padding:18px 12px}.upgrade-panel h2{margin-bottom:12px;font-size:24px}.upgrade-choices{grid-template-columns:repeat(2,1fr);gap:8px}.upgrade-choice{min-height:120px;padding:10px 8px}.upgrade-choice i{width:40px;height:40px;margin-bottom:7px;font-size:20px}.upgrade-choice b{font-size:13px}.upgrade-choice span{margin-top:4px;font-size:9px}#controls{display:none}}
+#hud,#combo,#prompt,#controls,#dashButton,.screen{zoom:var(--ui,1)}
+#dashButton{position:absolute;z-index:6;left:22px;bottom:15px;min-width:92px;height:44px;padding:0 16px;overflow:hidden;border:3px solid var(--ink);border-radius:15px;background:var(--paper);box-shadow:0 4px 0 var(--ink);font-size:14px;font-weight:900;cursor:pointer;touch-action:manipulation}
+#dashButton i{position:absolute;left:0;bottom:0;height:5px;width:calc(var(--cd,0)*100%);background:var(--berry)}
+#dashButton.cooling{opacity:.62;box-shadow:0 2px 0 var(--ink);transform:translateY(2px)}
+#dashButton:focus-visible{outline:4px solid #fff;outline-offset:3px}
+body:after{content:"横屏或在电脑上打开，画面更大";display:none;padding:14px 20px;color:#26315fcc;font-size:13px;font-weight:700;text-align:center}
+@media(orientation:portrait) and (max-width:700px){body{grid-template-rows:1fr auto 1fr}#stage{grid-row:2;margin:0 auto}body:after{display:block;grid-row:3;align-self:start}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -98,14 +104,14 @@ button{font:inherit;color:inherit}
           <h2>吸走、合成、送回餐车</h2>
         </div>
         <div class="how">
-          <div><b>移动</b><span>点击 / 拖动<br>或 WASD</span></div>
+          <div><b>移动</b><span>WASD / 方向键<br>或点击、拖动</span></div>
           <i>›</i>
           <div><b>靠近</b><span>自动吸走<br>散落团子</span></div>
           <i>›</i>
-          <div><b>送回</b><span>靠近餐车<br>自动结算</span></div>
+          <div><b>送回</b><span>回到中央餐车<br>自动换成金币</span></div>
         </div>
         <button id="startButton" class="primary">开始清洁</button>
-        <small>不用攻击，不会失败 · 两分钟一局</small>
+        <small>目标：两分钟内把 120 只团子全部送回餐车 · 不用攻击，不会失败 · 按回车也能开始</small>
       </div>
     </section>
 
@@ -127,7 +133,8 @@ button{font:inherit;color:inherit}
       </div>
     </section>
 
-    <footer id="controls">移动：WASD / 方向键 / 点击或拖动　　冲刺：空格</footer>
+    <button id="dashButton" type="button" aria-label="冲刺（空格）">冲刺<i></i></button>
+    <footer id="controls">移动：WASD / 方向键 / 点击或拖动　　冲刺：空格　　开始 / 再来一局：回车</footer>
   </main>
   <script>(() => {
   'use strict';
@@ -146,7 +153,7 @@ button{font:inherit;color:inherit}
     start: document.getElementById('startScreen'), upgrade: document.getElementById('upgradeScreen'),
     choices: document.getElementById('upgradeChoices'), end: document.getElementById('endScreen'),
     finalCoins: document.getElementById('finalCoins'), timeBonus: document.getElementById('timeBonus'), finalClean: document.getElementById('finalClean'),
-    best: document.getElementById('bestScore'), endTitle: document.getElementById('endTitle'), stamp: document.getElementById('stamp')
+    best: document.getElementById('bestScore'), endTitle: document.getElementById('endTitle'), stamp: document.getElementById('stamp'), dash: document.getElementById('dashButton')
   };
 
   const input = { keys: new Set(), pointer: false, target: null };
@@ -196,9 +203,15 @@ button{font:inherit;color:inherit}
     return items;
   }
 
+  function clearInput() { input.keys.clear(); input.pointer = false; input.target = null; }
+  function readBest() { try { return Number(localStorage.getItem('dango-cleanup-best') || 0) || 0; } catch (_) { return 0; } }
+  function writeBest(value) { try { localStorage.setItem('dango-cleanup-best', value); } catch (_) {} }
+  function fitUi() { const stage = document.getElementById('stage'); stage.style.setProperty('--ui', Math.min(1, stage.clientWidth / 1040).toFixed(4)); }
+
   function startGame() {
     state = createState();
     state.mode = 'play';
+    clearInput();
     ui.start.classList.remove('show');
     ui.end.classList.remove('show');
     ensureAudio();
@@ -425,8 +438,8 @@ button{font:inherit;color:inherit}
     const timeBonus = clearedEarly ? Math.ceil(state.time) : 0;
     state.coins += timeBonus;
     const score = state.coins;
-    const best = Math.max(score, Number(localStorage.getItem('dango-cleanup-best') || 0));
-    localStorage.setItem('dango-cleanup-best', best);
+    const best = Math.max(score, readBest());
+    writeBest(best);
     ui.finalCoins.textContent = state.coins; ui.timeBonus.textContent = `+${timeBonus}`; ui.finalClean.textContent = clean + '%'; ui.best.textContent = best;
     ui.endTitle.textContent = clean >= 100 ? '甜点街重新亮起来了' : clean >= 75 ? '再跑一圈就能闪闪发亮' : '今天也收拾了不少团子';
     ui.stamp.textContent = clean >= 100 ? '闪亮' : clean >= 75 ? '清爽' : '加油';
@@ -570,7 +583,10 @@ button{font:inherit;color:inherit}
     const seconds = Math.ceil(state.time); ui.clock.textContent = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
     ui.clock.parentElement.classList.toggle('danger', seconds <= 15);
     ui.combo.classList.toggle('show', state.combo >= 2 && state.comboTimer > 0);
-    ui.prompt.classList.toggle('show', state.player.cargo.length >= state.player.capacity);
+    ui.prompt.classList.toggle('show', state.mode === 'play' && state.player.cargo.length >= state.player.capacity);
+    const p = state.player, dashTotal = p.hasDash ? 2 : 4.2;
+    ui.dash.classList.toggle('cooling', p.dashCd > 0);
+    ui.dash.style.setProperty('--cd', (p.dashCd / dashTotal).toFixed(3));
   }
 
   function frame(now) {
@@ -587,6 +603,7 @@ button{font:inherit;color:inherit}
     const key = e.key.toLowerCase();
     if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', ' ', 'w', 'a', 's', 'd'].includes(key)) e.preventDefault();
     if (['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'w', 'a', 's', 'd'].includes(key)) input.target = null;
+    if (key === 'enter' && (state?.mode === 'title' || state?.mode === 'end')) { e.preventDefault(); startGame(); return; }
     input.keys.add(key);
     if (key === ' ') dash();
     if (state?.mode === 'upgrade' && ['1', '2', '3', '4'].includes(key)) ui.choices.children[Number(key) - 1]?.click();
@@ -599,9 +616,11 @@ button{font:inherit;color:inherit}
   document.getElementById('startButton').addEventListener('click', startGame);
   document.getElementById('restartButton').addEventListener('click', startGame);
   ui.sound.addEventListener('click', () => { audioOn = !audioOn; ui.sound.classList.toggle('off', !audioOn); if (audioOn) { ensureAudio(); tone(660); } });
-  window.addEventListener('resize', resize);
+  ui.dash.addEventListener('pointerdown', e => { e.preventDefault(); dash(); });
+  window.addEventListener('blur', clearInput);
+  window.addEventListener('resize', () => { resize(); fitUi(); });
 
-  resize(); state = createState(); requestAnimationFrame(frame);
+  resize(); fitUi(); state = createState(); requestAnimationFrame(frame);
 })();
 </script>
 </body>

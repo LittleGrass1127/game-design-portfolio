@@ -151,6 +151,11 @@
     return true;
   }
 
+  // 冲刺冷却剩余比例（0 = 可用，1 = 刚用完），用于冲刺按钮的冷却条
+  function dashCooldownRatio(player) {
+    return player.dashCooldown > 0 ? Math.max(0, Math.min(1, player.dashCd / player.dashCooldown)) : 0;
+  }
+
   function moveSpeed(player) {
     return player.speed * (player.cargo.length === 0 ? player.emptyBoost : 1) * (player.dash > 0 ? G.dash.speedMultiplier : 1);
   }
@@ -181,6 +186,6 @@
     makeRng, rand, cargoValue, formulaValue, levelRow, hasRoom, pickupType, autoMerge, collect,
     comboMultiplier, deliveryValue, inDeliveryRange, settle,
     upgradeById, availableUpgrades, drawUpgrades, applyEffect, applyUpgrade, shouldOfferUpgrade, beginUpgrade,
-    tryDash, moveSpeed, cleanPercent, shouldEnd, endTier, finish, formatClock
+    tryDash, dashCooldownRatio, moveSpeed, cleanPercent, shouldEnd, endTier, finish, formatClock
   };
 })(window);
