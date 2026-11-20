@@ -2723,8 +2723,8 @@ window.GAME_CONFIG = {
     {
       "tier": "gold",
       "label": "金色回收",
-      "absorbedMin": 20,
-      "comboMin": 8,
+      "absorbedMin": 48,
+      "comboMin": 24,
       "logic": "and",
       "leverage": 2,
       "reputation": 1,
@@ -2737,8 +2737,8 @@ window.GAME_CONFIG = {
     {
       "tier": "silver",
       "label": "银色回收",
-      "absorbedMin": 9,
-      "comboMin": 5,
+      "absorbedMin": 25,
+      "comboMin": 20,
       "logic": "or",
       "leverage": 1,
       "reputation": null,

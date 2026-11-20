@@ -155,15 +155,15 @@ assert.strictEqual(Engine.chance({ dc: 11, bonus: 0, mode: 'disadvantage' }), (1
   const t = new Engine(STORY, { seed: 5 }); t.chooseOrigin('engineer');
   while (t.state.phase !== 'interlude') { const v = t.choices().find(x => x.available); t.beginCheck(v.id); t.acceptRoll(); }
   assert.strictEqual(t.state.interludeAfter, 1);
-  assert.strictEqual(t.applyRaceResult('night-drive-1', { absorbed: 20, maxCombo: 8, tier: 'gold' }).ok, false, '营地前不能结算夜航');
+  assert.strictEqual(t.applyRaceResult('night-drive-1', { absorbed: 48, maxCombo: 24, tier: 'gold' }).ok, false, '营地前不能结算夜航');
   t.train('keep_margin'); assert.strictEqual(t.state.act, 2);
   const before = plain(t.state);
-  const g = t.applyRaceResult('night-drive-1', { absorbed: 20, maxCombo: 8, tier: 'gold' });
+  const g = t.applyRaceResult('night-drive-1', { absorbed: 48, maxCombo: 24, tier: 'gold' });
   assert.ok(g.ok);
   assert.strictEqual(t.state.resources.leverage - before.resources.leverage, 2, '金档 筹码+2');
   assert.strictEqual(t.state.fate - before.fate, 1, '金档 改口+1');
   assert.ok(t.state.items.includes('金色车辙章·1'));
-  assert.strictEqual(t.applyRaceResult('night-drive-1', { absorbed: 20, maxCombo: 8, tier: 'gold' }).ok, false, '同一段不能重复结算');
+  assert.strictEqual(t.applyRaceResult('night-drive-1', { absorbed: 48, maxCombo: 24, tier: 'gold' }).ok, false, '同一段不能重复结算');
   assert.strictEqual(t.applyRaceResult('night-drive-2', { absorbed: 1, maxCombo: 1, tier: 'bronze' }).ok, false, '赛段与幕次不符');
   deq(plain(Engine.raceReward('silver', 2)), { resources: { leverage: 1, pressure: -1 }, item: '合流车队徽·2' });
 }

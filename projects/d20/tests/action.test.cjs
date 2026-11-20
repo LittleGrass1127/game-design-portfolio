@@ -46,7 +46,7 @@ const build = (cards = {}, rooms = {}) => ({ cards: { rhetoric: 0, insight: 0, n
 }
 
 // ---------- 3. 档位判定 ----------
-for (const [absorbed, combo, tier] of [[20, 8, 'gold'], [19, 8, 'silver'], [20, 7, 'silver'], [9, 0, 'silver'], [3, 5, 'silver'], [8, 4, 'bronze'], [0, 0, 'bronze']]) {
+for (const [absorbed, combo, tier] of [[48, 24, 'gold'], [47, 24, 'silver'], [48, 23, 'silver'], [25, 0, 'silver'], [3, 20, 'silver'], [24, 19, 'bronze'], [22, 18, 'bronze'], [0, 0, 'bronze']]) {
   assert.strictEqual(Sim.tierFor(absorbed, combo), tier, absorbed + '/' + combo + ' -> ' + tier);
 }
 
@@ -111,6 +111,45 @@ for (const leg of [1, 2, 3]) for (const module of ['turbo', 'magnet', 'reactor']
   assert.strictEqual(r.tier, Sim.tierFor(r.absorbed, r.maxCombo));
   assert.ok(Sim.validate(mine.snapshot()).valid, '赛车快照可通过存档校验');
   raceStats.push({ leg, module, time: +r.time.toFixed(2), absorbed: r.absorbed, maxCombo: r.maxCombo, tier: r.tier, safety: +(r.safety * 100).toFixed(1) });
+}
+// 档位区分度：同样 9 场，不操作只能拿铜档；固定追车策略以金档为主、其余为银档
+{
+  const idleTiers = [];
+  for (const leg of [1, 2, 3]) for (const module of ['turbo', 'magnet', 'reactor']) {
+    const sim = new Sim({ mode: 'race', act: leg, seed: 2000 + leg * 10, module, build: build({ insight: 2, nerve: 2, craft: 2, rhetoric: 1 }, { command: 1 }) });
+    let i = 0; while (sim.state.phase === 'playing' && i++ < 4000) sim.step(0.05, { x: 0, y: 0, boost: false });
+    assert.ok(sim.state.result.finished, '不操作也能抵达（不软锁） leg=' + leg + ' ' + module);
+    idleTiers.push(sim.state.result.tier);
+  }
+  assert.ok(idleTiers.every(t => t === 'bronze'), '不操作应只拿铜档：' + idleTiers.join(','));
+  const chase = raceStats.map(r => r.tier);
+  assert.ok(chase.filter(t => t === 'gold').length >= 6 && !chase.includes('bronze'), '追车策略以金档为主：' + chase.join(','));
+  console.log('赛车（不操作）档位：', idleTiers.join(','));
+}
+// 档位分布：3 种固定驾驶方式 × 3 段 × 3 模组 × 4 个种子 = 各 36 场
+//   idle 不操作；corridor 只跟着安全走廊走、不主动追车；chase 追最近的车
+{
+  const drivers = {
+    idle: () => ({ x: 0, y: 0, boost: false }),
+    corridor: sim => { const c = sim.corridor(), p = sim.state.player; return { x: c.active ? Math.max(-1, Math.min(1, (c.center - p.x) / 40)) : 0, y: 0, boost: false }; },
+    chase: driver
+  };
+  const dist = {};
+  for (const name of Object.keys(drivers)) {
+    dist[name] = { gold: 0, silver: 0, bronze: 0 };
+    for (const leg of [1, 2, 3]) for (const module of ['turbo', 'magnet', 'reactor']) for (let k = 0; k < 4; k++) {
+      const sim = new Sim({ mode: 'race', act: leg, seed: 500 + k * 17 + leg, module, build: build({ insight: leg, nerve: leg, craft: leg, rhetoric: leg }, { command: leg > 1 ? 1 : 0 }) });
+      let i = 0; while (sim.state.phase === 'playing' && i++ < 4000) sim.step(0.05, drivers[name](sim));
+      assert.ok(sim.state.result.finished, name + ' 也能跑完');
+      dist[name][sim.state.result.tier]++;
+    }
+  }
+  assert.strictEqual(dist.idle.gold, 0, '不操作拿不到金档');
+  assert.ok(dist.idle.bronze >= 30, '不操作以铜档为主');
+  assert.strictEqual(dist.corridor.gold, 0, '只跟走廊不追车拿不到金档');
+  assert.ok(dist.corridor.silver > dist.corridor.bronze, '跟走廊以银档为主');
+  assert.ok(dist.chase.gold >= 27 && dist.chase.bronze === 0, '追车以金档为主、没有铜档');
+  console.log('赛车档位分布（金/银/铜，各 36 场）：', Object.entries(dist).map(([k, v]) => k + ' ' + v.gold + '/' + v.silver + '/' + v.bronze).join(' | '));
 }
 // 固定种子确定性
 {

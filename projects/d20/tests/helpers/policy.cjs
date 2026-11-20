@@ -18,6 +18,9 @@ const POLICIES = {
   last: views => views[views.length - 1]
 };
 
+// 各档位的最低达标成绩，取自 race-tiers.csv（经 story 传入时用 options.tiers 覆盖）
+const DEFAULT_TIERS = { gold: { absorbed: 48, maxCombo: 24 }, silver: { absorbed: 25, maxCombo: 2 }, bronze: { absorbed: 3, maxCombo: 2 } };
+
 function playEpisode(Engine, story, seed, policyName = 'random', options = {}) {
   const rand = mulberry(seed ^ 0xA5A5A5A5);
   const pickChoice = POLICIES[policyName];
@@ -35,7 +38,7 @@ function playEpisode(Engine, story, seed, policyName = 'random', options = {}) {
       const leg = st.act - 1;
       if (leg >= 1 && leg <= 3 && st.training >= leg && !st.races.some(x => x.id === 'night-drive-' + leg) && options.races !== false) {
         const tiers = ['bronze', 'silver', 'gold'], tier = options.tier || tiers[Math.floor(rand() * 3)];
-        const absorbed = tier === 'gold' ? 20 : tier === 'silver' ? 9 : 3, maxCombo = tier === 'gold' ? 8 : 2;
+        const { absorbed, maxCombo } = (options.tiers || DEFAULT_TIERS)[tier];
         r = engine.applyRaceResult('night-drive-' + leg, { absorbed, maxCombo, tier });
         if (!r.ok) throw new Error(r.error);
         log.races.push(tier);
