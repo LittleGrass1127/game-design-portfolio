@@ -89,11 +89,11 @@ window.GAME_CONFIG = {
     },
     {
       "key": "archived",
-      "text": "第四卷底片已归档。照片墙变得清晰，并解锁共同相册批注。"
+      "text": "第四卷底片已收录。照片墙变得清晰，并解锁共同相册批注。"
     },
     {
       "key": "archiveToast",
-      "text": "归档奖励已记录，同一底片重复修复不会重复发奖。"
+      "text": "收录奖励已记录，同一底片重复修复不会重复发奖。"
     },
     {
       "key": "progressLabel",
@@ -101,7 +101,7 @@ window.GAME_CONFIG = {
     },
     {
       "key": "progressDone",
-      "text": "照片已归档"
+      "text": "照片已收录"
     }
   ]
 };

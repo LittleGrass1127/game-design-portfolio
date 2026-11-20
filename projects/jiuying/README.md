@@ -1,6 +1,6 @@
 # 旧影回声 · 交互原型工程
 
-调整曝光修复底片，把线索区分为“事实”和“推断”，核对通过后归档照片——一个只验证“观察 → 分类 → 核对”这条主操作链的单屏交互原型。
+调整曝光修复底片，把线索区分为“事实”和“推断”，核对通过后收录照片——一个只验证“观察 → 分类 → 核对”这条主操作链的单屏交互原型。
 
 - 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=jiuying
 - 仓库内试玩：[../../play.html?game=jiuying](../../play.html?game=jiuying)
@@ -40,7 +40,7 @@ jiuying/
 | `config/evidence.csv` | 4 条线索：卡片标题/说明、放入槽位后的显示名、正确分类 `type` |
 | `config/evidence-types.csv` | 2 个分类槽：槽位与按钮 DOM id、空槽占位文案 |
 | `config/exposure.json` | 滑条范围、初始值、可识别区间 `[readableMin, readableMax]`、灯箱亮度系数 |
-| `config/progress.json` | 初始 / 可识别 / 已分类 / 已核对 / 已归档 五个阶段的进度值 |
+| `config/progress.json` | 初始 / 可识别 / 已分类 / 已核对 / 已收录 五个阶段的进度值 |
 | `config/text.csv` | 所有反馈与提示文案，支持 `{step}` 占位 |
 
 修改配置后执行：
