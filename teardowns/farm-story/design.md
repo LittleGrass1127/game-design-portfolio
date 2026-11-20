@@ -1,7 +1,5 @@
 # 《农场物语》游戏策划案
 
-原文：https://my.feishu.cn/wiki/GxLYwSEkWiWojdkRTnpcq7Jmn3c
-
 > 说明：本文为参考经典农场游戏（星露谷物语）的复刻练习，部分角色与内容沿用原作设定，仅用于策划练习。
 
 > 参考作品：星露谷物语（Stardew Valley）、牧场物语、动物森友会

@@ -1,7 +1,5 @@
 # 【需求文档】农场物语
 
-原文：https://my.feishu.cn/wiki/L5YkwGcTYiI1EOkc3aOcDfFxnze
-
 > 说明：本文为参考经典农场游戏（星露谷物语）的复刻练习，部分角色与内容沿用原作设定，仅用于策划练习。
 
 配套文档：[农场物语策划案](design.md)

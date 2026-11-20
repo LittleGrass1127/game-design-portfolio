@@ -107,5 +107,5 @@
 
 ## 延伸阅读
 
-- [海外休闲二合｜活动拆解](https://ucnwdsitb71n.feishu.cn/wiki/Q51wwgCe7iZtVHkBVrLcajA7nnd)
-- [项目实践与配置验证｜方法说明](https://ucnwdsitb71n.feishu.cn/wiki/YA6Fw88fLiHXKekMNfUcDHJanJf)
+- [二合活动拆解｜Mystery Town「逃离房间」](../teardowns/merge-teardown.md)
+- [效率系统与配置验收方法](../methods/efficiency-system.md)

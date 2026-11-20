@@ -1,10 +1,6 @@
 # 炉石传说｜游戏拆解案
 
-原文：https://my.feishu.cn/wiki/UhinwtYYCiIrRNkYKKuc64k5nOp
-
 > 拆解框架：核心玩法 → 系统架构 → 商业化 → 长线运营 → 成功与隐忧
-
-（原文此处为附件：《炉石传说简单拆解》PDF，见飞书原文）
 
 ---
 
