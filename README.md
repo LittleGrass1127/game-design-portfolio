@@ -2,7 +2,7 @@
 
 # 🎮 高原｜游戏策划作品集
 
-**系统策划 / 数值策划 · 先玩，再看怎么想的**
+**系统策划 / 数值策划 · 拆解、设计与可玩作品**
 
 [![在线作品站](https://img.shields.io/badge/▶_在线作品站-d6ef72?style=for-the-badge&labelColor=0f1621)](https://littlegrass1127.github.io/game-design-portfolio/)
 [![游戏大厅](https://img.shields.io/badge/🎲_可玩游戏大厅-86bfff?style=for-the-badge&labelColor=0f1621)](https://littlegrass1127.github.io/game-design-portfolio/play.html)
@@ -14,9 +14,24 @@
 
 ---
 
-每个作品只回答三件事：**要解决什么设计问题、做了哪些取舍、用什么方式验证。** 能玩的先玩，想看过程再读文档。
+每个作品只回答三件事：**要解决什么设计问题、做了哪些取舍、用什么方式验证。** 从拆解开始，到系统与数值设计，再到可以直接试玩的作品。
 
-## 01 · 🕹️ 可玩作品
+## 01 · 📚 拆解与策划案
+
+- [炉石传说｜游戏拆解案](teardowns/hearthstone.md)
+- [二合活动拆解｜逃离房间](teardowns/merge-teardown.md)
+- [农场物语｜策划案](teardowns/farm-story/design.md) · [需求文档](teardowns/farm-story/requirements.md)（参考经典农场游戏的复刻练习）
+- [游戏分析与用户理解](teardowns/game-analysis.md)：卡牌平衡、抽卡经济、SLG 对比、回合制行动经济
+
+## 02 · 🧩 系统与数值设计
+
+- [青蛙战斗｜攻速改版后的数值重标](design/frog-battle.md)：从活动总消耗反推成长与怪物强度；统一乘系数会让吸血、灼烧、护盾各自失衡，按机制分别重标，用情形矩阵和路线模拟找风险。
+- [二合活动｜把棋盘空间当作核心资源](design/merge-event.md)：从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。
+- [试玩广告｜30 秒里的五个节点](design/playable-ad.md)：入场理解、第一次成功、难度变化、接近失败、结束回看；附多投放位适配录屏说明。
+- [断线托管 + 风迹手册｜状态机与代币方案对比](design/disconnect-and-wind-guide.md)：90 秒回控预算；两套代币方案对比（静态测算）。
+- [战斗养成｜数值表](design/combat-growth/README.md)：技能表与商店奖励表，线性属性 + 非线性攻击间隔、按玩家反推怪物。
+
+## 03 · 🕹️ 可玩作品
 
 | 作品 | 设计问题 | 做法 | 验证 |
 |---|---|---|---|
@@ -40,21 +55,6 @@
 | [yedeng](https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/yedeng) · [chunfeng](https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/chunfeng) · [jiuying](https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jiuying) · [jingling](https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jingling) | 每个原型 4–5 张：素材 / 花材 / 线索 / 传闻、评分系数、文案 | 配置完整性 + 判定函数，86 / 64 / 118 / 115 条断言 | 各自 `docs/design.md` |
 
 断言数大头来自穷举和批量模拟的逐步比对，不等于独立规则点数量。
-
-## 02 · 🧩 系统与数值设计
-
-- [青蛙战斗｜攻速改版后的数值重标](design/frog-battle.md)：从活动总消耗反推成长与怪物强度；统一乘系数会让吸血、灼烧、护盾各自失衡，按机制分别重标，用情形矩阵和路线模拟找风险。
-- [二合活动｜把棋盘空间当作核心资源](design/merge-event.md)：从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。
-- [试玩广告｜30 秒里的五个节点](design/playable-ad.md)：入场理解、第一次成功、难度变化、接近失败、结束回看；附多投放位适配录屏说明。
-- [断线托管 + 风迹手册｜状态机与代币方案对比](design/disconnect-and-wind-guide.md)：90 秒回控预算；两套代币方案对比（静态测算）。
-- [战斗养成｜数值表](design/combat-growth/README.md)：技能表与商店奖励表，线性属性 + 非线性攻击间隔、按玩家反推怪物。
-
-## 03 · 📚 拆解与策划案
-
-- [炉石传说｜游戏拆解案](teardowns/hearthstone.md)
-- [二合活动拆解｜逃离房间](teardowns/merge-teardown.md)
-- [农场物语｜策划案](teardowns/farm-story/design.md) · [需求文档](teardowns/farm-story/requirements.md)（参考经典农场游戏的复刻练习）
-- [游戏分析与用户理解](teardowns/game-analysis.md)：卡牌平衡、抽卡经济、SLG 对比、回合制行动经济
 
 ## 04 · 🧭 工作方法
 

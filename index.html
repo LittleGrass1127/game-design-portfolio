@@ -64,14 +64,14 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap"><a class="brand" href="#"><span class="mark">高</span>高原 / GAO YUAN</a><div class="nav-links"><a href="#play">可玩作品</a><a href="#design">系统与数值</a><a href="#teardowns">拆解与策划案</a><a href="#methods">工作方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></div></nav>
+<nav class="nav"><div class="wrap"><a class="brand" href="#"><span class="mark">高</span>高原 / GAO YUAN</a><div class="nav-links"><a href="#teardowns">拆解与策划案</a><a href="#design">系统与数值</a><a href="#play">可玩作品</a><a href="#methods">工作方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></div></nav>
 <div class="wrap">
 <header class="hero">
   <div>
     <div class="eyebrow">● 系统策划 / 数值策划 · 设计作品</div>
-    <h1>先玩，<br>再看<em>怎么想的</em>。</h1>
+    <h1>先拆解，<br>再<em>设计</em>，最后能玩。</h1>
     <p>这里放的是能直接运行、能复核的设计作品。每个作品只回答三件事：要解决什么设计问题、做了哪些取舍、用什么方式验证。</p>
-    <div class="actions"><a class="btn primary" href="play.html">▶ 打开游戏大厅</a><a class="btn" href="#design">看设计过程</a><a class="btn" href="downloads/playable-games.zip" download>⤓ 离线包</a></div>
+    <div class="actions"><a class="btn primary" href="#teardowns">从拆解开始</a><a class="btn" href="#design">看设计过程</a><a class="btn" href="play.html">▶ 游戏大厅</a><a class="btn" href="downloads/playable-games.zip" download>⤓ 离线包</a></div>
   </div>
   <div class="stats">
     <div class="stat"><b>3 + 4</b><span>完整 Demo + 交互原型</span></div>
@@ -81,8 +81,28 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
   </div>
 </header>
 
+<section class="section" id="teardowns">
+  <div class="sec-head"><div><h2>拆解与策划案</h2><p>竞品拆解、完整策划案与需求文档，以及对游戏和玩家的分析。</p></div><span class="num">01</span></div>
+  <div class="links">
+    <a href="teardowns/hearthstone.md">炉石传说｜游戏拆解案</a>
+    <a href="teardowns/merge-teardown.md">二合活动拆解｜逃离房间</a>
+    <a href="teardowns/game-analysis.md">游戏分析与用户理解</a>
+    <a href="teardowns/farm-story/design.md">农场物语｜策划案</a>
+    <a href="teardowns/farm-story/requirements.md">农场物语｜需求文档</a>
+  </div>
+</section>
+<section class="section" id="design">
+  <div class="sec-head"><div><h2>系统与数值设计</h2><p>问题从哪来，取舍怎么做，结论的边界在哪里。</p></div><span class="num">02</span></div>
+  <div class="cases">
+    <a class="case c-lime" href="design/frog-battle.md"><div class="k">NUMERIC</div><h3>青蛙战斗｜攻速改版后的数值重标</h3><p>从活动总消耗反推成长与怪物强度；统一乘系数会让吸血、灼烧、护盾各自失衡，按机制分别重标，用情形矩阵和路线模拟找风险。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-blue" href="design/merge-event.md"><div class="k">SYSTEM</div><h3>二合活动｜把棋盘空间当作核心资源</h3><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-coral" href="design/playable-ad.md"><div class="k">PLAYABLE AD</div><h3>试玩广告｜30 秒里的五个节点</h3><p>入场理解、第一次成功、难度变化、接近失败、结束回看；结束点停在“差一点赢”，并做横竖屏多投放位适配。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-violet" href="design/disconnect-and-wind-guide.md"><div class="k">SYSTEM + NUMERIC</div><h3>断线托管 + 风迹手册</h3><p>状态机和 90 秒回控预算处理“掉线后谁来操作”；两套代币方案对比，选让轻度用户也能拿到第一档的方案（静态测算）。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-lime" style="grid-column:1/-1" href="design/combat-growth/README.md"><div class="k">NUMERIC TABLES</div><h3>战斗养成｜数值表</h3><p>技能表与商店奖励表（CSV）：线性属性 + 非线性攻击间隔、三段式材料曲线、按玩家反推怪物、训练签保持正期望。</p><span class="more">查看数值表 →</span></a>
+  </div>
+</section>
 <section class="section" id="play">
-  <div class="sec-head"><div><h2>可玩作品</h2><p>3 个完整 Demo、4 个原创交互原型，不用安装，点开就能玩；每个作品都附可运行、可测试的工程文件。</p></div><span class="num">01</span></div>
+  <div class="sec-head"><div><h2>可玩作品</h2><p>3 个完整 Demo、4 个原创交互原型，不用安装，点开就能玩；每个作品都附可运行、可测试的工程文件。</p></div><span class="num">03</span></div>
   <div class="cards">
     <article class="card c-lime"><div class="icon">🎲</div><h3>二十面野心 · 孙哥纪事</h3><p class="sub">D20 融合叙事 · 一局 12–18 分钟</p>
       <p class="q">检定、动作、卡组、营地、赛车五套玩法，怎样共用一套资源和后果，而不是拼成五个小游戏？</p>
@@ -119,29 +139,6 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
   </div>
   <p class="note">工程由线上单文件版本整理，规则行为与单文件版做过对拍；测试数为本仓库 tests/ 实际运行结果。说明见 <a href="projects/README.md">projects/README.md</a>。</p>
 </section>
-
-<section class="section" id="design">
-  <div class="sec-head"><div><h2>系统与数值设计</h2><p>问题从哪来，取舍怎么做，结论的边界在哪里。</p></div><span class="num">02</span></div>
-  <div class="cases">
-    <a class="case c-lime" href="design/frog-battle.md"><div class="k">NUMERIC</div><h3>青蛙战斗｜攻速改版后的数值重标</h3><p>从活动总消耗反推成长与怪物强度；统一乘系数会让吸血、灼烧、护盾各自失衡，按机制分别重标，用情形矩阵和路线模拟找风险。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-blue" href="design/merge-event.md"><div class="k">SYSTEM</div><h3>二合活动｜把棋盘空间当作核心资源</h3><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-coral" href="design/playable-ad.md"><div class="k">PLAYABLE AD</div><h3>试玩广告｜30 秒里的五个节点</h3><p>入场理解、第一次成功、难度变化、接近失败、结束回看；结束点停在“差一点赢”，并做横竖屏多投放位适配。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-violet" href="design/disconnect-and-wind-guide.md"><div class="k">SYSTEM + NUMERIC</div><h3>断线托管 + 风迹手册</h3><p>状态机和 90 秒回控预算处理“掉线后谁来操作”；两套代币方案对比，选让轻度用户也能拿到第一档的方案（静态测算）。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-lime" style="grid-column:1/-1" href="design/combat-growth/README.md"><div class="k">NUMERIC TABLES</div><h3>战斗养成｜数值表</h3><p>技能表与商店奖励表（CSV）：线性属性 + 非线性攻击间隔、三段式材料曲线、按玩家反推怪物、训练签保持正期望。</p><span class="more">查看数值表 →</span></a>
-  </div>
-</section>
-
-<section class="section" id="teardowns">
-  <div class="sec-head"><div><h2>拆解与策划案</h2><p>竞品拆解、完整策划案与需求文档，以及对游戏和玩家的分析。</p></div><span class="num">03</span></div>
-  <div class="links">
-    <a href="teardowns/hearthstone.md">炉石传说｜游戏拆解案</a>
-    <a href="teardowns/merge-teardown.md">二合活动拆解｜逃离房间</a>
-    <a href="teardowns/game-analysis.md">游戏分析与用户理解</a>
-    <a href="teardowns/farm-story/design.md">农场物语｜策划案</a>
-    <a href="teardowns/farm-story/requirements.md">农场物语｜需求文档</a>
-  </div>
-</section>
-
 <section class="section" id="methods">
   <div class="sec-head"><div><h2>工作方法</h2><p>把一次性劳动拆成可检查、可复现、可回滚的流程。</p></div><span class="num">04</span></div>
   <div class="cases">
