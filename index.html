@@ -40,6 +40,10 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
 .verify{margin-top:auto;font-size:12.5px;color:var(--muted);background:#0000002a;border-radius:10px;padding:10px 12px;border-left:3px solid var(--accent,var(--lime))}
 .verify b{color:var(--text)}
 .play{display:inline-flex;margin-top:16px;font-weight:800;font-size:14px;color:var(--accent,var(--lime))}.play:hover{text-decoration:underline}
+.how{margin:0 0 14px;font-size:12.5px;line-height:1.7;color:#c8d3df}
+.how b{color:var(--accent,var(--lime));margin-right:6px}
+.pick{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:99px;background:var(--lime);color:#17202b;font-size:11px;font-weight:800;vertical-align:3px}
+.proto em{display:block;margin-top:6px;font-style:normal;font-size:11px;color:#8fa0b4}
 .c-lime{--accent:var(--lime)}.c-blue{--accent:var(--blue)}.c-coral{--accent:var(--coral)}.c-violet{--accent:var(--violet)}
 .protos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
 .proto{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:.15s}.proto:hover{border-color:var(--blue)}
@@ -102,40 +106,43 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
   </div>
 </section>
 <section class="section" id="play">
-  <div class="sec-head"><div><h2>可玩作品</h2><p>3 个完整 Demo、4 个原创交互原型，不用安装，点开就能玩；每个作品都附可运行、可测试的工程文件。</p></div><span class="num">03</span></div>
+  <div class="sec-head"><div><h2>可玩作品</h2><p>3 个完整 Demo、4 个原创交互原型，不用安装，点开就能玩；每个作品都附可运行、可测试的工程文件。时间有限的话先玩团子清洁队，2 分钟一局。</p></div><span class="num">03</span></div>
   <div class="cards">
     <article class="card c-lime"><div class="icon">🎲</div><h3>二十面野心 · 孙哥纪事</h3><p class="sub">D20 融合叙事 · 一局 12–18 分钟</p>
       <p class="q">检定、动作、卡组、营地、赛车五套玩法，怎样共用一套资源和后果，而不是拼成五个小游戏？</p>
       <div class="tags"><span class="tag">4 幕</span><span class="tag">12 次检定</span><span class="tag">3 段赛车</span><span class="tag">5 种结局</span></div>
+      <p class="how"><b>怎么玩</b>12–18 分钟 · 键盘为主：WASD 移动，靠近合同按 E 检定；赛车 A / D 转向、Shift 增压。</p>
       <div class="verify"><b>验证</b>　1,600 局固定策略测试；37/37 选项、74/74 成败分支全覆盖</div>
       <a class="play" href="play.html?game=d20">在线试玩 →</a></article>
     <article class="card c-blue"><div class="icon">📚</div><h3>中国式考研：最后十二周</h3><p class="sub">时间分配系统 · C# 规则核心 + HTML 版</p>
       <p class="q">12 周、4 科、3 个时段、11 种行动，玩家怎样看懂自己的取舍，并在失败后复盘？</p>
       <div class="tags"><span class="tag">预览即结算</span><span class="tag">可解释资源</span><span class="tag">12 周</span></div>
+      <p class="how"><b>怎么玩</b>10–15 分钟 · 鼠标 / 触屏：每周点三个行动排进计划，看预览，再确认。</p>
       <div class="verify"><b>验证</b>　241 条规则断言、288 个事件场景通过；Unity 导出包验收未完成</div>
       <a class="play" href="play.html?game=kaoyan">在线试玩 →</a></article>
-    <article class="card c-coral"><div class="icon">🧹</div><h3>团子清洁队</h3><p class="sub">单操作合成 · 2 分钟短局</p>
+    <article class="card c-coral"><div class="icon">🧹</div><h3>团子清洁队<span class="pick">推荐先玩</span></h3><p class="sub">单操作合成 · 2 分钟短局</p>
       <p class="q">只给玩家一个“移动”操作，能不能撑起收集、合成、交付的完整短局循环？</p>
       <div class="tags"><span class="tag">价值 (3^L−1)/2</span><span class="tag">120 个团子</span><span class="tag">14 项升级</span></div>
+      <p class="how"><b>怎么玩</b>2 分钟 · 键盘 / 鼠标 / 触屏：WASD 或点击移动，靠近团子自动吸走，回餐车自动交付。</p>
       <div class="verify"><b>验证</b>　13 条验收用例</div>
       <a class="play" href="play.html?game=tuanzi">在线试玩 →</a></article>
   </div>
   <div class="protos">
-    <a class="proto" href="play.html?game=yedeng"><b>夜灯街深夜剪辑室</b><span>素材选择、排序与试映反馈</span></a>
-    <a class="proto" href="play.html?game=chunfeng"><b>春风编花会</b><span>花材布置与多目标评分</span></a>
-    <a class="proto" href="play.html?game=jiuying"><b>旧影回声</b><span>照片修复、事实推断与核对</span></a>
-    <a class="proto" href="play.html?game=jingling"><b>精灵巡游季</b><span>传闻判断、共鸣与结伴挑战</span></a>
+    <a class="proto" href="play.html?game=yedeng"><b>夜灯街深夜剪辑室</b><span>素材选择、排序与试映反馈</span><em>1–2 分钟 · 点击</em></a>
+    <a class="proto" href="play.html?game=chunfeng"><b>春风编花会</b><span>花材布置与多目标评分</span><em>1–2 分钟 · 点击</em></a>
+    <a class="proto" href="play.html?game=jiuying"><b>旧影回声</b><span>照片修复、事实推断与核对</span><em>约 1 分钟 · 点击 / 拖动</em></a>
+    <a class="proto" href="play.html?game=jingling"><b>精灵巡游季</b><span>传闻判断、共鸣与结伴挑战</span><em>约 2 分钟 · 点击</em></a>
   </div>
-  <div class="lobby"><div><h3>全部 7 个作品都在游戏大厅里</h3><p>在线切换、全屏、单独打开 HTML；也可以下载 ZIP 离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅 →</a></div>
+  <div class="lobby"><div><h3>全部 7 个作品都在游戏大厅里</h3><p>每个作品都写明目标、操作和时长；可以在线切换、全屏、单独打开 HTML，也可以下载 ZIP 离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅 →</a></div>
   <h3 style="margin:40px 0 6px;font-size:20px">工程文件</h3><p style="margin:0 0 16px;color:var(--muted);font-size:14px">每个作品拆成 src / config / docs / tests：数值和内容放在配置表里，规则用 Node 测试复核，直接打开 src/index.html 即可运行。</p>
   <div class="projs">
-    <div class="proj c-lime"><b>二十面野心 · 孙哥纪事</b><span class="meta">23 张配置表 · 3 组测试 2,752 条断言</span><span class="meta">幕、场景、37 个选项、78 条后果、5 结局、赛车与远征参数</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/d20">工程目录</a><a href="projects/d20/docs/design.md">策划文档</a><a href="projects/d20/src/index.html">运行拆分版</a></div></div>
+    <div class="proj c-lime"><b>二十面野心 · 孙哥纪事</b><span class="meta">23 张配置表 · 3 组测试 2,877 条断言</span><span class="meta">幕、场景、37 个选项、78 条后果、5 结局、赛车与远征参数</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/d20">工程目录</a><a href="projects/d20/docs/design.md">策划文档</a><a href="projects/d20/src/index.html">运行拆分版</a></div></div>
     <div class="proj c-blue"><b>中国式考研：最后十二周</b><span class="meta">8 张配置表 · 3 组测试 23,871 条断言</span><span class="meta">科目、起点、目标线、11 种行动、事件与选项</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/kaoyan">工程目录</a><a href="projects/kaoyan/docs/design.md">策划文档</a><a href="projects/kaoyan/src/index.html">运行拆分版</a></div></div>
-    <div class="proj c-coral"><b>团子清洁队</b><span class="meta">6 张配置表 · 378 条断言</span><span class="meta">局内参数、污渍区、团子等级价值、14 项升级与效果</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/tuanzi">工程目录</a><a href="projects/tuanzi/docs/design.md">策划文档</a><a href="projects/tuanzi/src/index.html">运行拆分版</a></div></div>
-    <div class="proj c-violet"><b>夜灯街深夜剪辑室</b><span class="meta">4 张配置表 · 86 条断言</span><span class="meta">素材、委托、评分系数与反馈文案</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/yedeng">工程目录</a><a href="projects/yedeng/docs/design.md">策划文档</a><a href="projects/yedeng/src/index.html">运行拆分版</a></div></div>
-    <div class="proj c-lime"><b>春风编花会</b><span class="meta">5 张配置表 · 64 条断言</span><span class="meta">花材、属性等级、友邻愿望、评分与通过线</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/chunfeng">工程目录</a><a href="projects/chunfeng/docs/design.md">策划文档</a><a href="projects/chunfeng/src/index.html">运行拆分版</a></div></div>
-    <div class="proj c-blue"><b>旧影回声</b><span class="meta">5 张配置表 · 118 条断言</span><span class="meta">线索、事实 / 推断分类、曝光区间与进度</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jiuying">工程目录</a><a href="projects/jiuying/docs/design.md">策划文档</a><a href="projects/jiuying/src/index.html">运行拆分版</a></div></div>
-    <div class="proj c-coral"><b>精灵巡游季</b><span class="meta">5 张配置表 · 115 条断言</span><span class="meta">传闻、共鸣方式、挑战序列与进度</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jingling">工程目录</a><a href="projects/jingling/docs/design.md">策划文档</a><a href="projects/jingling/src/index.html">运行拆分版</a></div></div>
+    <div class="proj c-coral"><b>团子清洁队</b><span class="meta">6 张配置表 · 388 条断言</span><span class="meta">局内参数、污渍区、团子等级价值、14 项升级与效果</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/tuanzi">工程目录</a><a href="projects/tuanzi/docs/design.md">策划文档</a><a href="projects/tuanzi/src/index.html">运行拆分版</a></div></div>
+    <div class="proj c-violet"><b>夜灯街深夜剪辑室</b><span class="meta">4 张配置表 · 102 条断言</span><span class="meta">素材、委托、评分系数与反馈文案</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/yedeng">工程目录</a><a href="projects/yedeng/docs/design.md">策划文档</a><a href="projects/yedeng/src/index.html">运行拆分版</a></div></div>
+    <div class="proj c-lime"><b>春风编花会</b><span class="meta">5 张配置表 · 84 条断言</span><span class="meta">花材、属性等级、友邻愿望、评分与通过线</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/chunfeng">工程目录</a><a href="projects/chunfeng/docs/design.md">策划文档</a><a href="projects/chunfeng/src/index.html">运行拆分版</a></div></div>
+    <div class="proj c-blue"><b>旧影回声</b><span class="meta">5 张配置表 · 178 条断言</span><span class="meta">线索、事实 / 推断分类、曝光区间与进度</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jiuying">工程目录</a><a href="projects/jiuying/docs/design.md">策划文档</a><a href="projects/jiuying/src/index.html">运行拆分版</a></div></div>
+    <div class="proj c-coral"><b>精灵巡游季</b><span class="meta">5 张配置表 · 124 条断言</span><span class="meta">传闻、共鸣方式、挑战序列与进度</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jingling">工程目录</a><a href="projects/jingling/docs/design.md">策划文档</a><a href="projects/jingling/src/index.html">运行拆分版</a></div></div>
   </div>
   <p class="note">工程由线上单文件版本整理，规则行为与单文件版做过对拍；测试数为本仓库 tests/ 实际运行结果。说明见 <a href="projects/README.md">projects/README.md</a>。</p>
 </section>
