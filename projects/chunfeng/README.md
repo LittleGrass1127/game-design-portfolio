@@ -1,61 +1,59 @@
-# 春风编花会（交互原型工程）
+# 春风编花会
 
-选择花材、种进十六个环形落点，在色彩、高低层次和三位友邻的愿望之间找兼顾方案。只验证"选材 + 空间布置 + 多目标评分"这一条操作链。
+交互原型：选花材种进十六个环形落点，让三位友邻的愿望全中并达到通过线，再提交花环。
 
-- 在线试玩：https://littlegrass1127.github.io/game-design-portfolio/play.html?game=chunfeng
-- 仓库内入口：[../../play.html?game=chunfeng](../../play.html?game=chunfeng)
-- 单文件版本：[../../prototypes/chunfeng.html](../../prototypes/chunfeng.html)
-- 设计文档：[docs/design.md](docs/design.md)
+## 设计问题
 
-## 运行
+色彩、株高层次和三位友邻的愿望分别指向不同花材，玩家能不能靠实时评价自己找到兼顾的方案？单种花材种满拿不到好评价；愿望全中但缺一种株高，也过不了通过线。
 
-无构建工具。直接用浏览器打开 `src/index.html` 即可（支持 file://）。
-
-## 目录结构
+## 核心循环
 
 ```
-projects/chunfeng/
-  README.md
-  config/                    策划配置表（改这里）
-    flowers.csv              花材
-    attribute-levels.csv     株高 / 香型等级的显示名
-    wishes.csv               友邻愿望（统计量 + 门槛）
-    scoring.json             花坛尺寸、评分系数、权重、提交通过线
-    texts.json               文案
-  src/
-    index.html               页面骨架（花材卡、愿望、落点由配置生成）
-    style.css                样式（与原单文件一致）
-    js/config.generated.js   由 tools/export-config.cjs 生成，不手改
-    js/rules.js              纯规则：统计、评分、愿望、提交判定（window.ChunfengRules）
-    js/ui.js                 toast / 反馈条 / 进度条 / 评分环
-    js/main.js               入口：渲染与事件绑定
-  tools/export-config.cjs    配置表 -> config.generated.js
-  tests/config.test.cjs      配置完整性 + 评分规则测试
-  tests/helpers/load.cjs     vm 沙箱加载浏览器脚本
-  docs/design.md             逆推策划文档
+选花材 → 点落点种下 / 再点拔除 → 看实时评价与愿望命中 → 种满 12 株后提交
+      → 未通过：反馈指出缺哪条愿望，或分数差在哪一项 → 调整 → 再提交
+      → 通过：花环锁定 → 重新布置
 ```
 
-## 配置表
+## 怎么玩
 
-| 文件 | 内容 |
+- 操作：鼠标或触屏点击。先点左侧花材，再点环上的落点；再点一次拔除。
+- 目标：种满 12 株，三个愿望全中，且综合评分 ≥ 88。一轮 1–2 分钟。
+- 提示：右侧愿望满足后会变色；要过通过线，低、中、高三种株高都得出现。
+- 提交前随便拔除重摆，不损耗花材；通过后点「重新布置」再来一环。
+
+## 规则与数值在哪张配置表
+
+| 配置表 | 内容 |
 | --- | --- |
-| `config/flowers.csv` | 4 种花材：id、名称、颜色、株高等级、香型等级 |
-| `config/attribute-levels.csv` | 株高 1–3 → 低/中/高株，香型 1–3 → 淡/清/浓香 |
-| `config/wishes.csv` | 3 条愿望：NPC、文案、引用的统计量 `stat`、门槛 `min` |
-| `config/scoring.json` | 落点数 16、最少种植 12、色彩/层次系数、总分权重、通过线 72 |
-| `config/texts.json` | 风向提示、提交反馈、进度标签 |
+| `config/flowers.csv` | 4 种花材：颜色、株高（1–3）、香型（1–3） |
+| `config/attribute-levels.csv` | 株高 / 香型等级的显示名 |
+| `config/wishes.csv` | 3 条友邻愿望：引用的统计量与门槛 |
+| `config/scoring.json` | 落点数、最少种植数、色彩 / 层次系数、总分权重、通过条件（愿望全中 + 通过线 88） |
+| `config/texts.json` | 首屏目标、三种提交反馈（通过 / 缺愿望 / 分数不够）、提示文案 |
 
-修改配置后重新导出：
+公式与调参记录见 [docs/design.md](docs/design.md) 第 3 节。
+
+改了 `config/` 之后重新导出，再跑测试：
 
 ```bash
 node tools/export-config.cjs          # 生成 src/js/config.generated.js
-node tools/export-config.cjs --check  # 校验是否已同步
+node tools/export-config.cjs --check  # 校验导出文件与配置表一致
 ```
 
-## 测试
+## 怎么验证
 
 ```bash
 node tests/config.test.cjs
 ```
 
-检查花材 / 愿望 ID 唯一、字段齐全、等级与统计量引用存在、愿望可达成、满分恰为 100，并对评分函数和提交判定做定值断言。
+实际运行结果：84 条断言全部通过。覆盖配置完整性、导出一致性、评分与提交判定的定值，以及对 12–16 株全部 3,480 种数量组合的穷举（愿望全中 2,160 种，其中 335 种被通过线挡下，可通过 1,825 种）。
+
+另用 headless Chromium 在单文件版和拆分版上执行同一套 31 步点击，逐步比对界面状态一致，控制台无报错。
+
+## 在线试玩
+
+- 在线：<https://littlegrass1127.github.io/game-design-portfolio/play.html?game=chunfeng>
+- 仓库内入口：[../../play.html?game=chunfeng](../../play.html?game=chunfeng)
+- 单文件版（线上与离线包用的就是它）：[../../prototypes/chunfeng.html](../../prototypes/chunfeng.html)
+- 拆分版：直接用浏览器打开 [src/index.html](src/index.html)，无需构建，支持 `file://`
+- 策划文档：[docs/design.md](docs/design.md)
