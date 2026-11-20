@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="高原的系统与数值策划作品集：可在线试玩的 HTML Demo、系统与数值方案的设计过程。">
+<meta name="description" content="高原的系统与数值策划作品集：可玩作品、系统与数值设计、拆解与策划案、工作方法。">
 <title>高原｜游戏策划作品集</title>
 <style>
 :root{--bg:#0f1621;--panel:#162030;--panel2:#1b2739;--line:#2a3749;--text:#f1f5f8;--muted:#9fadbf;--lime:#d6ef72;--blue:#86bfff;--coral:#ff9b86;--violet:#b9a4ff}
@@ -64,25 +64,25 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
 </style>
 </head>
 <body>
-<nav class="nav"><div class="wrap"><a class="brand" href="#"><span class="mark">高</span>高原 / GAO YUAN</a><div class="nav-links"><a href="#demos">可玩 Demo</a><a href="#projects">工程文件</a><a href="#cases">设计过程</a><a href="#studies">拆解与练习</a><a href="#methods">工作方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></div></nav>
+<nav class="nav"><div class="wrap"><a class="brand" href="#"><span class="mark">高</span>高原 / GAO YUAN</a><div class="nav-links"><a href="#play">可玩作品</a><a href="#design">系统与数值</a><a href="#teardowns">拆解与策划案</a><a href="#methods">工作方法</a><a href="play.html">游戏大厅</a><a href="https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd">飞书作品集</a></div></div></nav>
 <div class="wrap">
 <header class="hero">
   <div>
     <div class="eyebrow">● 系统策划 / 数值策划 · 设计作品</div>
     <h1>先玩，<br>再看<em>怎么想的</em>。</h1>
     <p>这里放的是能直接运行、能复核的设计作品。每个作品只回答三件事：要解决什么设计问题、做了哪些取舍、用什么方式验证。</p>
-    <div class="actions"><a class="btn primary" href="play.html">▶ 打开游戏大厅</a><a class="btn" href="#cases">看设计过程</a><a class="btn" href="downloads/playable-games.zip" download>⤓ 离线包</a></div>
+    <div class="actions"><a class="btn primary" href="play.html">▶ 打开游戏大厅</a><a class="btn" href="#design">看设计过程</a><a class="btn" href="downloads/playable-games.zip" download>⤓ 离线包</a></div>
   </div>
   <div class="stats">
     <div class="stat"><b>3 + 4</b><span>完整 Demo + 交互原型</span></div>
     <div class="stat"><b>1,600</b><span>局固定策略测试</span></div>
     <div class="stat"><b>241</b><span>条规则断言</span></div>
-    <div class="stat"><b>4</b><span>个系统 / 数值方案</span></div>
+    <div class="stat"><b>7</b><span>个可复核工程</span></div>
   </div>
 </header>
 
-<section class="section" id="demos">
-  <div class="sec-head"><div><h2>可玩 Demo</h2><p>不用安装，点开就能玩。</p></div><span class="num">01</span></div>
+<section class="section" id="play">
+  <div class="sec-head"><div><h2>可玩作品</h2><p>3 个完整 Demo、4 个原创交互原型，不用安装，点开就能玩；每个作品都附可运行、可测试的工程文件。</p></div><span class="num">01</span></div>
   <div class="cards">
     <article class="card c-lime"><div class="icon">🎲</div><h3>二十面野心 · 孙哥纪事</h3><p class="sub">D20 融合叙事 · 一局 12–18 分钟</p>
       <p class="q">检定、动作、卡组、营地、赛车五套玩法，怎样共用一套资源和后果，而不是拼成五个小游戏？</p>
@@ -107,10 +107,7 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
     <a class="proto" href="play.html?game=jingling"><b>精灵巡游季</b><span>传闻判断、共鸣与结伴挑战</span></a>
   </div>
   <div class="lobby"><div><h3>全部 7 个作品都在游戏大厅里</h3><p>在线切换、全屏、单独打开 HTML；也可以下载 ZIP 离线运行。</p></div><a class="btn primary" href="play.html">进入游戏大厅 →</a></div>
-</section>
-
-<section class="section" id="projects">
-  <div class="sec-head"><div><h2>工程文件</h2><p>每个作品都拆成 src / config / docs / tests：数值和内容放在配置表里，规则用 Node 测试复核，直接打开 src/index.html 即可运行。</p></div><span class="num">02</span></div>
+  <h3 style="margin:40px 0 6px;font-size:20px">工程文件</h3><p style="margin:0 0 16px;color:var(--muted);font-size:14px">每个作品拆成 src / config / docs / tests：数值和内容放在配置表里，规则用 Node 测试复核，直接打开 src/index.html 即可运行。</p>
   <div class="projs">
     <div class="proj c-lime"><b>二十面野心 · 孙哥纪事</b><span class="meta">23 张配置表 · 3 组测试 2,752 条断言</span><span class="meta">幕、场景、37 个选项、78 条后果、5 结局、赛车与远征参数</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/d20">工程目录</a><a href="projects/d20/docs/design.md">策划文档</a><a href="projects/d20/src/index.html">运行拆分版</a></div></div>
     <div class="proj c-blue"><b>中国式考研：最后十二周</b><span class="meta">8 张配置表 · 3 组测试 23,871 条断言</span><span class="meta">科目、起点、目标线、11 种行动、事件与选项</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/kaoyan">工程目录</a><a href="projects/kaoyan/docs/design.md">策划文档</a><a href="projects/kaoyan/src/index.html">运行拆分版</a></div></div>
@@ -120,41 +117,35 @@ a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid var(--lim
     <div class="proj c-blue"><b>旧影回声</b><span class="meta">5 张配置表 · 118 条断言</span><span class="meta">线索、事实 / 推断分类、曝光区间与进度</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jiuying">工程目录</a><a href="projects/jiuying/docs/design.md">策划文档</a><a href="projects/jiuying/src/index.html">运行拆分版</a></div></div>
     <div class="proj c-coral"><b>精灵巡游季</b><span class="meta">5 张配置表 · 115 条断言</span><span class="meta">传闻、共鸣方式、挑战序列与进度</span><div class="ln"><a href="https://github.com/LittleGrass1127/game-design-portfolio/tree/main/projects/jingling">工程目录</a><a href="projects/jingling/docs/design.md">策划文档</a><a href="projects/jingling/src/index.html">运行拆分版</a></div></div>
   </div>
-  <p class="note">工程由线上单文件版本逆向整理，规则行为与单文件版做过对拍；测试数为本仓库 tests/ 实际运行结果。说明见 <a href="projects/README.md">projects/README.md</a>。</p>
+  <p class="note">工程由线上单文件版本整理，规则行为与单文件版做过对拍；测试数为本仓库 tests/ 实际运行结果。说明见 <a href="projects/README.md">projects/README.md</a>。</p>
 </section>
 
-<section class="section" id="cases">
-  <div class="sec-head"><div><h2>系统与数值方案 · 设计过程</h2><p>问题从哪来，取舍怎么做，结论的边界在哪里。</p></div><span class="num">03</span></div>
+<section class="section" id="design">
+  <div class="sec-head"><div><h2>系统与数值设计</h2><p>问题从哪来，取舍怎么做，结论的边界在哪里。</p></div><span class="num">02</span></div>
   <div class="cases">
-    <a class="case c-lime" href="docs/frog-project.md"><div class="k">NUMERIC</div><h3>青蛙战斗｜攻速改版后的数值重标</h3><p>统一乘系数会让吸血、灼烧、护盾各自失衡。按机制分别重标，用情形矩阵和路线模拟找风险，并写清模拟结论的边界。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-blue" href="docs/merge-project.md"><div class="k">SYSTEM</div><h3>二合活动｜把棋盘空间当作核心资源</h3><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-coral" href="docs/trial-ad.md"><div class="k">PLAYABLE AD</div><h3>试玩广告｜30 秒里的五个节点</h3><p>入场理解、第一次成功、难度变化、接近失败、结束回看；结束点停在“差一点赢”，每轮迭代只改一个变量。</p><span class="more">阅读设计过程 →</span></a>
-    <a class="case c-violet" href="docs/system-numeric-case.md"><div class="k">SYSTEM + NUMERIC</div><h3>断线托管 + 风迹手册</h3><p>状态机和 90 秒回控预算处理“掉线后谁来操作”；两套代币方案对比，选让轻度用户也能拿到第一档的方案（静态测算）。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-lime" href="design/frog-battle.md"><div class="k">NUMERIC</div><h3>青蛙战斗｜攻速改版后的数值重标</h3><p>从活动总消耗反推成长与怪物强度；统一乘系数会让吸血、灼烧、护盾各自失衡，按机制分别重标，用情形矩阵和路线模拟找风险。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-blue" href="design/merge-event.md"><div class="k">SYSTEM</div><h3>二合活动｜把棋盘空间当作核心资源</h3><p>二合活动里真正稀缺的是棋盘格子。从空间压力出发，把订单、棋子权重、玩家分层和奖励节奏放进同一个系统。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-coral" href="design/playable-ad.md"><div class="k">PLAYABLE AD</div><h3>试玩广告｜30 秒里的五个节点</h3><p>入场理解、第一次成功、难度变化、接近失败、结束回看；结束点停在“差一点赢”，并做横竖屏多投放位适配。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-violet" href="design/disconnect-and-wind-guide.md"><div class="k">SYSTEM + NUMERIC</div><h3>断线托管 + 风迹手册</h3><p>状态机和 90 秒回控预算处理“掉线后谁来操作”；两套代币方案对比，选让轻度用户也能拿到第一档的方案（静态测算）。</p><span class="more">阅读设计过程 →</span></a>
+    <a class="case c-lime" style="grid-column:1/-1" href="design/combat-growth/README.md"><div class="k">NUMERIC TABLES</div><h3>战斗养成｜数值表</h3><p>技能表与商店奖励表（CSV）：线性属性 + 非线性攻击间隔、三段式材料曲线、按玩家反推怪物、训练签保持正期望。</p><span class="more">查看数值表 →</span></a>
   </div>
 </section>
 
-<section class="section" id="studies">
-  <div class="sec-head"><div><h2>早期作品与拆解</h2><p>拆解案、复刻练习、需求文档和数值表，从旧飞书作品集整理而来。</p></div><span class="num">04</span></div>
+<section class="section" id="teardowns">
+  <div class="sec-head"><div><h2>拆解与策划案</h2><p>竞品拆解、完整策划案与需求文档，以及对游戏和玩家的分析。</p></div><span class="num">03</span></div>
   <div class="links">
-    <a href="works/hearthstone-teardown.md">炉石传说｜游戏拆解案</a>
-    <a href="works/merge-teardown.md">二合活动拆解</a>
-    <a href="works/farm-story/design.md">农场物语｜策划案</a>
-    <a href="works/farm-story/requirements.md">农场物语｜需求文档</a>
-    <a href="works/combat-growth/README.md">战斗养成｜数值表</a>
-    <a href="works/game-analysis.md">游戏分析：卡牌、抽卡、SLG、回合数值</a>
-    <a href="works/trial-ad-video.md">试玩广告视频与 AI 生成图</a>
-    <a href="docs/interview-and-original-design.md">面试复盘与原创设计</a>
-    <a href="docs/game-experience.md">游戏经历与用户理解</a>
+    <a href="teardowns/hearthstone.md">炉石传说｜游戏拆解案</a>
+    <a href="teardowns/merge-teardown.md">二合活动拆解｜逃离房间</a>
+    <a href="teardowns/game-analysis.md">游戏分析与用户理解</a>
+    <a href="teardowns/farm-story/design.md">农场物语｜策划案</a>
+    <a href="teardowns/farm-story/requirements.md">农场物语｜需求文档</a>
   </div>
 </section>
 
 <section class="section" id="methods">
-  <div class="sec-head"><div><h2>工作方法</h2><p>可复用的数值、系统、工具与交付方法。</p></div><span class="num">05</span></div>
-  <div class="links">
-    <a href="docs/numeric-design.md">活动数值设计与验证方法</a>
-    <a href="docs/system-design.md">系统规则、状态与异常处理</a>
-    <a href="docs/efficiency-system.md">效率系统：AI、Lua 与测试工具</a>
-    <a href="docs/product-judgment.md">立项、范围与交付复盘</a>
+  <div class="sec-head"><div><h2>工作方法</h2><p>把一次性劳动拆成可检查、可复现、可回滚的流程。</p></div><span class="num">04</span></div>
+  <div class="cases">
+    <a class="case c-blue" style="grid-column:1/-1" href="methods/efficiency-system.md"><div class="k">METHOD</div><h3>效率系统｜AI、Lua、命令行</h3><p>标准化 → 最小跑通 → 日志验收 → 批量扩量 → 工具化沉淀；附配置检查与“控制流—配置—表现—异常”四层验收清单。</p><span class="more">阅读方法 →</span></a>
   </div>
   <p class="note">模拟、项目内测试与线上数据分别标注；公开页面不含内部配置、ID 与未公开玩法。</p>
 </section>

@@ -1,16 +1,18 @@
 # 工程文件
 
-7 个可玩作品的工程版本。线上与离线包使用的是 `demos/`、`prototypes/` 下的单文件 HTML；这里把它们逆向整理成可维护的工程：代码按模块拆分，数值和内容抽成配置表，规则用 Node 测试复核。
+7 个可玩作品的工程版本。线上与离线包使用的是 `demos/`、`prototypes/` 下的单文件 HTML；这里把它们整理成可维护的工程：代码按模块拆分，数值和内容抽成配置表，规则用 Node 测试复核。
+
+本目录属于作品集“01 可玩作品”的工程部分；其余三类见首页：[系统与数值设计](../design/) · [拆解与策划案](../teardowns/) · [工作方法](../methods/efficiency-system.md)。返回 [README](../README.md)。
 
 | 工程 | 类型 | 配置表 | 测试（本仓库实际运行） | 在线试玩 |
 |---|---|---|---|---|
 | [d20 · 二十面野心·孙哥纪事](d20/README.md) | 完整 Demo | 23 | 3 组，2,752 条断言 | [试玩](../play.html?game=d20) |
 | [kaoyan · 中国式考研：最后十二周](kaoyan/README.md) | 完整 Demo | 8 | 3 组，23,871 条断言 | [试玩](../play.html?game=kaoyan) |
 | [tuanzi · 团子清洁队](tuanzi/README.md) | 完整 Demo | 6 | 378 条断言 | [试玩](../play.html?game=tuanzi) |
-| [yedeng · 夜灯街深夜剪辑室](yedeng/README.md) | 交互原型 | 4 | 86 条断言 | [试玩](../play.html?game=yedeng) |
-| [chunfeng · 春风编花会](chunfeng/README.md) | 交互原型 | 5 | 64 条断言 | [试玩](../play.html?game=chunfeng) |
-| [jiuying · 旧影回声](jiuying/README.md) | 交互原型 | 5 | 118 条断言 | [试玩](../play.html?game=jiuying) |
-| [jingling · 精灵巡游季](jingling/README.md) | 交互原型 | 5 | 115 条断言 | [试玩](../play.html?game=jingling) |
+| [yedeng · 夜灯街深夜剪辑室](yedeng/README.md) | 原创交互原型 | 4 | 86 条断言 | [试玩](../play.html?game=yedeng) |
+| [chunfeng · 春风编花会](chunfeng/README.md) | 原创交互原型 | 5 | 64 条断言 | [试玩](../play.html?game=chunfeng) |
+| [jiuying · 旧影回声](jiuying/README.md) | 原创交互原型 | 5 | 118 条断言 | [试玩](../play.html?game=jiuying) |
+| [jingling · 精灵巡游季](jingling/README.md) | 原创交互原型 | 5 | 115 条断言 | [试玩](../play.html?game=jingling) |
 
 断言数大头来自穷举和固定种子批量模拟的逐步比对（例如考研的 3,993 种开局排法、孙哥的 1,600 局固定策略），不等于独立规则点数量。
 
