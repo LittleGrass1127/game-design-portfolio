@@ -149,7 +149,7 @@
         const eventTitle=S.engine.pendingEvent().options[index]?.text;
         const result=S.engine.chooseEvent(index);
         if(!result.ok){notify(result.error);return;}
-        save();afterProgress();notify(`记下了：${eventTitle}`);break;
+        save();afterProgress();if(S.screen!=='ending')notify(`记下了：${eventTitle}`);break;
       }
       case 'rules':openOverlay({type:'rules'});break;
       case 'diary':if(S.engine)openOverlay({type:'diary'});break;
