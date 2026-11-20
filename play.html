@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="高原的可玩游戏大厅：7 个无需安装、可在线或离线运行的 HTML 游戏与交互原型。">
+<meta name="description" content="高原的可玩游戏大厅：7 个无需安装、可在线或离线运行的 HTML 游戏与交互原型，每个都写明玩法、时长和操作方式。">
 <title>可玩游戏大厅｜高原作品集</title>
 <style>
 :root{--bg:#101722;--panel:#172131;--line:#2c394b;--text:#f3f6f8;--muted:#a6b2c2;--lime:#d6ef72;--blue:#86bfff;--coral:#ff9b86}
@@ -15,83 +15,120 @@ body{min-height:100vh;background:radial-gradient(circle at 85% 0,#243a5355,trans
 .icon-btn,.action{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);background:#ffffff05;border-radius:9px;min-height:38px;padding:8px 13px;cursor:pointer;font-size:13px;font-weight:700}.icon-btn:hover,.action:hover{border-color:var(--blue);color:var(--blue)}.action.primary{background:var(--lime);border-color:var(--lime);color:#17202b}.action.primary:hover{background:#e4f69b;color:#17202b}
 .shell{display:grid;grid-template-columns:310px minmax(0,1fr);min-height:calc(100vh - 72px)}
 .library{border-right:1px solid var(--line);padding:25px 18px 30px;background:#121b28}.library-head{padding:0 9px 18px}.library h1{font-size:24px;letter-spacing:-.04em;margin:0 0 8px}.library-head p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
-.game-list{display:grid;gap:7px}.game-button{width:100%;display:grid;grid-template-columns:36px 1fr 18px;align-items:center;gap:11px;text-align:left;border:1px solid transparent;background:transparent;border-radius:11px;padding:12px 10px;cursor:pointer}.game-button:hover{background:#ffffff06}.game-button.active{background:#223044;border-color:#3a4c63}.game-number{font:700 12px/1 ui-monospace,monospace;color:var(--muted)}.game-button.active .game-number{color:var(--lime)}.game-copy b{display:block;font-size:13px;line-height:1.4}.game-copy small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.game-arrow{color:var(--muted);opacity:0}.game-button.active .game-arrow{opacity:1;color:var(--lime)}
+.game-list{display:grid;gap:7px}.game-button{width:100%;display:grid;grid-template-columns:36px 1fr 18px;align-items:center;gap:11px;text-align:left;border:1px solid transparent;background:transparent;border-radius:11px;padding:12px 10px;cursor:pointer}.game-button:hover{background:#ffffff06}.game-button.active{background:#223044;border-color:#3a4c63}.game-number{font:700 12px/1 ui-monospace,monospace;color:var(--muted)}.game-button.active .game-number{color:var(--lime)}.game-copy b{display:block;font-size:13px;line-height:1.4}.game-copy small{display:block;color:var(--muted);font-size:11px;margin-top:4px}.game-copy em{display:inline-block;margin-left:7px;padding:1px 7px;border-radius:99px;background:var(--lime);color:#17202b;font-style:normal;font-size:10px;font-weight:800;vertical-align:1px}.game-copy .meta{color:#8fa0b4;font-size:10.5px;margin-top:3px}.group-label{margin:14px 10px 2px;color:var(--muted);font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.1em}.group-label:first-child{margin-top:0}.game-arrow{color:var(--muted);opacity:0}.game-button.active .game-arrow{opacity:1;color:var(--lime)}
 .library-foot{margin:22px 9px 0;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:11px;line-height:1.8}.library-foot a{color:var(--blue);font-weight:700}
-.player{min-width:0;padding:26px 30px 36px}.player-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}.eyebrow{color:var(--blue);font:700 11px/1.4 ui-monospace,monospace;letter-spacing:.08em}.player h2{font-size:clamp(25px,3vw,40px);letter-spacing:-.05em;line-height:1.15;margin:8px 0}.description{max-width:700px;color:var(--muted);font-size:13px;line-height:1.75;margin:0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tag{font-size:11px;color:#c8d3df;border:1px solid var(--line);border-radius:99px;padding:4px 9px}
-.head-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;flex:0 0 auto}.stage{position:relative;height:min(68vh,760px);min-height:460px;background:#080d14;border:1px solid #36465b;border-radius:14px;overflow:hidden;box-shadow:0 24px 70px #0005}.stage iframe{display:block;width:100%;height:100%;border:0;background:white}.stage-loading{position:absolute;inset:0;display:grid;place-items:center;background:#0b111a;color:var(--muted);font-size:13px;pointer-events:none;transition:opacity .18s}.stage-loading.done{opacity:0}.fullscreen-btn{position:absolute;right:12px;bottom:12px;width:40px;height:40px;padding:0;background:#101722dc;border-color:#ffffff44;color:white;opacity:.35}.stage:hover .fullscreen-btn,.fullscreen-btn:focus-visible{opacity:1}
-.player-foot{display:flex;justify-content:space-between;gap:20px;margin-top:14px;color:var(--muted);font-size:12px;line-height:1.7}.controls{max-width:720px}.controls b{color:#d8e0e9}.offline-note{text-align:right;white-space:nowrap}.offline-note a{color:var(--lime);font-weight:700}
-.mobile-select{display:none;width:100%;margin-bottom:14px;padding:12px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;font:inherit}
+.player{min-width:0;padding:26px 30px 36px}.player-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:18px}.eyebrow{color:var(--blue);font:700 11px/1.4 ui-monospace,monospace;letter-spacing:.08em}.player h2{font-size:clamp(25px,3vw,40px);letter-spacing:-.05em;line-height:1.15;margin:8px 0}.description{max-width:700px;color:var(--muted);font-size:13px;line-height:1.75;margin:0}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.tag{font-size:11px;color:#c8d3df;border:1px solid var(--line);border-radius:99px;padding:4px 9px}.tag.key{color:var(--lime);border-color:#d6ef7255}.tag.pick{background:var(--lime);border-color:var(--lime);color:#17202b;font-weight:800}
+.head-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;flex:0 0 auto}.stage{position:relative;height:min(68vh,760px);min-height:460px;background:#080d14;border:1px solid #36465b;border-radius:14px;overflow:hidden;box-shadow:0 24px 70px #0005}.stage iframe{display:block;width:100%;height:100%;border:0;background:white}.stage-loading{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:14px;padding:24px;background:#0b111a;color:var(--muted);font-size:13px;line-height:1.7;text-align:center;transition:opacity .18s}.stage-loading.done{opacity:0;pointer-events:none}.stage-loading b{display:block;color:var(--text);font-size:16px}.stage-loading .action{pointer-events:auto}.spinner{width:30px;height:30px;border:3px solid #ffffff22;border-top-color:var(--lime);border-radius:50%;animation:spin .8s linear infinite}.stage-loading.failed .spinner{display:none}@keyframes spin{to{transform:rotate(360deg)}}.stage:fullscreen{width:100vw;height:100vh;min-height:0;border:0;border-radius:0}.stage-exit{position:absolute;right:12px;top:12px;display:none;background:#101722e6;border-color:#ffffff55;color:white}.stage:fullscreen .stage-exit{display:inline-flex;opacity:.4}.stage:fullscreen .stage-exit:hover,.stage-exit:focus-visible{opacity:1}
+.stage-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px}.stage-bar .pager{display:flex;gap:8px}.stage-bar .action{min-height:34px;padding:6px 12px;font-size:12px}.howto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.howto div{padding:12px 14px;border:1px solid var(--line);border-radius:11px;background:#ffffff05;color:#c8d3df;font-size:12.5px;line-height:1.7}.howto b{display:block;margin-bottom:3px;color:var(--lime);font-size:11px;letter-spacing:.08em}.player-foot{display:flex;justify-content:space-between;gap:20px;margin-top:14px;color:var(--muted);font-size:12px;line-height:1.7}.controls{max-width:720px}.offline-note{text-align:right;white-space:nowrap}.offline-note a{color:var(--lime);font-weight:700}
+.mobile-select{display:none;width:100%;margin-bottom:14px;padding:8px 12px 10px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:9px;font:inherit}
 @media(max-width:1050px){.shell{grid-template-columns:260px minmax(0,1fr)}.player{padding:22px 20px 30px}.player-head{display:block}.head-actions{justify-content:flex-start;margin-top:16px}.stage{height:64vh;min-height:420px}}
-@media(max-width:720px){.topbar{height:auto;min-height:64px;padding:14px 16px}.identity small,.mode,.top-actions .label{display:none}.shell{display:block}.library{display:none}.mobile-select{display:block}.player{padding:20px 14px 28px}.player h2{font-size:28px}.stage{height:66vh;min-height:430px;border-radius:10px}.player-foot{display:block}.offline-note{text-align:left;margin-top:10px;white-space:normal}.head-actions .action{flex:1}.description{font-size:12px}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:720px){.topbar{height:auto;min-height:64px;padding:14px 16px}.identity small,.mode{display:none}.howto{grid-template-columns:1fr}.stage-bar{flex-wrap:wrap}.head-actions{margin-top:12px}.shell{display:block}.library{display:none}.mobile-select{display:block}.player{padding:20px 14px 28px}.player h2{font-size:28px}.stage{height:66vh;min-height:430px;border-radius:10px}.player-foot{display:block}.offline-note{text-align:left;margin-top:10px;white-space:normal}.head-actions .action{flex:1}.description{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.spinner{animation-duration:2.4s}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <a class="identity" href="index.html" aria-label="返回高原作品集首页"><span class="mark">高</span><span><b>可玩游戏大厅</b><small>GAO YUAN · PLAYABLE PORTFOLIO</small></span></a>
-  <div class="top-actions"><span class="mode" id="runMode">浏览器直接运行</span><a class="icon-btn" href="index.html"><span aria-hidden="true">←</span><span class="label">返回作品集</span></a></div>
+  <div class="top-actions"><span class="mode" id="runMode">浏览器直接运行</span><a class="icon-btn" href="index.html#play"><span aria-hidden="true">←</span><span class="label">返回作品集</span></a></div>
 </header>
 <main class="shell">
   <aside class="library" aria-label="游戏列表">
-    <div class="library-head"><h1>选一个，直接玩。</h1><p>3 个完整 Demo，4 个交互原型。<br>不用安装，不需要联网加载素材。</p></div>
+    <div class="library-head"><h1>选一个，直接玩。</h1><p>3 个完整 Demo，4 个交互原型。不用安装，不需要联网加载素材。<br>第一次来，建议先玩 <b style="color:var(--lime)">团子清洁队</b>：2 分钟一局。</p></div>
     <div class="game-list" id="gameList"></div>
     <div class="library-foot">离线游玩：下载 ZIP 后完整解压，双击其中的 <b>play.html</b>。每个游戏也都是独立 HTML，可单独打开。<br><br><a href="downloads/playable-games.zip" download>下载全部游戏与启动页 ↓</a></div>
   </aside>
   <section class="player" aria-live="polite">
-    <label class="mobile-select"><select id="mobileSelect" aria-label="选择游戏" style="width:100%;background:transparent;color:inherit;border:0;outline:0"></select></label>
+    <label class="mobile-select"><span style="display:block;color:var(--muted);font-size:10px;margin-bottom:2px">切换游戏（共 7 个）</span><select id="mobileSelect" aria-label="选择游戏" style="width:100%;background:transparent;color:inherit;border:0;outline:0;font-weight:700"></select></label>
     <div class="player-head">
       <div><div class="eyebrow" id="gameType"></div><h2 id="gameTitle"></h2><p class="description" id="gameDescription"></p><div class="tags" id="gameTags"></div></div>
-      <div class="head-actions"><a class="action" id="openDirect" target="_blank" rel="noopener">单独打开 HTML ↗</a><a class="action primary" id="downloadCurrent" download>下载当前游戏 ↓</a></div>
+      <div class="head-actions"><button class="action primary" id="fullscreenTop" type="button">全屏游玩</button><a class="action" id="openDirect" target="_blank" rel="noopener">单独打开 ↗</a><a class="action" id="downloadCurrent" download>下载 ↓</a></div>
     </div>
     <div class="stage" id="stage">
       <iframe id="gameFrame" title="游戏运行窗口" allow="autoplay; fullscreen; gamepad" allowfullscreen></iframe>
-      <div class="stage-loading" id="loading">正在打开游戏…</div>
-      <button class="icon-btn fullscreen-btn" id="fullscreenButton" title="全屏游玩" aria-label="全屏游玩">⛶</button>
+      <div class="stage-loading" id="loading" role="status"><span class="spinner" aria-hidden="true"></span><div id="loadingText">正在打开游戏…</div><a class="action" id="loadingOpen" target="_blank" rel="noopener" hidden>单独打开这个游戏 ↗</a></div>
+      <button class="icon-btn stage-exit" id="fullscreenButton" type="button" title="退出全屏（Esc）">退出全屏</button>
     </div>
-    <div class="player-foot"><div class="controls"><b>操作：</b><span id="gameControls"></span><br>游戏内声音需首次点击后才会启用；建议电脑端 Chrome / Edge 游玩。</div><div class="offline-note"><a href="downloads/playable-games.zip" download>下载完整离线包</a><br><span id="fileHint">ZIP 内含启动页与全部单文件游戏</span></div></div>
+    <div class="stage-bar"><div class="pager"><button class="action" id="prevGame" type="button">← 上一个</button><button class="action" id="nextGame" type="button">下一个 →</button></div><button class="action" id="reloadGame" type="button" title="重新载入当前游戏，从头开始">↻ 重新载入</button></div>
+    <div class="howto" aria-label="怎么玩"><div><b>目标</b><span id="gameGoal"></span></div><div><b>操作</b><span id="gameControls"></span></div><div><b>提示</b><span id="gameTip"></span></div></div>
+    <div class="player-foot"><div class="controls">点一下游戏画面后键盘才会生效；声音需首次点击后启用。建议电脑端 Chrome / Edge。</div><div class="offline-note"><a href="downloads/playable-games.zip" download>下载完整离线包</a><br><span id="fileHint">ZIP 内含启动页与全部单文件游戏</span></div></div>
   </section>
 </main>
 <script>
 (() => {
   'use strict';
   const games = [
-    {id:'d20',path:'demos/d20.html',title:'二十面野心 · 孙哥纪事',type:'COMPLETE DEMO / D20 FUSION',short:'检定、牌组与多结局',description:'4 幕、12 个目标、12 次检定、3 段赛车与 5 种结局。把生存、牌组、营地和赛车放进同一套结算关系。',tags:['完整 Demo','多结局','鼠标操作'],controls:'鼠标点击进行选择与检定；按页面提示推进剧情。'},
-    {id:'kaoyan',path:'demos/kaoyan.html',title:'中国式考研 · 最后十二周',type:'COMPLETE DEMO / TIME & RISK',short:'12 周时间与风险管理',description:'4 科、3 时段、11 种行动、12 周。时间分配不是单纯堆收益，还要处理精力、压力、金钱与目标分数线。',tags:['完整 Demo','资源管理','鼠标操作'],controls:'鼠标点击安排每周行动，确认后进入下一周。'},
-    {id:'tuanzi',path:'demos/tuanzi.html',title:'团子清洁队',type:'COMPLETE DEMO / 2-MINUTE LOOP',short:'2 分钟收集与局内构筑',description:'移动、吸附、同色合成与回车交付组成 2 分钟短局；14 项升级改变容量、收益、移动和合成方式。',tags:['完整 Demo','键盘 / 触控','14 项升级'],controls:'WASD / 方向键移动，空格冲刺；也可点击或拖动画面移动。'},
-    {id:'yedeng',path:'prototypes/yedeng.html',title:'夜灯街深夜剪辑室',type:'INTERACTION PROTOTYPE / EDITING',short:'素材选择、排序与试映',description:'按委托选择素材、调整剪辑顺序并试映，让主题匹配与镜头节奏同时影响反馈。',tags:['交互原型','排序','选择'],controls:'鼠标选择素材并调整顺序，完成剪辑后试映。'},
-    {id:'chunfeng',path:'prototypes/chunfeng.html',title:'春风编花会',type:'INTERACTION PROTOTYPE / ARRANGEMENT',short:'花材布置与多目标评分',description:'选择花材并进行环形布置，在愿望、色彩和相邻关系之间寻找兼顾方案。',tags:['交互原型','空间布置','评分'],controls:'鼠标选择花材并点击位置布置，按提示提交作品。'},
-    {id:'jiuying',path:'prototypes/jiuying.html',title:'旧影回声',type:'INTERACTION PROTOTYPE / DEDUCTION',short:'修复、推断与核对',description:'先调整曝光修复照片，再区分事实与推断，最后核对证据并整理照片。',tags:['交互原型','观察','推断'],controls:'鼠标调整照片参数、选择线索分类并核对答案。'},
-    {id:'jingling',path:'prototypes/jingling.html',title:'精灵巡游季',type:'INTERACTION PROTOTYPE / CHOICE',short:'传闻判断与共鸣挑战',description:'根据传闻和环境判断精灵偏好，选择共鸣方式，再完成结伴挑战。',tags:['交互原型','环境判断','序列挑战'],controls:'鼠标阅读传闻、选择共鸣并依次完成挑战操作。'}
+    {id:'d20',path:'demos/d20.html',title:'二十面野心 · 孙哥纪事',type:'COMPLETE DEMO / D20 FUSION',group:'完整 Demo',short:'D20 检定、远征、营地、赛车共用一套资源',time:'12–18 分钟',input:'键盘为主',description:'一夜走过 4 处现场：远征里找合同做 D20 检定，营地里三选一成长，幕间开车回收零件。五套玩法共用一套资源和后果。',tags:['4 幕 · 12 次检定','3 段赛车','5 种结局'],goal:'走完 4 幕、12 次检定，按整夜积累的资源与关系走向 5 种结局之一。失败只留下代价，不会卡关。',controls:'WASD / 方向键移动，靠近合同按 E；对话按 1–3 选择，Enter 接受结果；赛车 A / D 转向、Shift 增压。',tip:'检定前能看到胜率，不必清完敌人再检定。赛车里主动撞上前车才有金 / 银档。'},
+    {id:'kaoyan',path:'demos/kaoyan.html',title:'中国式考研 · 最后十二周',type:'COMPLETE DEMO / TIME & RISK',group:'完整 Demo',short:'12 周时间与风险管理',time:'10–15 分钟',input:'鼠标 / 触屏',description:'4 科、每周 3 个时段、11 种行动。学习收益受精力和压力影响，预览按真实规则先算一遍，确认前就知道结果。',tags:['预览即结算','12 周 · 4 科','可存档'],goal:'十二周后总分达到目标线，并且四科都过单科线。',controls:'点行动卡排进本周计划（可调序、移除），看右侧预览，再点确认；偶数周处理一个二选一事件。',tip:'精力低于 60 或压力高于 35 时学习效率下降，留一个时段休息常常更划算。'},
+    {id:'tuanzi',path:'demos/tuanzi.html',title:'团子清洁队',type:'COMPLETE DEMO / 2-MINUTE LOOP',group:'完整 Demo',recommended:true,short:'只用移动的收集、合成、交付短局',time:'2 分钟',input:'键盘 / 鼠标 / 触屏',description:'只有“移动”一个操作：靠近团子自动吸附，同色同级自动合成，回到餐车自动交付；五次四选一升级让下一圈更快。',tags:['单操作','自动合成','14 项升级'],goal:'两分钟内把 120 只团子全部送回中央餐车，金币越多越好。不会失败。',controls:'WASD / 方向键移动，或点击、拖动画面；空格或左下角按钮冲刺；升级时按 1–4；回车开始 / 再来一局。',tip:'背包默认装 7 只，满了就回餐车；8 秒内连续交付有连送加成。'},
+    {id:'yedeng',path:'prototypes/yedeng.html',title:'夜灯街深夜剪辑室',type:'INTERACTION PROTOTYPE / EDITING',group:'交互原型',short:'选素材、排顺序、试映',time:'1–2 分钟',input:'点击',description:'从七段录像里选五段、排好顺序再试映。素材分数不是答案，顺序和结尾同样算分。',tags:['排序','试映反馈'],goal:'选满五段，让试映通过，再正式放映。',controls:'点右侧素材加入时间轴，点时间轴片段移除；片段按加入顺序排列。',tip:'相邻片段的“情绪”数字越接近，节奏越连贯；委托要求以片尾合影收尾。'},
+    {id:'chunfeng',path:'prototypes/chunfeng.html',title:'春风编花会',type:'INTERACTION PROTOTYPE / ARRANGEMENT',group:'交互原型',short:'环形布置与多目标评分',time:'1–2 分钟',input:'点击',description:'选花材种进十六个环形落点，在颜色、株高和三位友邻的愿望之间找兼顾方案。',tags:['多目标','实时评价'],goal:'种满 12 株，三个愿望全中，且综合评分不低于 88。',controls:'先点左侧花材，再点环上的落点；再点一次拔除。种满 12 株后提交。',tip:'右侧愿望满足后会变色；低、中、高三种株高都出现才过得了通过线。'},
+    {id:'jiuying',path:'prototypes/jiuying.html',title:'旧影回声',type:'INTERACTION PROTOTYPE / DEDUCTION',group:'交互原型',short:'调曝光、分清事实与推断',time:'约 1 分钟',input:'点击 / 拖动',description:'先把底片调到可识别的曝光，再判断哪条线索是事实、哪条是推断，核对通过后收录照片。',tags:['观察','分类判断'],goal:'事实、推断各放对一条，核对通过后收录照片。',controls:'拖动曝光滑条；点右侧线索选中，再点“归为事实”或“归为推断”，然后核对。',tip:'能直接查到记录的是事实，需要靠关系去猜的是推断；有一条干扰项。'},
+    {id:'jingling',path:'prototypes/jingling.html',title:'精灵巡游季',type:'INTERACTION PROTOTYPE / CHOICE',group:'交互原型',short:'读环境选共鸣、顺序挑战',time:'约 2 分钟',input:'点击',description:'读传闻里的环境线索，选对共鸣方式与精灵结伴，再按顺序完成三步协作。',tags:['环境判断','序列挑战'],goal:'把三条传闻里的三只精灵都收进图鉴。',controls:'左侧选传闻，右侧选共鸣方式，点“尝试结伴”；结伴后按顺序点三个协作按钮。',tip:'传闻副标题里藏着关键环境词；协作按钮的排列顺序不是正确顺序。'}
   ];
   const $ = id => document.getElementById(id);
-  const list = $('gameList'), select = $('mobileSelect'), frame = $('gameFrame');
-  let current = null;
+  const list = $('gameList'), select = $('mobileSelect'), frame = $('gameFrame'), loading = $('loading');
+  const online = location.protocol === 'http:' || location.protocol === 'https:';
+  let current = null, loadToken = 0, slowTimer = null;
+  let lastGroup = '';
   games.forEach((game, index) => {
+    if (game.group !== lastGroup) { lastGroup = game.group; const label = document.createElement('div'); label.className = 'group-label'; label.textContent = game.group; list.appendChild(label); }
     const button = document.createElement('button');
-    button.className = 'game-button'; button.dataset.game = game.id;
-    button.innerHTML = `<span class="game-number">${String(index + 1).padStart(2,'0')}</span><span class="game-copy"><b>${game.title}</b><small>${game.short}</small></span><span class="game-arrow">→</span>`;
+    button.className = 'game-button'; button.dataset.game = game.id; button.type = 'button';
+    button.innerHTML = `<span class="game-number">${String(index + 1).padStart(2,'0')}</span><span class="game-copy"><b>${game.title}${game.recommended ? '<em>先玩这个</em>' : ''}</b><small>${game.short}</small><small class="meta">${game.time} · ${game.input}</small></span><span class="game-arrow">→</span>`;
     button.addEventListener('click', () => openGame(game.id, true)); list.appendChild(button);
-    const option = document.createElement('option'); option.value = game.id; option.textContent = game.title; select.appendChild(option);
+    const option = document.createElement('option'); option.value = game.id; option.textContent = `${game.title}｜${game.time}${game.recommended ? '｜推荐先玩' : ''}`; select.appendChild(option);
   });
   select.addEventListener('change', () => openGame(select.value, true));
-  frame.addEventListener('load', () => $('loading').classList.add('done'));
+
+  function showLoading(game) {
+    loading.classList.remove('done', 'failed'); $('loadingOpen').hidden = true;
+    $('loadingText').innerHTML = `<b>正在打开「${game.title}」…</b>${game.id === 'd20' ? '这个作品带渲染引擎，文件约 1.4 MB，首次打开稍慢。' : ''}`;
+  }
+  function showFailed(game, reason) {
+    loading.classList.remove('done'); loading.classList.add('failed');
+    $('loadingText').innerHTML = `<b>「${game.title}」没有打开</b>${reason}`;
+    $('loadingOpen').href = game.path; $('loadingOpen').hidden = false;
+  }
+  frame.addEventListener('load', () => {
+    if (!current || frame.getAttribute('src') !== current.path) return;
+    clearTimeout(slowTimer);
+    if (!loading.classList.contains('failed')) loading.classList.add('done');
+    try { frame.focus(); } catch (_) {}
+  });
+  function loadFrame(game) {
+    const token = ++loadToken;
+    showLoading(game); clearTimeout(slowTimer);
+    slowTimer = setTimeout(() => { if (token === loadToken && !loading.classList.contains('done')) { $('loadingText').innerHTML = `<b>「${game.title}」还在加载…</b>网络较慢时可以再等一会儿，或者单独打开这个游戏。`; $('loadingOpen').href = game.path; $('loadingOpen').hidden = false; } }, 8000);
+    frame.title = `${game.title}｜游戏运行窗口`; frame.src = game.path;
+    // 在线时先确认文件存在；file:// 下浏览器不允许 fetch 本地文件，直接交给 iframe
+    if (online) fetch(game.path, {method: 'HEAD'}).then(response => { if (token === loadToken && !response.ok) { clearTimeout(slowTimer); showFailed(game, `服务器返回 ${response.status}。可以换一个游戏，或稍后再试。`); } }).catch(() => {});
+  }
   function openGame(id, updateUrl) {
-    const game = games.find(item => item.id === id) || games[0]; current = game;
+    const game = games.find(item => item.id === id) || games.find(item => item.recommended) || games[0]; current = game;
     document.querySelectorAll('.game-button').forEach(button => { const active = button.dataset.game === game.id; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
     select.value = game.id; $('gameType').textContent = game.type; $('gameTitle').textContent = game.title; $('gameDescription').textContent = game.description;
-    $('gameTags').replaceChildren(...game.tags.map(text => { const tag = document.createElement('span'); tag.className = 'tag'; tag.textContent = text; return tag; }));
-    $('gameControls').textContent = game.controls; $('openDirect').href = game.path; $('downloadCurrent').href = game.path; $('downloadCurrent').setAttribute('download', game.path.split('/').pop());
-    frame.title = `${game.title}｜游戏运行窗口`; $('loading').classList.remove('done'); frame.src = game.path;
+    const chips = [[`时长 ${game.time}`, 'tag key'], [`操作 ${game.input}`, 'tag key'], ...(game.recommended ? [['推荐先玩', 'tag pick']] : []), ...game.tags.map(text => [text, 'tag'])];
+    $('gameTags').replaceChildren(...chips.map(([text, cls]) => { const tag = document.createElement('span'); tag.className = cls; tag.textContent = text; return tag; }));
+    $('gameGoal').textContent = game.goal; $('gameControls').textContent = game.controls; $('gameTip').textContent = game.tip;
+    $('openDirect').href = game.path; $('downloadCurrent').href = game.path; $('downloadCurrent').setAttribute('download', game.path.split('/').pop());
+    loadFrame(game);
     document.title = `${game.title}｜可玩游戏大厅`;
     if (updateUrl) { const url = new URL(location.href); url.searchParams.set('game', game.id); history.replaceState(null, '', url); }
   }
-  $('fullscreenButton').addEventListener('click', async () => {
-    try { if (document.fullscreenElement) await document.exitFullscreen(); else await $('stage').requestFullscreen(); } catch (_) { window.open(current.path, '_blank'); }
-  });
+  function step(delta) { const index = games.indexOf(current); openGame(games[(index + delta + games.length) % games.length].id, true); }
+  $('prevGame').addEventListener('click', () => step(-1));
+  $('nextGame').addEventListener('click', () => step(1));
+  $('reloadGame').addEventListener('click', () => loadFrame(current));
+  async function toggleFullscreen() {
+    try { if (document.fullscreenElement) await document.exitFullscreen(); else { await $('stage').requestFullscreen(); try { frame.focus(); } catch (_) {} } }
+    catch (_) { window.open(current.path, '_blank'); } // 不支持全屏（例如部分手机浏览器）时改为单独打开
+  }
+  $('fullscreenTop').addEventListener('click', toggleFullscreen);
+  $('fullscreenButton').addEventListener('click', toggleFullscreen);
   if (location.protocol === 'file:') { $('runMode').textContent = '本地离线模式'; $('fileHint').textContent = '当前无需联网，游戏文件均在本机'; }
   const aliases = {liufen:'yedeng'}; // 兼容旧链接
   const requested = new URLSearchParams(location.search).get('game');
-  openGame(aliases[requested] || requested || games[0].id, false);
+  openGame(aliases[requested] || requested || '', false); // 未指定时打开推荐先玩的那个
 })();
 </script>
 </body>

@@ -29,6 +29,8 @@ const results = [];
       await page.waitForTimeout(400);
       assert.ok((await page.title()).length > 0, `${id}: missing title`);
       assert.ok(await page.locator('body').isVisible(), `${id}: body is not visible`);
+      const frameSize = await page.evaluate(() => ({ viewport: innerWidth, content: document.documentElement.scrollWidth }));
+      assert.ok(frameSize.content <= frameSize.viewport + 1, `${id}: horizontal overflow ${JSON.stringify(frameSize)}`);
       if (id === 'tuanzi') {
         await page.locator('#startButton').click();
         await page.keyboard.down('ArrowRight'); await page.waitForTimeout(300); await page.keyboard.up('ArrowRight');
@@ -48,6 +50,14 @@ const results = [];
     const page = await browser.newPage({ viewport: { width: 1440, height: 1000 }, acceptDownloads: true });
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
+    // 不带参数时打开“推荐先玩”的作品
+    await page.goto(url('play.html'));
+    await page.frameLocator('#gameFrame').locator('body').waitFor();
+    assert.equal(await page.locator('#gameFrame').getAttribute('src'), 'demos/tuanzi.html', 'launcher: default game should be the recommended one');
+    assert.equal(await page.locator('.game-button.active .game-copy em').count(), 1, 'launcher: recommended badge');
+    // 旧别名仍然可用
+    await page.goto(url('play.html') + '?game=liufen');
+    await page.waitForFunction(() => document.querySelector('#gameFrame')?.getAttribute('src') === 'prototypes/yedeng.html');
     await page.goto(url('play.html') + '?game=tuanzi');
     await page.frameLocator('#gameFrame').locator('body').waitFor();
     assert.equal(await page.locator('.game-button').count(), games.length);
@@ -57,7 +67,20 @@ const results = [];
       await page.waitForFunction(expected => document.querySelector('#gameFrame')?.getAttribute('src') === expected, file);
       assert.ok((await page.locator('#gameTitle').textContent()).length > 0);
       assert.equal(await page.locator('#downloadCurrent').getAttribute('href'), file);
+      // 每个作品都写明时长、操作方式，以及目标 / 操作 / 提示
+      assert.ok(/时长/.test(await page.locator('#gameTags').textContent()) && /操作/.test(await page.locator('#gameTags').textContent()), `${id}: time and input tags`);
+      for (const part of ['#gameGoal', '#gameControls', '#gameTip']) assert.ok((await page.locator(part).textContent()).length > 8, `${id}: ${part} is empty`);
+      await page.waitForFunction(() => document.querySelector('#loading').classList.contains('done'), null, { timeout: 15000 });
     }
+    // 上一个 / 下一个循环切换，重新载入保持当前作品
+    await page.locator('#nextGame').click();
+    await page.waitForFunction(expected => document.querySelector('#gameFrame')?.getAttribute('src') === expected, games[0][1]);
+    await page.locator('#prevGame').click();
+    await page.waitForFunction(expected => document.querySelector('#gameFrame')?.getAttribute('src') === expected, games[games.length - 1][1]);
+    await page.locator('#reloadGame').click();
+    await page.waitForFunction(() => document.querySelector('#loading').classList.contains('done'), null, { timeout: 15000 });
+    assert.equal(await page.locator('#gameFrame').getAttribute('src'), games[games.length - 1][1]);
+    assert.ok(new URL(page.url()).searchParams.get('game') === games[games.length - 1][0], 'launcher: URL follows the current game');
     await page.locator('.game-button[data-game="tuanzi"]').click();
     await page.waitForTimeout(500);
     await page.screenshot({ path: path.join(output, 'play-desktop.png'), fullPage: true });
