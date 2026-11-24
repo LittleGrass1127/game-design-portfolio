@@ -5,7 +5,7 @@
 **系统策划 / 数值策划 · 拆解、设计与可玩作品**
 
 [![在线作品站](https://img.shields.io/badge/▶_在线作品站-d6ef72?style=for-the-badge&labelColor=0f1621)](https://littlegrass1127.github.io/game-design-portfolio/)
-[![游戏大厅](https://img.shields.io/badge/🎲_可玩游戏大厅-86bfff?style=for-the-badge&labelColor=0f1621)](https://littlegrass1127.github.io/game-design-portfolio/play.html)
+[![游戏大厅](https://img.shields.io/badge/⚡_即时试玩-86bfff?style=for-the-badge&labelColor=0f1621)](https://littlegrass1127.github.io/game-design-portfolio/play.html)
 [![飞书作品集](https://img.shields.io/badge/📘_飞书作品集-ff9b86?style=for-the-badge&labelColor=0f1621)](https://ucnwdsitb71n.feishu.cn/wiki/DkGUwAYBZiwEO0kF5wWcpXuYnHd)
 
 `3 个完整 Demo` · `4 个交互原型` · `7 个工程` · `1,600 局策略测试` · `241 条规则断言`
@@ -51,6 +51,9 @@
 统一入口：[可玩游戏大厅](play.html)。[下载完整离线包](downloads/playable-games.zip)，解压后双击 `play.html`；也可以单独打开任意游戏 HTML。
 
 三种使用方式：**即时可玩**（大厅直接运行）、**HTML 单文件**（下载后双击即可，无需联网）、**完整离线包**（含大厅与全部游戏）。
+
+**下载版本**：🎮 [可玩离线包](downloads/playable-games.zip)（大厅 + 全部单文件游戏）｜💻 [完整工程源码 ZIP](https://github.com/LittleGrass1127/game-design-portfolio/archive/refs/heads/main.zip)（含 `src/`、`config/`、`tests/` 与策划文档）。
+
 
 | 作品 | 即时可玩 | HTML 单文件 |
 |-|-|-|
