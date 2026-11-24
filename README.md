@@ -50,6 +50,18 @@
 
 统一入口：[可玩游戏大厅](play.html)。[下载完整离线包](downloads/playable-games.zip)，解压后双击 `play.html`；也可以单独打开任意游戏 HTML。
 
+三种使用方式：**即时可玩**（大厅直接运行）、**HTML 单文件**（下载后双击即可，无需联网）、**完整离线包**（含大厅与全部游戏）。
+
+| 作品 | 即时可玩 | HTML 单文件 |
+|-|-|-|
+| 二十面野心·孙哥纪事 | [打开](play.html?game=d20) | [下载 HTML](demos/d20.html) |
+| 中国式考研：最后十二周 | [打开](play.html?game=kaoyan) | [下载 HTML](demos/kaoyan.html) |
+| 团子清洁队 | [打开](play.html?game=tuanzi) | [下载 HTML](demos/tuanzi.html) |
+| 夜灯街深夜剪辑室 | [打开](play.html?game=yedeng) | [下载 HTML](prototypes/yedeng.html) |
+| 春风编花会 | [打开](play.html?game=chunfeng) | [下载 HTML](prototypes/chunfeng.html) |
+| 旧影回声 | [打开](play.html?game=jiuying) | [下载 HTML](prototypes/jiuying.html) |
+| 精灵巡游季 | [打开](play.html?game=jingling) | [下载 HTML](prototypes/jingling.html) |
+
 ### 🛠️ 工程文件
 
 每个作品都拆成可维护的工程：`src/`（直接打开 `src/index.html` 运行，无需构建）、`config/`（策划配置表 CSV / JSON）、`tests/`（`node` 直接运行）、`docs/design.md`（策划文档）。总览见 [projects/README.md](projects/README.md)。
